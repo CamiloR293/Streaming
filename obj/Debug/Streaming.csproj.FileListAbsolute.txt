@@ -1,0 +1,12 @@
+D:\GitHub\Streaming\bin\Debug\Streaming.exe.config
+D:\GitHub\Streaming\bin\Debug\Streaming.exe
+D:\GitHub\Streaming\bin\Debug\Streaming.pdb
+D:\GitHub\Streaming\obj\Debug\Streaming.csproj.AssemblyReference.cache
+D:\GitHub\Streaming\obj\Debug\Streaming.csproj.SuggestedBindingRedirects.cache
+D:\GitHub\Streaming\obj\Debug\Streaming.Properties.Resources.resources
+D:\GitHub\Streaming\obj\Debug\Streaming.csproj.GenerateResource.cache
+D:\GitHub\Streaming\obj\Debug\Streaming.csproj.CoreCompileInputs.cache
+D:\GitHub\Streaming\obj\Debug\Streaming.exe
+D:\GitHub\Streaming\obj\Debug\Streaming.pdb
+D:\GitHub\Streaming\obj\Debug\Streaming.Main.resources
+D:\GitHub\Streaming\obj\Debug\Streaming.RegistroCliente.resources
