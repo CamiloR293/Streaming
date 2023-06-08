@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Streaming
@@ -14,7 +7,7 @@ namespace Streaming
     {
         Panel panelContainer = new Panel();
         Form registerClient = null;
-        public AgregarTarjeta(Panel panelContainer,Form register)
+        public AgregarTarjeta(Panel panelContainer, Form register)
         {
             InitializeComponent();
             this.panelContainer = panelContainer;

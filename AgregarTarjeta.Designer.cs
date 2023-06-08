@@ -30,6 +30,8 @@
         {
             this.picBoxReturnTo = new System.Windows.Forms.PictureBox();
             this.pnlDesktop = new System.Windows.Forms.Panel();
+            this.cmbBoxTipoTarjeta = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.btnRegistrarme = new System.Windows.Forms.Button();
             this.txtCVV = new System.Windows.Forms.TextBox();
             this.txtFechaExpedicion = new System.Windows.Forms.TextBox();
@@ -43,8 +45,7 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.pnlSuperior = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cmbBoxTipoTarjeta = new System.Windows.Forms.ComboBox();
+            this.btnRegistrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxReturnTo)).BeginInit();
             this.pnlDesktop.SuspendLayout();
             this.pnlSuperior.SuspendLayout();
@@ -64,6 +65,7 @@
             // pnlDesktop
             // 
             this.pnlDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(195)))), ((int)(((byte)(156)))));
+            this.pnlDesktop.Controls.Add(this.btnRegistrar);
             this.pnlDesktop.Controls.Add(this.cmbBoxTipoTarjeta);
             this.pnlDesktop.Controls.Add(this.label8);
             this.pnlDesktop.Controls.Add(this.btnRegistrarme);
@@ -81,6 +83,31 @@
             this.pnlDesktop.Name = "pnlDesktop";
             this.pnlDesktop.Size = new System.Drawing.Size(590, 390);
             this.pnlDesktop.TabIndex = 3;
+            // 
+            // cmbBoxTipoTarjeta
+            // 
+            this.cmbBoxTipoTarjeta.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbBoxTipoTarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBoxTipoTarjeta.FormattingEnabled = true;
+            this.cmbBoxTipoTarjeta.Items.AddRange(new object[] {
+            "Debito",
+            "Credito"});
+            this.cmbBoxTipoTarjeta.Location = new System.Drawing.Point(240, 237);
+            this.cmbBoxTipoTarjeta.Name = "cmbBoxTipoTarjeta";
+            this.cmbBoxTipoTarjeta.Size = new System.Drawing.Size(167, 28);
+            this.cmbBoxTipoTarjeta.TabIndex = 23;
+            this.cmbBoxTipoTarjeta.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(188, -20);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(199, 21);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Informacion de la tarjeta";
             // 
             // btnRegistrarme
             // 
@@ -231,30 +258,21 @@
             this.lblTitle.TabIndex = 22;
             this.lblTitle.Text = "REGISTRAR TARJETA";
             // 
-            // label8
+            // btnRegistrar
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(188, -20);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(199, 21);
-            this.label8.TabIndex = 22;
-            this.label8.Text = "Informacion de la tarjeta";
-            // 
-            // cmbBoxTipoTarjeta
-            // 
-            this.cmbBoxTipoTarjeta.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cmbBoxTipoTarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbBoxTipoTarjeta.FormattingEnabled = true;
-            this.cmbBoxTipoTarjeta.Items.AddRange(new object[] {
-            "Debito",
-            "Credito"});
-            this.cmbBoxTipoTarjeta.Location = new System.Drawing.Point(240, 237);
-            this.cmbBoxTipoTarjeta.Name = "cmbBoxTipoTarjeta";
-            this.cmbBoxTipoTarjeta.Size = new System.Drawing.Size(167, 28);
-            this.cmbBoxTipoTarjeta.TabIndex = 23;
-            this.cmbBoxTipoTarjeta.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.btnRegistrar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRegistrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(117)))));
+            this.btnRegistrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(144)))), ((int)(((byte)(77)))));
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRegistrar.Location = new System.Drawing.Point(223, 321);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(130, 45);
+            this.btnRegistrar.TabIndex = 24;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Visible = false;
             // 
             // AgregarTarjeta
             // 
@@ -263,6 +281,7 @@
             this.ClientSize = new System.Drawing.Size(590, 461);
             this.Controls.Add(this.pnlDesktop);
             this.Controls.Add(this.pnlSuperior);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AgregarTarjeta";
             this.Text = "AgregarTarjeta";
             ((System.ComponentModel.ISupportInitialize)(this.picBoxReturnTo)).EndInit();
@@ -293,5 +312,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.ComboBox cmbBoxTipoTarjeta;
+        private System.Windows.Forms.Button btnRegistrar;
     }
 }

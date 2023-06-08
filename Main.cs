@@ -13,9 +13,9 @@ namespace Streaming
         #region txtUserName
         private void txtUserName_Click(object sender, EventArgs e)
         {
-            if(txtUserName.Text.Equals("Correo o nombre de usuario")) txtUserName.Clear();
-            
-                
+            if (txtUserName.Text.Equals("Correo o nombre de usuario")) txtUserName.Clear();
+
+
         }
         private void txtUserName_Leave(object sender, EventArgs e)
         {
@@ -63,12 +63,12 @@ namespace Streaming
             lblRegister.ForeColor = System.Drawing.Color.FromArgb(196, 110, 56);
             openForms(new RegistroCliente(pnlDesktop));
         }
-        
+
         private void lblEmployeeAccount_Click(object sender, EventArgs e)
-        { 
+        {
             lblRegister.ForeColor = System.Drawing.Color.FromArgb(196, 110, 56);
-            openForms(new InicioEmpleado());
-            
+            openForms(new MainEmpleado());
+
         }
     }
 }

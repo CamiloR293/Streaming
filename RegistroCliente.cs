@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Streaming
@@ -42,7 +35,7 @@ namespace Streaming
 
         private void btnAgregarTarjeta_Click(object sender, EventArgs e)
         {
-            openForms(new AgregarTarjeta(panelContainer,this));
+            openForms(new AgregarTarjeta(panelContainer, this));
         }
     }
 }

@@ -53,6 +53,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.pnlSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxReturnTo)).BeginInit();
             this.pnlDesktop.SuspendLayout();
@@ -61,6 +62,7 @@
             // pnlSuperior
             // 
             this.pnlSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(117)))));
+            this.pnlSuperior.Controls.Add(this.lblTitle);
             this.pnlSuperior.Controls.Add(this.picBoxReturnTo);
             this.pnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSuperior.Location = new System.Drawing.Point(0, 0);
@@ -359,6 +361,18 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Primer nombre:";
             // 
+            // lblTitle
+            // 
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTitle.Location = new System.Drawing.Point(285, 24);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(214, 27);
+            this.lblTitle.TabIndex = 23;
+            this.lblTitle.Text = "REGISTRAR CLIENTE";
+            // 
             // RegistroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -371,6 +385,7 @@
             this.Name = "RegistroCliente";
             this.Text = "RegistroCliente";
             this.pnlSuperior.ResumeLayout(false);
+            this.pnlSuperior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxReturnTo)).EndInit();
             this.pnlDesktop.ResumeLayout(false);
             this.pnlDesktop.PerformLayout();
@@ -405,5 +420,6 @@
         private System.Windows.Forms.TextBox txtPNombre;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnAgregarTarjeta;
+        private System.Windows.Forms.Label lblTitle;
     }
 }

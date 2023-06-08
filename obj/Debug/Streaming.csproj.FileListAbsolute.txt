@@ -12,3 +12,12 @@ D:\GitHub\Streaming\obj\Debug\Streaming.Main.resources
 D:\GitHub\Streaming\obj\Debug\Streaming.RegistroCliente.resources
 D:\GitHub\Streaming\obj\Debug\Streaming.AgregarTarjeta.resources
 D:\GitHub\Streaming\obj\Debug\Streaming.InicioEmpleado.resources
+D:\GitHub\Streaming\obj\Debug\Streaming.DatosPersonalesEmpleado.resources
+D:\GitHub\Streaming\obj\Debug\Streaming.MainEmpleado.resources
+D:\GitHub\Streaming\obj\Debug\Streaming.DatosPersonalesCliente.resources
+D:\GitHub\Streaming\obj\Debug\Streaming.InicioCliente.resources
+D:\GitHub\Streaming\obj\Debug\Streaming.MenuPrincipalCliente.resources
+D:\GitHub\Streaming\obj\Debug\Streaming.RegistrarProductoEmpleado.resources
+D:\GitHub\Streaming\obj\Debug\Streaming.PlanSuscripcionCliente.resources
+D:\GitHub\Streaming\obj\Debug\Streaming.VerPeliculaCliente.resources
+D:\GitHub\Streaming\obj\Debug\Streaming.ViendoPelicula.resources

@@ -52,11 +52,35 @@
     <Compile Include="AgregarTarjeta.Designer.cs">
       <DependentUpon>AgregarTarjeta.cs</DependentUpon>
     </Compile>
+    <Compile Include="DatosPersonalesCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatosPersonalesCliente.Designer.cs">
+      <DependentUpon>DatosPersonalesCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatosPersonalesEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatosPersonalesEmpleado.Designer.cs">
+      <DependentUpon>DatosPersonalesEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InicioCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InicioCliente.Designer.cs">
+      <DependentUpon>InicioCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="InicioEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="InicioEmpleado.Designer.cs">
       <DependentUpon>InicioEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainEmpleado.Designer.cs">
+      <DependentUpon>MainEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -64,22 +88,70 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuPrincipalCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuPrincipalCliente.Designer.cs">
+      <DependentUpon>MenuPrincipalCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlanSuscripcionCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanSuscripcionCliente.Designer.cs">
+      <DependentUpon>PlanSuscripcionCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrarProductoEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrarProductoEmpleado.Designer.cs">
+      <DependentUpon>RegistrarProductoEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegistroCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RegistroCliente.Designer.cs">
       <DependentUpon>RegistroCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="VerPeliculaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerPeliculaCliente.Designer.cs">
+      <DependentUpon>VerPeliculaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViendoPelicula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViendoPelicula.Designer.cs">
+      <DependentUpon>ViendoPelicula.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AgregarTarjeta.resx">
       <DependentUpon>AgregarTarjeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatosPersonalesCliente.resx">
+      <DependentUpon>DatosPersonalesCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatosPersonalesEmpleado.resx">
+      <DependentUpon>DatosPersonalesEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InicioCliente.resx">
+      <DependentUpon>InicioCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InicioEmpleado.resx">
       <DependentUpon>InicioEmpleado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainEmpleado.resx">
+      <DependentUpon>MainEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuPrincipalCliente.resx">
+      <DependentUpon>MenuPrincipalCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanSuscripcionCliente.resx">
+      <DependentUpon>PlanSuscripcionCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -91,8 +163,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RegistrarProductoEmpleado.resx">
+      <DependentUpon>RegistrarProductoEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegistroCliente.resx">
       <DependentUpon>RegistroCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerPeliculaCliente.resx">
+      <DependentUpon>VerPeliculaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViendoPelicula.resx">
+      <DependentUpon>ViendoPelicula.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -130,6 +211,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\return.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\585e4beacb11b227491c3399.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1101793.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\browse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Movie.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
