@@ -10,19 +10,32 @@ using System.Windows.Forms;
 
 namespace Streaming
 {
-    public partial class RegistroCliente : Form
+    public partial class AgregarTarjeta : Form
     {
         Panel panelContainer = new Panel();
-        public RegistroCliente(Panel panelContainer)
+        Form registerClient = null;
+        public AgregarTarjeta(Panel panelContainer,Form register)
         {
             InitializeComponent();
             this.panelContainer = panelContainer;
+            this.registerClient = register;
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void picBoxReturnTo_Click(object sender, EventArgs e)
         {
-            openForms(new Main());
+            openForms(registerClient);
         }
+
         private Form activeForm = null;
         private void openForms(Form newForm)
         {
@@ -37,12 +50,7 @@ namespace Streaming
             panelContainer.Tag = newForm;
 
             newForm.BringToFront();
-            newForm.Show();
-        }
 
-        private void btnAgregarTarjeta_Click(object sender, EventArgs e)
-        {
-            openForms(new AgregarTarjeta(panelContainer,this));
         }
     }
 }

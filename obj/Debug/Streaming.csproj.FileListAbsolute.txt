@@ -10,3 +10,5 @@ D:\GitHub\Streaming\obj\Debug\Streaming.exe
 D:\GitHub\Streaming\obj\Debug\Streaming.pdb
 D:\GitHub\Streaming\obj\Debug\Streaming.Main.resources
 D:\GitHub\Streaming\obj\Debug\Streaming.RegistroCliente.resources
+D:\GitHub\Streaming\obj\Debug\Streaming.AgregarTarjeta.resources
+D:\GitHub\Streaming\obj\Debug\Streaming.InicioEmpleado.resources

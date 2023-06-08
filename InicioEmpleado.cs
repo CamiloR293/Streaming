@@ -10,21 +10,20 @@ using System.Windows.Forms;
 
 namespace Streaming
 {
-    public partial class RegistroCliente : Form
+    public partial class InicioEmpleado : Form
     {
-        Panel panelContainer = new Panel();
-        public RegistroCliente(Panel panelContainer)
+        public InicioEmpleado()
         {
             InitializeComponent();
-            this.panelContainer = panelContainer;
         }
 
         private void picBoxReturnTo_Click(object sender, EventArgs e)
         {
             openForms(new Main());
         }
+
         private Form activeForm = null;
-        private void openForms(Form newForm)
+        public void openForms(Form newForm)
         {
             if (activeForm != null) activeForm.Close();
             activeForm = newForm;
@@ -33,16 +32,25 @@ namespace Streaming
             newForm.FormBorderStyle = FormBorderStyle.None;
             activeForm.Dock = DockStyle.Fill;
 
-            panelContainer.Controls.Add(newForm);
-            panelContainer.Tag = newForm;
+            pnlDesktop.Controls.Add(newForm);
+            pnlDesktop.Tag = newForm;
 
             newForm.BringToFront();
             newForm.Show();
         }
 
-        private void btnAgregarTarjeta_Click(object sender, EventArgs e)
+        private void txtPassword_Click(object sender, EventArgs e)
         {
-            openForms(new AgregarTarjeta(panelContainer,this));
+            if (txtPassword.Text.Equals("Contraseña"))
+            {
+                txtPassword.UseSystemPasswordChar = true;
+                txtPassword.Clear();
+            }
+        }
+
+        private void txtUserName_Click(object sender, EventArgs e)
+        {
+            if (txtUserName.Text.Equals("Correo o nombre de usuario")) txtUserName.Clear();
         }
     }
 }

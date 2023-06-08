@@ -10,14 +10,19 @@ namespace Streaming
             InitializeComponent();
         }
 
-
+        #region txtUserName
         private void txtUserName_Click(object sender, EventArgs e)
         {
             if(txtUserName.Text.Equals("Correo o nombre de usuario")) txtUserName.Clear();
-
-
+            
+                
         }
-
+        private void txtUserName_Leave(object sender, EventArgs e)
+        {
+            if (txtUserName.Text.Equals("")) txtUserName.Text = "Correo o nombre de usuario";
+        }
+        #endregion
+        #region txtPassword
         private void txtPassword_Click(object sender, EventArgs e)
         {
             if (txtPassword.Text.Equals("Contraseña"))
@@ -26,14 +31,18 @@ namespace Streaming
                 txtPassword.Clear();
             }
         }
-        private Form activeForm = null;
-        private void lblRegister_Click(object sender, EventArgs e)
+        private void txtPassword_Leave(object sender, EventArgs e)
         {
-            lblRegister.ForeColor = System.Drawing.Color.FromArgb(196, 110, 56);
-            openForms(new RegistroCliente(pnlDesktop));
+            if (txtPassword.Text.Equals(""))
+            {
+                txtPassword.UseSystemPasswordChar = false;
+                txtPassword.Text = "Contraseña";
+            }
         }
-        
-        private void openForms(Form newForm)
+        #endregion
+        #region OpenForm
+        private Form activeForm = null;
+        public void openForms(Form newForm)
         {
             if (activeForm != null) activeForm.Close();
             activeForm = newForm;
@@ -47,6 +56,19 @@ namespace Streaming
 
             newForm.BringToFront();
             newForm.Show();
+        }
+        #endregion
+        private void lblRegister_Click(object sender, EventArgs e)
+        {
+            lblRegister.ForeColor = System.Drawing.Color.FromArgb(196, 110, 56);
+            openForms(new RegistroCliente(pnlDesktop));
+        }
+        
+        private void lblEmployeeAccount_Click(object sender, EventArgs e)
+        { 
+            lblRegister.ForeColor = System.Drawing.Color.FromArgb(196, 110, 56);
+            openForms(new InicioEmpleado());
+            
         }
     }
 }
