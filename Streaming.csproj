@@ -156,7 +156,6 @@
     <Compile Include="logica\Cliente.cs" />
     <Compile Include="logica\planSuscripcion.cs" />
     <Compile Include="logica\producto.cs" />
-    <Compile Include="logica\Registro.cs" />
     <Compile Include="logica\tarjeta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
