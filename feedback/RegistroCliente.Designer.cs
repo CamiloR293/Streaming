@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlSuperior = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.picBoxReturnTo = new System.Windows.Forms.PictureBox();
             this.pnlDesktop = new System.Windows.Forms.Panel();
             this.btnAgregarTarjeta = new System.Windows.Forms.Button();
@@ -53,7 +54,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblTitle = new System.Windows.Forms.Label();
+            this.Registrar = new System.Windows.Forms.Button();
             this.pnlSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxReturnTo)).BeginInit();
             this.pnlDesktop.SuspendLayout();
@@ -70,6 +71,18 @@
             this.pnlSuperior.Size = new System.Drawing.Size(816, 71);
             this.pnlSuperior.TabIndex = 0;
             // 
+            // lblTitle
+            // 
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTitle.Location = new System.Drawing.Point(285, 24);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(214, 27);
+            this.lblTitle.TabIndex = 23;
+            this.lblTitle.Text = "REGISTRAR CLIENTE";
+            // 
             // picBoxReturnTo
             // 
             this.picBoxReturnTo.Image = global::Streaming.Properties.Resources._return;
@@ -84,6 +97,7 @@
             // pnlDesktop
             // 
             this.pnlDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(195)))), ((int)(((byte)(156)))));
+            this.pnlDesktop.Controls.Add(this.Registrar);
             this.pnlDesktop.Controls.Add(this.btnAgregarTarjeta);
             this.pnlDesktop.Controls.Add(this.txtRepPassword);
             this.pnlDesktop.Controls.Add(this.txtPassword);
@@ -361,17 +375,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Primer nombre:";
             // 
-            // lblTitle
+            // Registrar
             // 
-            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTitle.Location = new System.Drawing.Point(285, 24);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(214, 27);
-            this.lblTitle.TabIndex = 23;
-            this.lblTitle.Text = "REGISTRAR CLIENTE";
+            this.Registrar.Location = new System.Drawing.Point(580, 262);
+            this.Registrar.Name = "Registrar";
+            this.Registrar.Size = new System.Drawing.Size(75, 23);
+            this.Registrar.TabIndex = 22;
+            this.Registrar.Text = "Registrar";
+            this.Registrar.UseVisualStyleBackColor = true;
+            this.Registrar.Click += new System.EventHandler(this.button1_Click);
             // 
             // RegistroCliente
             // 
@@ -421,5 +433,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnAgregarTarjeta;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Button Registrar;
     }
 }

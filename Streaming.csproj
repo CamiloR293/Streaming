@@ -151,6 +151,13 @@
     <Compile Include="feedback\PlanSuscripcionCliente.Designer.cs">
       <DependentUpon>PlanSuscripcionCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="logica\actor.cs" />
+    <Compile Include="logica\administrador.cs" />
+    <Compile Include="logica\Cliente.cs" />
+    <Compile Include="logica\planSuscripcion.cs" />
+    <Compile Include="logica\producto.cs" />
+    <Compile Include="logica\Registro.cs" />
+    <Compile Include="logica\tarjeta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="feedback\RegistrarProductoEmpleado.cs">

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Streaming.logica;
+using System;
 using System.Windows.Forms;
 
 namespace Streaming
@@ -36,6 +37,14 @@ namespace Streaming
         private void btnAgregarTarjeta_Click(object sender, EventArgs e)
         {
             openForms(new AgregarTarjeta(panelContainer, this));
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            cliente admin = new cliente();
+            int resultado = admin.ingresarRegistro(25, txtUsuario.Text.ToString(), txtPNombre.Text.ToString(), txtPApellido.Text.ToString(),
+                txtSNombre.Text.ToString(), txtSApellido.Text.ToString(), txtPassword.Text.ToString(), txtFechaNacimiento.Text.ToString(), txtTelefono.Text.ToString()
+                , txtCorreo.Text.ToString(), 2, "12/06/2023");
         }
     }
 }

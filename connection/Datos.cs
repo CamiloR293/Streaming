@@ -8,7 +8,7 @@ namespace Streaming.connection
     class Datos
     {
         //Creo la cadena de conexion 
-        string cadenaConexion = "Data Source = localhost; User ID = proyecto_basesII; Password=1234";
+        string cadenaConexion = "Data Source = localhost; User ID = bases; Password=oracle";
 
         //Metodo para ejecutar una sentencia insert , update o delete
         public int ejecutarDML(string consulta)
