@@ -48,13 +48,13 @@ namespace Streaming
             //creación de variable para capturar la fecha actual
             DateTime fechaActual = DateTime.Now.Date;
             // enviar datos de caja de texto para agregar nuevo usuario
-            int resultado = admin.ingresarRegistro( contador, txtUsuario.Text.ToString(), txtPNombre.Text.ToString(),
-                                                    txtSNombre.Text.ToString(), txtPApellido.Text.ToString(),
-                                                    txtSApellido.Text.ToString(), txtPassword.Text.ToString(),
-                                                    txtFechaNacimiento.Text.ToString(), txtTelefono.Text.ToString(),
-                                                    txtCorreo.Text.ToString(), 2, fechaActual.ToString("dd/MM/yyyy") );
+            int resultado = admin.ingresarRegistro( contador, txtUsuario.Text, txtPNombre.Text,
+                                                    txtSNombre.Text, txtPApellido.Text,
+                                                    txtSApellido.Text, txtPassword.Text,
+                                                    txtFechaNacimiento.Text, txtTelefono.Text,
+                                                    txtCorreo.Text, 2, fechaActual.ToString("dd/MM/yyyy") );
             //validacion
-            if (resultado > 1 & txtPassword.Text.Equals(txtRepPassword.Text))
+            if (resultado > 0 & txtPassword.Text.Equals(txtRepPassword.Text))
                 MessageBox.Show("Usuario registrado", "Mensanje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MessageBox.Show("Usuario NO registrado", "Mensanje", MessageBoxButtons.OK, MessageBoxIcon.Information);
