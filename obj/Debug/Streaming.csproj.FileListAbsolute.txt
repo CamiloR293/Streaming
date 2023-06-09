@@ -21,3 +21,45 @@ D:\GitHub\Streaming\obj\Debug\Streaming.RegistrarProductoEmpleado.resources
 D:\GitHub\Streaming\obj\Debug\Streaming.PlanSuscripcionCliente.resources
 D:\GitHub\Streaming\obj\Debug\Streaming.VerPeliculaCliente.resources
 D:\GitHub\Streaming\obj\Debug\Streaming.ViendoPelicula.resources
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\bin\Debug\Streaming.exe.config
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\bin\Debug\Streaming.exe
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\bin\Debug\Streaming.pdb
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\obj\Debug\Streaming.csproj.AssemblyReference.cache
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\obj\Debug\Streaming.AgregarTarjeta.resources
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\obj\Debug\Streaming.DatosPersonalesCliente.resources
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\obj\Debug\Streaming.DatosPersonalesEmpleado.resources
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\obj\Debug\Streaming.InicioCliente.resources
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\obj\Debug\Streaming.InicioEmpleado.resources
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\obj\Debug\Streaming.MainEmpleado.resources
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\obj\Debug\Streaming.Main.resources
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\obj\Debug\Streaming.MenuPrincipalCliente.resources
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\obj\Debug\Streaming.PlanSuscripcionCliente.resources
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\obj\Debug\Streaming.Properties.Resources.resources
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\obj\Debug\Streaming.RegistrarProductoEmpleado.resources
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\obj\Debug\Streaming.RegistroCliente.resources
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\obj\Debug\Streaming.VerPeliculaCliente.resources
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\obj\Debug\Streaming.ViendoPelicula.resources
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\obj\Debug\Streaming.csproj.GenerateResource.cache
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\obj\Debug\Streaming.csproj.CoreCompileInputs.cache
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\obj\Debug\Streaming.exe
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\obj\Debug\Streaming.pdb
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\bin\Debug\System.Buffers.dll
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\bin\Debug\System.Memory.dll
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\bin\Debug\System.Text.Json.dll
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\bin\Debug\System.ValueTuple.dll
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\bin\Debug\System.Buffers.xml
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\bin\Debug\System.Memory.xml
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\bin\Debug\System.Text.Json.xml
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\bin\Debug\System.ValueTuple.xml
+C:\Users\Asus\OneDrive - unicauca.edu.co\Base de datos\Bases II\Streaming\obj\Debug\Streaming.csproj.CopyComplete
