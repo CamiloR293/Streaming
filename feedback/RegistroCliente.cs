@@ -41,14 +41,13 @@ namespace Streaming
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cliente admin = new cliente();
+            cliente miCLiente = new cliente();
             // contador para originar codigo de cliente
-            int contador = 0;
-            contador = contador + 1;
+            int contador = 1;
             //creación de variable para capturar la fecha actual
             DateTime fechaActual = DateTime.Now.Date;
             // enviar datos de caja de texto para agregar nuevo usuario
-            int resultado = admin.ingresarRegistro( contador, txtUsuario.Text, txtPNombre.Text,
+            int resultado = miCLiente.ingresarRegistro( contador, txtUsuario.Text, txtPNombre.Text,
                                                     txtSNombre.Text, txtPApellido.Text,
                                                     txtSApellido.Text, txtPassword.Text,
                                                     txtFechaNacimiento.Text, txtTelefono.Text,
@@ -57,7 +56,7 @@ namespace Streaming
             if (resultado > 0 & txtPassword.Text.Equals(txtRepPassword.Text))
                 MessageBox.Show("Usuario registrado", "Mensanje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                MessageBox.Show("Usuario NO registrado", "Mensanje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Usuario NO registrado", "Mensanje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //limpiar cajas de texto
             txtRepPassword.Clear();
             txtPassword.Clear();
@@ -69,6 +68,8 @@ namespace Streaming
             txtPApellido.Clear();
             txtSNombre.Clear();
             txtPNombre.Clear();
+            //sumar contador
+            contador++;
         }
     }
 }

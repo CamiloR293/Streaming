@@ -30,6 +30,7 @@
         {
             this.picBoxReturnTo = new System.Windows.Forms.PictureBox();
             this.pnlDesktop = new System.Windows.Forms.Panel();
+            this.btnRegistrar = new System.Windows.Forms.Button();
             this.cmbBoxTipoTarjeta = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnRegistrarme = new System.Windows.Forms.Button();
@@ -45,7 +46,6 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.pnlSuperior = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.btnRegistrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxReturnTo)).BeginInit();
             this.pnlDesktop.SuspendLayout();
             this.pnlSuperior.SuspendLayout();
@@ -54,9 +54,10 @@
             // picBoxReturnTo
             // 
             this.picBoxReturnTo.Image = global::Streaming.Properties.Resources._return;
-            this.picBoxReturnTo.Location = new System.Drawing.Point(22, 12);
+            this.picBoxReturnTo.Location = new System.Drawing.Point(29, 15);
+            this.picBoxReturnTo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picBoxReturnTo.Name = "picBoxReturnTo";
-            this.picBoxReturnTo.Size = new System.Drawing.Size(49, 50);
+            this.picBoxReturnTo.Size = new System.Drawing.Size(65, 62);
             this.picBoxReturnTo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxReturnTo.TabIndex = 0;
             this.picBoxReturnTo.TabStop = false;
@@ -79,10 +80,29 @@
             this.pnlDesktop.Controls.Add(this.label2);
             this.pnlDesktop.Controls.Add(this.label1);
             this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDesktop.Location = new System.Drawing.Point(0, 71);
+            this.pnlDesktop.Location = new System.Drawing.Point(0, 87);
+            this.pnlDesktop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlDesktop.Name = "pnlDesktop";
-            this.pnlDesktop.Size = new System.Drawing.Size(590, 390);
+            this.pnlDesktop.Size = new System.Drawing.Size(787, 480);
             this.pnlDesktop.TabIndex = 3;
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRegistrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(117)))));
+            this.btnRegistrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(144)))), ((int)(((byte)(77)))));
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRegistrar.Location = new System.Drawing.Point(297, 395);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(173, 55);
+            this.btnRegistrar.TabIndex = 24;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Visible = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // cmbBoxTipoTarjeta
             // 
@@ -92,9 +112,10 @@
             this.cmbBoxTipoTarjeta.Items.AddRange(new object[] {
             "Debito",
             "Credito"});
-            this.cmbBoxTipoTarjeta.Location = new System.Drawing.Point(240, 237);
+            this.cmbBoxTipoTarjeta.Location = new System.Drawing.Point(320, 292);
+            this.cmbBoxTipoTarjeta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbBoxTipoTarjeta.Name = "cmbBoxTipoTarjeta";
-            this.cmbBoxTipoTarjeta.Size = new System.Drawing.Size(167, 28);
+            this.cmbBoxTipoTarjeta.Size = new System.Drawing.Size(221, 33);
             this.cmbBoxTipoTarjeta.TabIndex = 23;
             this.cmbBoxTipoTarjeta.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -103,9 +124,10 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(188, -20);
+            this.label8.Location = new System.Drawing.Point(251, -25);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(199, 21);
+            this.label8.Size = new System.Drawing.Size(248, 26);
             this.label8.TabIndex = 22;
             this.label8.Text = "Informacion de la tarjeta";
             // 
@@ -117,9 +139,10 @@
             this.btnRegistrarme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarme.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarme.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRegistrarme.Location = new System.Drawing.Point(223, 321);
+            this.btnRegistrarme.Location = new System.Drawing.Point(297, 395);
+            this.btnRegistrarme.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegistrarme.Name = "btnRegistrarme";
-            this.btnRegistrarme.Size = new System.Drawing.Size(130, 45);
+            this.btnRegistrarme.Size = new System.Drawing.Size(173, 55);
             this.btnRegistrarme.TabIndex = 21;
             this.btnRegistrarme.Text = "Registrarme";
             this.btnRegistrarme.UseVisualStyleBackColor = false;
@@ -129,10 +152,11 @@
             this.txtCVV.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCVV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCVV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCVV.Location = new System.Drawing.Point(240, 189);
+            this.txtCVV.Location = new System.Drawing.Point(320, 233);
+            this.txtCVV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCVV.Multiline = true;
             this.txtCVV.Name = "txtCVV";
-            this.txtCVV.Size = new System.Drawing.Size(167, 20);
+            this.txtCVV.Size = new System.Drawing.Size(223, 25);
             this.txtCVV.TabIndex = 16;
             // 
             // txtFechaExpedicion
@@ -140,10 +164,11 @@
             this.txtFechaExpedicion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtFechaExpedicion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFechaExpedicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechaExpedicion.Location = new System.Drawing.Point(240, 142);
+            this.txtFechaExpedicion.Location = new System.Drawing.Point(320, 175);
+            this.txtFechaExpedicion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtFechaExpedicion.Multiline = true;
             this.txtFechaExpedicion.Name = "txtFechaExpedicion";
-            this.txtFechaExpedicion.Size = new System.Drawing.Size(167, 20);
+            this.txtFechaExpedicion.Size = new System.Drawing.Size(223, 25);
             this.txtFechaExpedicion.TabIndex = 15;
             // 
             // txtNumero
@@ -151,10 +176,11 @@
             this.txtNumero.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNumero.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumero.Location = new System.Drawing.Point(240, 94);
+            this.txtNumero.Location = new System.Drawing.Point(320, 116);
+            this.txtNumero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNumero.Multiline = true;
             this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(167, 20);
+            this.txtNumero.Size = new System.Drawing.Size(223, 25);
             this.txtNumero.TabIndex = 12;
             // 
             // txtNombre
@@ -162,10 +188,11 @@
             this.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(240, 48);
+            this.txtNombre.Location = new System.Drawing.Point(320, 59);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(167, 20);
+            this.txtNombre.Size = new System.Drawing.Size(223, 25);
             this.txtNombre.TabIndex = 11;
             // 
             // label7
@@ -173,9 +200,10 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(119, 234);
+            this.label7.Location = new System.Drawing.Point(159, 288);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(102, 21);
+            this.label7.Size = new System.Drawing.Size(128, 26);
             this.label7.TabIndex = 6;
             this.label7.Text = "Tipo tarjeta:";
             this.label7.Click += new System.EventHandler(this.label7_Click);
@@ -185,9 +213,10 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(175, 188);
+            this.label6.Location = new System.Drawing.Point(233, 231);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 21);
+            this.label6.Size = new System.Drawing.Size(55, 26);
             this.label6.TabIndex = 5;
             this.label6.Text = "CVV:";
             // 
@@ -196,9 +225,10 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(51, 140);
+            this.label5.Location = new System.Drawing.Point(68, 172);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(170, 21);
+            this.label5.Size = new System.Drawing.Size(209, 26);
             this.label5.TabIndex = 4;
             this.label5.Text = "Fecha de expedicion:";
             // 
@@ -207,9 +237,10 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(144, 92);
+            this.label2.Location = new System.Drawing.Point(192, 113);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 21);
+            this.label2.Size = new System.Drawing.Size(94, 26);
             this.label2.TabIndex = 1;
             this.label2.Text = "Numero:";
             // 
@@ -218,9 +249,10 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(144, 47);
+            this.label1.Location = new System.Drawing.Point(192, 58);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 21);
+            this.label1.Size = new System.Drawing.Size(94, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre:";
             // 
@@ -242,8 +274,9 @@
             this.pnlSuperior.Controls.Add(this.picBoxReturnTo);
             this.pnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSuperior.Location = new System.Drawing.Point(0, 0);
+            this.pnlSuperior.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSuperior.Name = "pnlSuperior";
-            this.pnlSuperior.Size = new System.Drawing.Size(590, 71);
+            this.pnlSuperior.Size = new System.Drawing.Size(787, 87);
             this.pnlSuperior.TabIndex = 2;
             // 
             // lblTitle
@@ -252,36 +285,22 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTitle.Location = new System.Drawing.Point(187, 23);
+            this.lblTitle.Location = new System.Drawing.Point(249, 28);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(220, 27);
+            this.lblTitle.Size = new System.Drawing.Size(282, 36);
             this.lblTitle.TabIndex = 22;
             this.lblTitle.Text = "REGISTRAR TARJETA";
             // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRegistrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(117)))));
-            this.btnRegistrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(144)))), ((int)(((byte)(77)))));
-            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRegistrar.Location = new System.Drawing.Point(223, 321);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(130, 45);
-            this.btnRegistrar.TabIndex = 24;
-            this.btnRegistrar.Text = "Registrar";
-            this.btnRegistrar.UseVisualStyleBackColor = false;
-            this.btnRegistrar.Visible = false;
-            // 
             // AgregarTarjeta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(590, 461);
+            this.ClientSize = new System.Drawing.Size(787, 567);
             this.Controls.Add(this.pnlDesktop);
             this.Controls.Add(this.pnlSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AgregarTarjeta";
             this.Text = "AgregarTarjeta";
             ((System.ComponentModel.ISupportInitialize)(this.picBoxReturnTo)).EndInit();
