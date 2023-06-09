@@ -1,16 +1,13 @@
 ﻿using Streaming.connection;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Streaming.logica
 {
     internal class cliente
     {
         Datos dt = new Datos();
+
         public int ingresarRegistro(int codigo, string usuario, string primernombre, string segundonombre, string primerapellido,
             string segundoapellido, string contrasenia, string fechanac, string telefono, string correo, int tipoaaceso, string fechaultinicio)
         {
@@ -23,17 +20,19 @@ namespace Streaming.logica
         }
         public DataSet consultarRegistro()
         {
-            DataSet miDs = new DataSet();
             string consulta;
             consulta = "select * from Registro";
-            miDs = dt.ejecutarSELECT(consulta);
+            DataSet miDs = dt.ejecutarSELECT(consulta);
             return miDs;
         }
         public DataSet consultarInfo(int nitBanco, string fechaIngreso)
         {
             DataSet miDs = new DataSet();
             string consulta;
-            consulta = "select B.nombanco, C.clienteid, C.clinombre, C.cliapellido,r.fecretiro from Registro R inner join Cliente C on C.ClienteID=R.ClienteID inner join Banco B on R.nitBanco=B.nitBanco where B.nitBanco =" + nitBanco + "AND fecIngreso= to_Date('" + fechaIngreso + "', 'dd-mm-yyyy')";
+            consulta = "select B.nombanco, C.clienteid, C.clinombre, C.cliapellido,r.fecretiro " +
+                "from Registro R inner join Cliente C " +
+                "on C.ClienteID=R.ClienteID inner join Banco B " +
+                "on R.nitBanco=B.nitBanco where B.nitBanco =" + nitBanco + "AND fecIngreso= to_Date('" + fechaIngreso + "', 'dd-mm-yyyy')";
             miDs = dt.ejecutarSELECT(consulta);
             return miDs;
         }
