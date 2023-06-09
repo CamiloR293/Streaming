@@ -49,7 +49,7 @@ namespace Streaming
         
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            Tarjeta mitarjeta = new Tarjeta();
+            /*Tarjeta mitarjeta = new Tarjeta();
             int codigo = 1;
             int resultado = mitarjeta.registrarTarjeta(codigo, txtNumero.Text, txtFechaExpedicion.Text, 
                                                        txtNombre.Text, cmbBoxTipoTarjeta.SelectedItem.ToString());
@@ -63,7 +63,7 @@ namespace Streaming
             txtFechaExpedicion.Clear();
             txtNombre.Clear();
             txtNumero.Clear();
-            txtPassword.Clear();
+            txtPassword.Clear();*/
         }
     }
 }

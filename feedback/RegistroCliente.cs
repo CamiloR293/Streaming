@@ -43,15 +43,15 @@ namespace Streaming
         {
             cliente miCLiente = new cliente();
             // contador para originar codigo de cliente
-            int contador = 1;
+            int contador = 40;
             //creación de variable para capturar la fecha actual
             DateTime fechaActual = DateTime.Now.Date;
             // enviar datos de caja de texto para agregar nuevo usuario
-            int resultado = miCLiente.ingresarRegistro( contador, txtUsuario.Text, txtPNombre.Text,
+            int resultado = miCLiente.ingresarRegistro(txtUsuario.Text, txtPNombre.Text,
                                                     txtSNombre.Text, txtPApellido.Text,
-                                                    txtSApellido.Text, txtPassword.Text,
-                                                    txtFechaNacimiento.Text, txtTelefono.Text,
-                                                    txtCorreo.Text, 2, fechaActual.ToString("dd/MM/yyyy") );
+                                                    txtSApellido.Text, txtFechaNacimiento.Text, txtPassword.Text
+                                                    , txtTelefono.Text,
+                                                    txtCorreo.Text, 2 );
             //validacion
             if (resultado > 0 & txtPassword.Text.Equals(txtRepPassword.Text))
                 MessageBox.Show("Usuario registrado", "Mensanje", MessageBoxButtons.OK, MessageBoxIcon.Information);
