@@ -21,5 +21,13 @@ namespace Streaming
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+                MessageBox.Show("¡Haz hecho clic en Plan Mensual!");
+            
+
+        }
     }
 }
