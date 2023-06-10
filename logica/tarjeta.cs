@@ -6,12 +6,12 @@ namespace Streaming.logica
     internal class tarjeta
     {
         Datos dt = new Datos();
-        public int ingresartarjeta(int cliente, int codigo, string numerotarjeta,
+        public int ingresartarjeta(string numerotarjeta,
          string fechaexp, string nombretarjeta, string cvv, string tipotarjeta)
         {
             int resultado;
             string consulta;
-            consulta = "insert into tarjeta values(" + cliente + "," + codigo + ", '" + numerotarjeta + "', '" + fechaexp + "', '" + nombretarjeta + "', '" + cvv + "', '" + tipotarjeta + "')";
+            consulta = "insert into tarjeta values((select max(codigo) from CLIENTE),(select max(codigo + 1) from TARJETA), '" + numerotarjeta + "', '" + fechaexp + "', '" + nombretarjeta + "', '" + cvv + "', '" + tipotarjeta + "')";
             resultado = dt.ejecutarDML(consulta);
             return resultado;
         }

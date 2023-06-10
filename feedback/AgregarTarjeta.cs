@@ -1,6 +1,7 @@
 ﻿using Streaming.logica;
 using System;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Streaming
 {
@@ -8,10 +9,31 @@ namespace Streaming
     {
         Panel panelContainer = new Panel();
         Form registerClient = null;
-        public AgregarTarjeta(Panel panelContainer, Form register)
+        private String txtUsuario;
+        private String txtPNombre;
+        private String txtPApellido;
+        private String txtSNombre;
+        private String txtSApellido;
+        private String txtPasswordRegistro;
+        private String txtFechaNacimiento;
+        private String txtTelefono;
+        private String txtCorreo;
+        public AgregarTarjeta(Panel panelContainer, Form register, String txtUsuario, String txtPNombre, String txtPApellido,
+                String txtSNombre, String txtSApellido, String txtPasswordRegistro, String txtFechaNacimiento, String txtTelefono
+                , String txtCorreo)
         {
             InitializeComponent();
+            this.txtCorreo = txtCorreo;
+            this.txtFechaNacimiento = txtFechaNacimiento;
+            this.txtPApellido = txtPApellido;
+            this.txtPNombre = txtPNombre;
+            this.txtSApellido = txtSApellido;
+            this.txtSNombre = txtSNombre;
+            this.txtPasswordRegistro = txtPasswordRegistro;
+            this.txtTelefono = txtTelefono;
+            this.txtUsuario = txtUsuario;
             this.panelContainer = panelContainer;
+
             this.registerClient = register;
             btnRegistrar.Visible = false;
             btnRegistrarme.Visible = true;
@@ -39,7 +61,7 @@ namespace Streaming
         {
             this.Close();
         }
-        
+
         private Form activeForm = null;
         private void openForms(Form newForm)
         {
@@ -57,24 +79,9 @@ namespace Streaming
             newForm.Show();
 
         }
-        
-        private void btnRegistrar_Click(object sender, EventArgs e)
-        {/*
-            tarjeta mitarjeta = new tarjeta();
-            int codigo = 1;
-            int resultado = mitarjeta.ingresartarjeta(txtNumero.Text.ToString(), txtFechaExpedicion.Text, 
-                                                       txtNombre.Text, cmbBoxTipoTarjeta.SelectedItem.ToString());
-            //validacion
-            if (resultado > 0)
-                MessageBox.Show("Tarjeta registrada", "Mensanje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else
-                MessageBox.Show("Tarjeta NO registrado", "Mensanje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //limpiar cajas de texto
-            txtCVV.Clear();
-            txtFechaExpedicion.Clear();
-            txtNombre.Clear();
-            txtNumero.Clear();
-            txtPassword.Clear();*/
-        }
+
+
+
+
     }
 }

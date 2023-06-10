@@ -54,7 +54,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Registrar = new System.Windows.Forms.Button();
             this.pnlSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxReturnTo)).BeginInit();
             this.pnlDesktop.SuspendLayout();
@@ -97,7 +96,6 @@
             // pnlDesktop
             // 
             this.pnlDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(195)))), ((int)(((byte)(156)))));
-            this.pnlDesktop.Controls.Add(this.Registrar);
             this.pnlDesktop.Controls.Add(this.btnAgregarTarjeta);
             this.pnlDesktop.Controls.Add(this.txtRepPassword);
             this.pnlDesktop.Controls.Add(this.txtPassword);
@@ -375,16 +373,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Primer nombre:";
             // 
-            // Registrar
-            // 
-            this.Registrar.Location = new System.Drawing.Point(580, 262);
-            this.Registrar.Name = "Registrar";
-            this.Registrar.Size = new System.Drawing.Size(75, 23);
-            this.Registrar.TabIndex = 22;
-            this.Registrar.Text = "Registrar";
-            this.Registrar.UseVisualStyleBackColor = true;
-            this.Registrar.Click += new System.EventHandler(this.button1_Click);
-            // 
             // RegistroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -433,6 +421,5 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnAgregarTarjeta;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Button Registrar;
     }
 }

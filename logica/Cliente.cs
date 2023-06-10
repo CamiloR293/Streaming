@@ -8,8 +8,8 @@ namespace Streaming.logica
     {
         Datos dt = new Datos();
 
-        public int ingresarRegistro(int codigo, string usuario, string primernombre, string segundonombre, string primerapellido,
-            string segundoapellido, string contrasenia, string fechanac, string telefono, string correo, int tipoaaceso, string fechaultinicio)
+        public int ingresarRegistro(string usuario, string primernombre, string segundonombre, string primerapellido,
+            string segundoapellido, string contrasenia, string fechanac, string telefono, string correo)
         {
             int resultado;
             string consulta;
