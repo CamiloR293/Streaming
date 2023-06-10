@@ -13,9 +13,9 @@ namespace Streaming.logica
         {
             int resultado;
             string consulta;
-            consulta = "insert into cliente values( (select max(codigo)+1 as codigo from CLIENTE)," + "'"+usuario+"'" + ", '"+ primernombre+"' , '" + segundonombre+"', '"+ 
-                primerapellido+"','"+segundoapellido+"',"+ "to_Date('" + fechanac + "','dd-mm-yyyy'), '" + contrasenia+"',"+ "to_Date(sysdate,'dd-mm-yyyy'),' " 
-                +telefono+"','"+ correo+"','"+tipoaaceso+"',"+"to_Date(sysdate','dd-mm-yyyy'))";
+            consulta = "insert into cliente values("+23+"," + "'"+usuario+"'" + ", '"+ primernombre+"' , '" + segundonombre+"', '"+ 
+                primerapellido+"','"+segundoapellido+"',"+ "to_Date('" + fechanac + "','dd/mm/yyyy'), '" + contrasenia+"',"+ "to_Date(sysdate,'dd/mm/yyyy'),' " 
+                +telefono+"','"+ correo+"',"+tipoaaceso+","+"to_Date(sysdate,'dd/mm/yyyy'))";
             resultado = dt.ejecutarDML(consulta);
             return resultado;
         }
