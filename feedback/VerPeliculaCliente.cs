@@ -32,9 +32,9 @@ namespace Streaming
             newForm.TopLevel = false;
             newForm.FormBorderStyle = FormBorderStyle.None;
             activeForm.Dock = DockStyle.Fill;
-
-            pnlDesktop.Controls.Add(newForm);
-            pnlDesktop.Tag = newForm;
+            
+            //pnlDesktop.Controls.Add(newForm);
+            //pnlDesktop.Tag = newForm;
 
             newForm.BringToFront();
             newForm.Show();

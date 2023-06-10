@@ -95,7 +95,7 @@ namespace Streaming
         #endregion
 
         private System.Windows.Forms.Panel pnlDesktop;
-        private Pelicula picBoxPeliculaC;
+        //private Pelicula picBoxPeliculaC;
         private System.Windows.Forms.FlowLayoutPanel flowPanelCatalogo;
         private System.Windows.Forms.Panel pnlBanner;
         private System.Windows.Forms.ComboBox cmbBoxGenero;

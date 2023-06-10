@@ -18,7 +18,12 @@ namespace Streaming
             InitializeComponent();
             AgregarPeliculas();
             this.panelContainer = panelContainer;
-        } 
+        }
+
+        public MenuPrincipalCliente()
+        {
+        }
+
         /*dimensiones picture box 169; 97 */
         private void AgregarPeliculas()
         {
