@@ -59,10 +59,10 @@ namespace Streaming
         }
         
         private void btnRegistrar_Click(object sender, EventArgs e)
-        {
-            /*Tarjeta mitarjeta = new Tarjeta();
+        {/*
+            tarjeta mitarjeta = new tarjeta();
             int codigo = 1;
-            int resultado = mitarjeta.registrarTarjeta(codigo, txtNumero.Text, txtFechaExpedicion.Text, 
+            int resultado = mitarjeta.ingresartarjeta(txtNumero.Text.ToString(), txtFechaExpedicion.Text, 
                                                        txtNombre.Text, cmbBoxTipoTarjeta.SelectedItem.ToString());
             //validacion
             if (resultado > 0)
