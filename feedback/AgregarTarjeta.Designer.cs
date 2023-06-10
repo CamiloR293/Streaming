@@ -20,7 +20,7 @@ namespace Streaming
             cliente miCLiente = new cliente();
 
             //enviar datos de caja de texto para agregar nuevo usuario
-            int resultado = miCLiente.ingresarRegistro( txtUsuario, txtPNombre, txtPApellido,
+            int resultado = miCLiente.ingresarRegistro(txtUsuario, txtPNombre, txtPApellido,
                 txtSNombre, txtSApellido, txtPasswordRegistro, txtFechaNacimiento, txtTelefono
                 , txtCorreo);
 
@@ -29,10 +29,12 @@ namespace Streaming
                                                        txtNombre.Text, txtCVV.Text, cmbBoxTipoTarjeta.SelectedItem.ToString());
 
             //validacion
-            if (resultado > 0 && resultado2 > 0)
-                MessageBox.Show("Usuario y Tarjeta registrada", "Mensanje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (resultado > 0 && resultado2 > 0) { 
+                MessageBox.Show("Usuario y Tarjeta registrada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                openForms(new PlanSuscripcionCliente());
+            }
             else
-                MessageBox.Show("Tarjeta NO registrado", "Mensanje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se ha completado el proceso satisfactoriamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //limpiar cajas de texto
             txtCVV.Clear();
             txtFechaExpedicion.Clear();
@@ -132,6 +134,7 @@ namespace Streaming
             this.btnRegistrar.TabIndex = 24;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = false;
+
             // 
             // cmbBoxTipoTarjeta
             // 
@@ -172,6 +175,7 @@ namespace Streaming
             this.btnRegistrarme.TabIndex = 21;
             this.btnRegistrarme.Text = "Registrarme";
             this.btnRegistrarme.UseVisualStyleBackColor = false;
+            this.btnRegistrarme.Click += BtnRegistrarme_Click;
             // 
             // txtCVV
             // 
