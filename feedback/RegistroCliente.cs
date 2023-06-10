@@ -41,13 +41,11 @@ namespace Streaming
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cliente miCLiente = new cliente();
-            // contador para originar codigo de cliente
-            int contador = 1;
+            Cliente miCLiente = new Cliente();
             //creación de variable para capturar la fecha actual
             DateTime fechaActual = DateTime.Now.Date;
             // enviar datos de caja de texto para agregar nuevo usuario
-            int resultado = miCLiente.ingresarRegistro( contador, txtUsuario.Text, txtPNombre.Text,
+            int resultado = miCLiente.ingresarRegistro(txtUsuario.Text, txtPNombre.Text,
                                                     txtSNombre.Text, txtPApellido.Text,
                                                     txtSApellido.Text, txtPassword.Text,
                                                     txtFechaNacimiento.Text, txtTelefono.Text,
@@ -68,8 +66,6 @@ namespace Streaming
             txtPApellido.Clear();
             txtSNombre.Clear();
             txtPNombre.Clear();
-            //sumar contador
-            contador++;
         }
     }
 }
