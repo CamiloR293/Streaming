@@ -16,5 +16,10 @@ namespace Streaming
         {
             InitializeComponent();
         }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            //Gestionar el registro de la pelicula
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace Streaming
 
         private void picBoxReturnTo_Click(object sender, EventArgs e)
         {
-            openForms(new Main());
+            this.Close();
         }
 
         private Form activeForm = null;
@@ -59,5 +59,11 @@ namespace Streaming
             if (txtUserName.Text.Equals("")) txtUserName.Text = "Correo o nombre de usuario";
         }
         #endregion
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            //Comprobar que exista el empleado primero
+            openForms(new InicioEmpleado());
+        }
     }
 }

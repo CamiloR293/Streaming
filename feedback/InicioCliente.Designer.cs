@@ -36,9 +36,9 @@
             this.btnDatosPersonales = new System.Windows.Forms.Button();
             this.btnMenuPrincipal = new System.Windows.Forms.Button();
             this.banner = new System.Windows.Forms.Panel();
+            this.picBoxBuscar = new System.Windows.Forms.PictureBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.picBoxBuscar = new System.Windows.Forms.PictureBox();
             this.pnlMain.SuspendLayout();
             this.pnlLateral.SuspendLayout();
             this.banner.SuspendLayout();
@@ -92,6 +92,7 @@
             this.btnCerrarSesion.TabIndex = 3;
             this.btnCerrarSesion.Text = "CERRAR SESION";
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // btnAddMetodosPago
             // 
@@ -107,6 +108,7 @@
             this.btnAddMetodosPago.TabIndex = 2;
             this.btnAddMetodosPago.Text = "AÑADIR METODOS DE PAGO";
             this.btnAddMetodosPago.UseVisualStyleBackColor = true;
+            this.btnAddMetodosPago.Click += new System.EventHandler(this.btnAddMetodosPago_Click);
             // 
             // btnDatosPersonales
             // 
@@ -122,6 +124,7 @@
             this.btnDatosPersonales.TabIndex = 1;
             this.btnDatosPersonales.Text = "DATOS PERSONALES";
             this.btnDatosPersonales.UseVisualStyleBackColor = true;
+            this.btnDatosPersonales.Click += new System.EventHandler(this.btnDatosPersonales_Click);
             // 
             // btnMenuPrincipal
             // 
@@ -137,6 +140,7 @@
             this.btnMenuPrincipal.TabIndex = 0;
             this.btnMenuPrincipal.Text = "MENU PRINCIPAL";
             this.btnMenuPrincipal.UseVisualStyleBackColor = true;
+            this.btnMenuPrincipal.Click += new System.EventHandler(this.btnMenuPrincipal_Click);
             // 
             // banner
             // 
@@ -149,6 +153,18 @@
             this.banner.Name = "banner";
             this.banner.Size = new System.Drawing.Size(800, 70);
             this.banner.TabIndex = 1;
+            // 
+            // picBoxBuscar
+            // 
+            this.picBoxBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picBoxBuscar.BackColor = System.Drawing.Color.White;
+            this.picBoxBuscar.Image = global::Streaming.Properties.Resources.browse;
+            this.picBoxBuscar.Location = new System.Drawing.Point(744, 24);
+            this.picBoxBuscar.Name = "picBoxBuscar";
+            this.picBoxBuscar.Size = new System.Drawing.Size(32, 28);
+            this.picBoxBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxBuscar.TabIndex = 25;
+            this.picBoxBuscar.TabStop = false;
             // 
             // txtBuscar
             // 
@@ -174,18 +190,6 @@
             this.lblTitle.TabIndex = 23;
             this.lblTitle.Text = "StreamingBD";
             // 
-            // picBoxBuscar
-            // 
-            this.picBoxBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picBoxBuscar.BackColor = System.Drawing.Color.White;
-            this.picBoxBuscar.Image = global::Streaming.Properties.Resources.browse;
-            this.picBoxBuscar.Location = new System.Drawing.Point(744, 24);
-            this.picBoxBuscar.Name = "picBoxBuscar";
-            this.picBoxBuscar.Size = new System.Drawing.Size(32, 28);
-            this.picBoxBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxBuscar.TabIndex = 25;
-            this.picBoxBuscar.TabStop = false;
-            // 
             // InicioCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -195,6 +199,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InicioCliente";
             this.Text = "InicioDelCliente";
+            this.Load += new System.EventHandler(this.InicioCliente_Load);
             this.pnlMain.ResumeLayout(false);
             this.pnlLateral.ResumeLayout(false);
             this.banner.ResumeLayout(false);

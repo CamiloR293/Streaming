@@ -140,6 +140,7 @@
             this.btnIngresar.TabIndex = 4;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = false;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // picBoxPassword
             // 
@@ -215,13 +216,13 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // InicioEmpleado
+            // MainEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 561);
             this.Controls.Add(this.pnlDesktop);
-            this.Name = "InicioEmpleado";
+            this.Name = "MainEmpleado";
             this.Text = "InicioEmpleado";
             this.pnlDesktop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxReturnTo)).EndInit();

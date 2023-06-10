@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lblTituloPelicula = new System.Windows.Forms.Label();
-            this.btnVerAhora = new System.Windows.Forms.Button();
             this.lblDescripcion = new System.Windows.Forms.Label();
+            this.btnVerAhora = new System.Windows.Forms.Button();
+            this.lblTituloPelicula = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -50,28 +50,17 @@
             this.panel1.Size = new System.Drawing.Size(613, 228);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // lblDescripcion
             // 
-            this.panel2.AutoScroll = true;
-            this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 228);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(613, 333);
-            this.panel2.TabIndex = 1;
-            // 
-            // lblTituloPelicula
-            // 
-            this.lblTituloPelicula.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTituloPelicula.AutoSize = true;
-            this.lblTituloPelicula.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloPelicula.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTituloPelicula.Location = new System.Drawing.Point(147, 30);
-            this.lblTituloPelicula.Name = "lblTituloPelicula";
-            this.lblTituloPelicula.Size = new System.Drawing.Size(146, 27);
-            this.lblTituloPelicula.TabIndex = 23;
-            this.lblTituloPelicula.Text = "TituloPelicula";
+            this.lblDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripcion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblDescripcion.Location = new System.Drawing.Point(238, 96);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(161, 21);
+            this.lblDescripcion.TabIndex = 26;
+            this.lblDescripcion.Text = "DescripcionPelicula";
             // 
             // btnVerAhora
             // 
@@ -87,18 +76,30 @@
             this.btnVerAhora.Text = "Ver ahora";
             this.btnVerAhora.UseVisualStyleBackColor = false;
             this.btnVerAhora.Visible = false;
+            this.btnVerAhora.Click += new System.EventHandler(this.btnVerAhora_Click);
             // 
-            // lblDescripcion
+            // lblTituloPelicula
             // 
-            this.lblDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblDescripcion.Location = new System.Drawing.Point(238, 96);
-            this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(161, 21);
-            this.lblDescripcion.TabIndex = 26;
-            this.lblDescripcion.Text = "DescripcionPelicula";
+            this.lblTituloPelicula.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTituloPelicula.AutoSize = true;
+            this.lblTituloPelicula.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloPelicula.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTituloPelicula.Location = new System.Drawing.Point(147, 30);
+            this.lblTituloPelicula.Name = "lblTituloPelicula";
+            this.lblTituloPelicula.Size = new System.Drawing.Size(146, 27);
+            this.lblTituloPelicula.TabIndex = 23;
+            this.lblTituloPelicula.Text = "TituloPelicula";
+            // 
+            // panel2
+            // 
+            this.panel2.AutoScroll = true;
+            this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 228);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(613, 333);
+            this.panel2.TabIndex = 1;
             // 
             // label1
             // 

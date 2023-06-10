@@ -13,6 +13,16 @@ namespace Streaming
             InitializeComponent();
             this.panelContainer = panelContainer;
             this.registerClient = register;
+            btnRegistrar.Visible = false;
+            btnRegistrarme.Visible = true;
+            picBoxReturnTo.Visible = true;
+        }
+        public AgregarTarjeta()
+        {
+            InitializeComponent();
+            btnRegistrar.Visible = true;
+            btnRegistrarme.Visible = false;
+            picBoxReturnTo.Visible = false;
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -27,9 +37,9 @@ namespace Streaming
 
         private void picBoxReturnTo_Click(object sender, EventArgs e)
         {
-            openForms(registerClient);
+            this.Close();
         }
-
+        
         private Form activeForm = null;
         private void openForms(Form newForm)
         {
@@ -44,6 +54,7 @@ namespace Streaming
             panelContainer.Tag = newForm;
 
             newForm.BringToFront();
+            newForm.Show();
 
         }
         

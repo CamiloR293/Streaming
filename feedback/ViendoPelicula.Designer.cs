@@ -32,7 +32,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picBoxPause = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblClose = new System.Windows.Forms.Label();
             this.pnlBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -45,7 +45,7 @@
             this.pnlBackground.Controls.Add(this.pictureBox2);
             this.pnlBackground.Controls.Add(this.pictureBox1);
             this.pnlBackground.Controls.Add(this.picBoxPause);
-            this.pnlBackground.Controls.Add(this.label1);
+            this.pnlBackground.Controls.Add(this.lblClose);
             this.pnlBackground.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBackground.Location = new System.Drawing.Point(0, 0);
             this.pnlBackground.Name = "pnlBackground";
@@ -84,17 +84,18 @@
             this.picBoxPause.TabIndex = 1;
             this.picBoxPause.TabStop = false;
             // 
-            // label1
+            // lblClose
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(762, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "X";
+            this.lblClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblClose.AutoSize = true;
+            this.lblClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClose.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblClose.Location = new System.Drawing.Point(762, 9);
+            this.lblClose.Name = "lblClose";
+            this.lblClose.Size = new System.Drawing.Size(26, 25);
+            this.lblClose.TabIndex = 0;
+            this.lblClose.Text = "X";
+            this.lblClose.Click += new System.EventHandler(this.lblClose_Click);
             // 
             // ViendoPelicula
             // 
@@ -119,7 +120,7 @@
         private System.Windows.Forms.Panel pnlBackground;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox picBoxPause;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblClose;
         private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

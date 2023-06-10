@@ -70,5 +70,11 @@ namespace Streaming
             openForms(new MainEmpleado());
 
         }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            //Comprobar que tiene una cuenta
+            openForms(new InicioCliente());
+        }
     }
 }
