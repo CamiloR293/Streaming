@@ -11,6 +11,16 @@ namespace Streaming.logica
         public administrador()
         {
         }
+        public int ingresaradministrador(int codigo, int adm_id, string nombre_usuario_admin, string primernombre, string segundonombre,
+            string primerapellido, string segundoapellido, string fechanacimiento, string contrasenia, string telefono, string correo)
+        {
+            int resultado;
+            string consulta;
+            consulta = "insert into administrador values(" + codigo + "," + adm_id + ", '" + nombre_usuario_admin + "','" + primernombre + "', '" + segundonombre + "', '"
+                + primerapellido + "', '" + segundoapellido + "', '" + "to_Date('" + fechanacimiento + "','dd/mm/yyyy'), '" + contrasenia + "', '" + telefono + "', '" + correo + "')";
+            resultado = dt.ejecutarDML(consulta);
+            return resultado;
+        }
 
         public DataSet consultarAdmin()
         {

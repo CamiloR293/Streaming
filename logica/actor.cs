@@ -11,6 +11,15 @@ namespace Streaming.logica
     internal class actor
     {
         Datos dt = new Datos();
+        public int ingresaractor(int codigo, string primernombre, string segundonombre,
+            string primerapellido, string segundoapellido, string fechanacimiento)
+        {
+            int resultado;
+            string consulta = "insert into actor values(" + codigo + ",'" + primernombre + "', '" + segundonombre + "', '"
+                + primerapellido + "', '" + segundoapellido + "', '" + "to_Date('" + fechanacimiento + "','dd/mm/yyyy'))";
+            resultado = dt.ejecutarDML(consulta);
+            return resultado;
+        }
         public DataSet consultaActor()
         {
             DataSet miDs = new DataSet();

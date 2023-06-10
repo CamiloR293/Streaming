@@ -9,17 +9,17 @@ namespace Streaming.logica
         Datos dt = new Datos();
 
         public int ingresarRegistro(string usuario, string primernombre, string segundonombre, string primerapellido,
-            string segundoapellido, string contrasenia, string fechanac, string telefono, string correo, int tipoaaceso)
+                    string segundoapellido, string contrasenia, string fechanac, string telefono, string correo, int tipoaaceso)
         {
-            int codigo = 21;
             int resultado;
             string consulta;
-            consulta = "insert into cliente values(" + codigo + "," + "'" + usuario + "'" + ", '" + primernombre + "' , '" + segundonombre + "', '" +
-                primerapellido + "','" + segundoapellido + "'," + "to_Date('" + fechanac + "','dd-mm-yyyy'), '" + contrasenia + "'," + "to_Date(sysdate,'dd-mm-yyyy'),' " + telefono + "','" + correo + "','" + tipoaaceso + "'," + "to_Date(sysdate,'dd-mm-yyyy'))";
+            consulta = "insert into cliente values(" + 23 + "," + "'" + usuario + "'" + ", '" + primernombre + "' , '" + segundonombre + "', '" +
+                primerapellido + "','" + segundoapellido + "'," + "to_Date('" + fechanac + "','dd/mm/yyyy'), '" + contrasenia + "'," + "to_Date(sysdate,'dd/mm/yyyy'),' "
+                + telefono + "','" + correo + "'," + tipoaaceso + "," + "to_Date(sysdate,'dd/mm/yyyy'))";
             resultado = dt.ejecutarDML(consulta);
             return resultado;
         }
-        public DataSet consultarRegistro()
+            public DataSet consultarRegistro()
         {
             string consulta;
             consulta = "select * from Registro";
