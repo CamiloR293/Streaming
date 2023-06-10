@@ -31,7 +31,7 @@ namespace Streaming
             //validacion
             if (resultado > 0 && resultado2 > 0) { 
                 MessageBox.Show("Usuario y Tarjeta registrada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                openForms(new PlanSuscripcionCliente());
+                openForms(new PlanSuscripcionCliente( panelContainer, this));
             }
             else
                 MessageBox.Show("No se ha completado el proceso satisfactoriamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Streaming.logica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace Streaming
 {
     public partial class PlanSuscripcionCliente : Form
     {
-        public PlanSuscripcionCliente()
+        Panel panelContainer = new Panel();
+        public PlanSuscripcionCliente(Panel panelContainer, Form activeForm)
         {
             InitializeComponent();
+            this.panelContainer = panelContainer;
+            this.activeForm = activeForm;
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -24,9 +28,31 @@ namespace Streaming
 
         private void button1_Click(object sender, EventArgs e)
         {
+            cliente_plan miRelacionClientePlan = new cliente_plan();
+            MessageBox.Show("¡Haz hecho clic en Plan mensual!");
+            int resultado = miRelacionClientePlan.ingresarRelacionClientePlan("sysdate+30");
+            if (resultado > 0)
+            {
+                MessageBox.Show("¡Compra exitosa!");
+                openForms(new InicioCliente());
 
-                MessageBox.Show("¡Haz hecho clic en Plan Mensual!");
-            
+            }
+        }
+        private Form activeForm = null;
+        private void openForms(Form newForm)
+        {
+            if (activeForm != null) activeForm.Close();
+            activeForm = newForm;
+
+            newForm.TopLevel = false;
+            newForm.FormBorderStyle = FormBorderStyle.None;
+            activeForm.Dock = DockStyle.Fill;
+
+            panelContainer.Controls.Add(newForm);
+            panelContainer.Tag = newForm;
+
+            newForm.BringToFront();
+            newForm.Show();
 
         }
     }
