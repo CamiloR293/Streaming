@@ -55,5 +55,19 @@ namespace Streaming
             newForm.Show();
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            cliente_plan miRelacionClientePlan = new cliente_plan();
+            MessageBox.Show("¡Haz hecho clic en Plan anual!");
+            int resultado = miRelacionClientePlan.ingresarRelacionClientePlan("sysdate+365");
+            if (resultado > 0)
+            {
+                MessageBox.Show("¡Compra exitosa!");
+                openForms(new InicioCliente());
+
+            }
+
+        }
     }
 }
