@@ -2,6 +2,7 @@
 using System.Data;
 using Oracle.ManagedDataAccess.Client;
 using System.Windows.Forms;
+using Oracle.ManagedDataAccess.Types;
 
 namespace Streaming.connection
 {
@@ -53,6 +54,15 @@ namespace Streaming.connection
         {
             int id = 0;
             OracleConnection miConexion = new OracleConnection(cadenaConexion);
+            try
+            {
+                miConexion.Open();
+            }
+            catch (Exception E)
+            {
+                MessageBox.Show("Conexión fallida -->" + E.Message);
+
+            }
             using (OracleCommand command = new OracleCommand("obtener_id_admin", miConexion))
             {
                 command.CommandType = CommandType.StoredProcedure;
@@ -61,8 +71,8 @@ namespace Streaming.connection
                 command.Parameters.Add("p_id", OracleDbType.Int32).Direction = ParameterDirection.Output;
 
                 command.ExecuteNonQuery();
-
-                id = Convert.ToInt32(command.Parameters["p_id"].Value);
+                OracleDecimal oracleDecimal = (OracleDecimal)command.Parameters["p_id"].Value;
+                id = oracleDecimal.ToInt32();
             }
 
             return id;

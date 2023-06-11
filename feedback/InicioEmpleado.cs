@@ -12,11 +12,13 @@ namespace Streaming
 {
     public partial class InicioEmpleado : Form
     {
+        private String username;
         private Color colorBlancoPredeterminado = Color.FromArgb(254, 250, 251);
         private Color colorBlancoSeleccionado = Color.FromArgb(231, 230, 230);
-        public InicioEmpleado()
+        public InicioEmpleado(String username)
         {
             InitializeComponent();
+            this.username = username;
         }
         public void InicioEmpleado_Load(object sender, System.EventArgs e)
         {
@@ -34,7 +36,7 @@ namespace Streaming
         {
             btnDatosPersonales.BackColor = colorBlancoPredeterminado;
             btnRegistrarProducto.BackColor = colorBlancoSeleccionado;
-            openForms(new RegistrarProductoEmpleado());
+            openForms(new RegistrarProductoEmpleado(username));
         }
         #region OpenForm
 

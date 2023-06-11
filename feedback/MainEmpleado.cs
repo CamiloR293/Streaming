@@ -75,7 +75,7 @@ namespace Streaming
                 MessageBox.Show("Inicio de sesión exitoso");
                 // Abre la siguiente ventana o realiza las acciones necesarias después del inicio de sesión exitoso
                 //Comprobar que exista el empleado primero
-                openForms(new InicioEmpleado()); ;
+                openForms(new InicioEmpleado(username)); ;
             }
             else
             {
