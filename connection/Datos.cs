@@ -49,6 +49,24 @@ namespace Streaming.connection
                 return -1;
             }
         }
+        public int procedureIdAdmin(string usuario)
+        {
+            int id = 0;
+            OracleConnection miConexion = new OracleConnection(cadenaConexion);
+            using (OracleCommand command = new OracleCommand("obtener_id_admin", miConexion))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.Add("p_usuario", OracleDbType.Varchar2).Value = usuario;
+                command.Parameters.Add("p_id", OracleDbType.Int32).Direction = ParameterDirection.Output;
+
+                command.ExecuteNonQuery();
+
+                id = Convert.ToInt32(command.Parameters["p_id"].Value);
+            }
+
+            return id;
+        }
 
         //Metodo para ejecutar sentencias select
         public DataSet ejecutarSELECT(string consulta)

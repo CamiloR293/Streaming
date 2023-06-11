@@ -30,5 +30,10 @@ namespace Streaming.logica
             miDs = dt.ejecutarSELECT(consulta);
             return miDs;
         }
+        public int retornarAdmin(string usuario)
+        {
+            return dt.procedureIdAdmin(usuario);
+
+        }
     }
 }
