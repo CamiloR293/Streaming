@@ -8,6 +8,7 @@ namespace Streaming
     public partial class AgregarTarjeta : Form
     {
         Panel panelContainer = new Panel();
+        Cliente cliente;
         Form registerClient = null;
         private String txtUsuario;
         private String txtPNombre;
@@ -33,11 +34,19 @@ namespace Streaming
             this.txtTelefono = txtTelefono;
             this.txtUsuario = txtUsuario;
             this.panelContainer = panelContainer;
-
             this.registerClient = register;
             btnRegistrar.Visible = false;
             btnRegistrarme.Visible = true;
             picBoxReturnTo.Visible = true;
+        }
+        public AgregarTarjeta (Cliente cliente)
+        {
+            this.cliente = cliente;
+
+            InitializeComponent();
+            btnRegistrar.Visible = true;
+            btnRegistrarme.Visible = false;
+            picBoxReturnTo.Visible = false;
         }
         public AgregarTarjeta()
         {

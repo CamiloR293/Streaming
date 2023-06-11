@@ -1,5 +1,6 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using Streaming.connection;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -23,6 +24,7 @@ namespace Streaming.logica
 
         public Cliente(int codigo, string user, string pName, string sName, string pApellido, string sapellido, string password, string fNacimiento, string telefono, string correo)
         {
+            this.codigo = codigo;
             this.user = user;
             this.pName = pName;
             this.sName = sName;
@@ -60,19 +62,6 @@ namespace Streaming.logica
             return miDs;
         }
 
-        public DataSet consultarInfo(int nitBanco, string fechaIngreso)
-        {
-            DataSet miDs = new DataSet();
-            string consulta;
-            consulta = "select B.nombanco, C.clienteid, C.clinombre, C.cliapellido,r.fecretiro " +
-                "from Registro R inner join Cliente C " +
-                "on C.ClienteID=R.ClienteID inner join Banco B " +
-                "on R.nitBanco=B.nitBanco where B.nitBanco =" + nitBanco + "AND fecIngreso= to_Date('" + fechaIngreso + "', 'dd-mm-yyyy')";
-            miDs = dt.ejecutarSELECT(consulta);
-            return miDs;
-        }
-
-        // ...
 
         public Cliente ObtenerClientePorUsuario(string usuario)
         {
@@ -88,7 +77,7 @@ namespace Streaming.logica
                 OracleDataReader reader = comando.ExecuteReader();
                 if (reader.Read())
                 {
-                    int codigo= int.Parse(reader["CODIGO"].ToString());
+                    int codigo = Convert.ToInt32(reader["CODIGO"]);
                     string user = reader["NOMBRE_USUARIO_CLIENTE"].ToString();
                     string pName = reader["PRIMERNOMBRE"].ToString();
                     string sName = reader["SEGUNDONOMBRE"].ToString();

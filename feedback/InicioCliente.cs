@@ -71,7 +71,7 @@ namespace Streaming
             btnMenuPrincipal.BackColor = colorNaranjaPredeterminado;
             btnAddMetodosPago.BackColor = colorNaranjaSeleccionado;
             btnDatosPersonales.BackColor = colorNaranjaPredeterminado;
-            openForms(new AgregarTarjeta());
+            openForms(new AgregarTarjeta(cliente));
         }
 
         private void btnCerrarSesion_Click(object sender, System.EventArgs e)

@@ -16,6 +16,7 @@ namespace Streaming.logica
             resultado = dt.ejecutarDML(consulta);
             return resultado;
         }
+
         public DataSet consultarProducto()
         {
             DataSet miDs = new DataSet();

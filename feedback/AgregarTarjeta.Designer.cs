@@ -43,6 +43,36 @@ namespace Streaming
             txtPassword.Clear();
         }
 
+        private void BtnRegistrar_Click(object sender, EventArgs e)
+        {
+            // Aquí puedes escribir el código que se ejecutará cuando se haga clic en el botón
+            // Por ejemplo, puedes mostrar un mensaje de confirmación
+            MessageBox.Show("¡Haz hecho clic en Registrar!");
+
+            tarjeta mitarjeta = new tarjeta();
+
+
+
+            //enviar datos de caja de texto para agregar tarjeta
+            int resultado2 = mitarjeta.ingresartarjetaLogin(cliente.Codigo,txtNumero.Text, txtFechaExpedicion.Text,
+                                                       txtNombre.Text, txtCVV.Text, cmbBoxTipoTarjeta.SelectedItem.ToString());
+
+            //validacion
+            if ( resultado2 > 0)
+            {
+                MessageBox.Show("Tarjeta registrada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                openForms(new PlanSuscripcionCliente(panelContainer, this));
+            }
+            else
+                MessageBox.Show("No se ha completado el proceso satisfactoriamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //limpiar cajas de texto
+            txtCVV.Clear();
+            txtFechaExpedicion.Clear();
+            txtNombre.Clear();
+            txtNumero.Clear();
+            txtPassword.Clear();
+        }
+
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -134,6 +164,7 @@ namespace Streaming
             this.btnRegistrar.TabIndex = 24;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += BtnRegistrar_Click;
 
             // 
             // cmbBoxTipoTarjeta
