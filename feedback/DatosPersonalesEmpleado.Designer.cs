@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlDesktop = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnActualizarDatos = new System.Windows.Forms.Button();
             this.lblSegundoApellido = new System.Windows.Forms.Label();
             this.lblSegundoNombre = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -59,7 +59,7 @@
             // pnlDesktop
             // 
             this.pnlDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(194)))), ((int)(((byte)(157)))));
-            this.pnlDesktop.Controls.Add(this.button3);
+            this.pnlDesktop.Controls.Add(this.btnActualizarDatos);
             this.pnlDesktop.Controls.Add(this.lblSegundoApellido);
             this.pnlDesktop.Controls.Add(this.lblSegundoNombre);
             this.pnlDesktop.Controls.Add(this.label19);
@@ -86,20 +86,21 @@
             this.pnlDesktop.Size = new System.Drawing.Size(639, 561);
             this.pnlDesktop.TabIndex = 0;
             // 
-            // button3
+            // btnActualizarDatos
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(117)))));
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(144)))), ((int)(((byte)(76)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(421, 423);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(161, 69);
-            this.button3.TabIndex = 22;
-            this.button3.Text = "Actualizar mis datos personales";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnActualizarDatos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnActualizarDatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(117)))));
+            this.btnActualizarDatos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(144)))), ((int)(((byte)(76)))));
+            this.btnActualizarDatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizarDatos.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizarDatos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnActualizarDatos.Location = new System.Drawing.Point(421, 423);
+            this.btnActualizarDatos.Name = "btnActualizarDatos";
+            this.btnActualizarDatos.Size = new System.Drawing.Size(161, 69);
+            this.btnActualizarDatos.TabIndex = 22;
+            this.btnActualizarDatos.Text = "Actualizar mis datos personales";
+            this.btnActualizarDatos.UseVisualStyleBackColor = false;
+            this.btnActualizarDatos.Click += new System.EventHandler(this.btnActualizarDatos_Click);
             // 
             // lblSegundoApellido
             // 
@@ -407,6 +408,6 @@
         private System.Windows.Forms.Label lblPrimerNombre;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnActualizarDatos;
     }
 }

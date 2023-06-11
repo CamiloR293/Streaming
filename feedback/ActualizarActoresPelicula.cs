@@ -58,5 +58,10 @@ namespace Streaming.feedback
         {
 
         }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            //Actualiza la informacion en la base de datos
+        }
     }
 }

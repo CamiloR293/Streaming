@@ -165,6 +165,7 @@
             this.picBoxBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxBuscar.TabIndex = 25;
             this.picBoxBuscar.TabStop = false;
+            this.picBoxBuscar.Click += new System.EventHandler(this.picBoxBuscar_Click);
             // 
             // txtBuscar
             // 
@@ -178,6 +179,8 @@
             this.txtBuscar.Size = new System.Drawing.Size(428, 28);
             this.txtBuscar.TabIndex = 24;
             this.txtBuscar.Text = "Buscar";
+            this.txtBuscar.Click += new System.EventHandler(this.txtBuscar_Click);
+            this.txtBuscar.Leave += new System.EventHandler(this.txtBuscar_Leave);
             // 
             // lblTitle
             // 

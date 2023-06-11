@@ -82,7 +82,6 @@
             this.pnlDesktop.Name = "pnlDesktop";
             this.pnlDesktop.Size = new System.Drawing.Size(629, 452);
             this.pnlDesktop.TabIndex = 1;
-            this.pnlDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDesktop_Paint);
             // 
             // btnVerTarjetas
             // 
@@ -114,6 +113,7 @@
             this.btnEliminarCuenta.TabIndex = 23;
             this.btnEliminarCuenta.Text = "Eliminar mi cuenta";
             this.btnEliminarCuenta.UseVisualStyleBackColor = false;
+            this.btnEliminarCuenta.Click += new System.EventHandler(this.btnEliminarCuenta_Click);
             // 
             // btnActualizarDatosPersonales
             // 
@@ -129,6 +129,7 @@
             this.btnActualizarDatosPersonales.TabIndex = 22;
             this.btnActualizarDatosPersonales.Text = "Actualizar mis datos personales";
             this.btnActualizarDatosPersonales.UseVisualStyleBackColor = false;
+            this.btnActualizarDatosPersonales.Click += new System.EventHandler(this.btnActualizarDatosPersonales_Click);
             // 
             // lblSegundoApellido
             // 
@@ -165,7 +166,6 @@
             this.label19.Size = new System.Drawing.Size(149, 21);
             this.label19.TabIndex = 19;
             this.label19.Text = "Segundo apellido:";
-            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // label18
             // 
@@ -226,7 +226,6 @@
             this.lblNombreUsuario.Size = new System.Drawing.Size(80, 21);
             this.lblNombreUsuario.TabIndex = 14;
             this.lblNombreUsuario.Text = "**********";
-            this.lblNombreUsuario.Click += new System.EventHandler(this.lblNombreUsuario_Click);
             // 
             // lblCodigo
             // 

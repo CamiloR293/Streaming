@@ -86,5 +86,18 @@ namespace Streaming
             
 
         }
+        private void txtBuscar_Click(object sender, System.EventArgs e)
+        {
+            if (txtBuscar.Text.Equals("Buscar")) txtBuscar.Clear();
+        }
+        private void txtBuscar_Leave(object sender, System.EventArgs e)
+        {
+            if (txtBuscar.Text.Equals("")) txtBuscar.Text = "Buscar";
+        }
+
+        private void picBoxBuscar_Click(object sender, System.EventArgs e)
+        {
+            //buscar segun txtBuscar
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Streaming.logica;
+﻿using Streaming.feedback;
+using Streaming.logica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,6 +33,13 @@ namespace Streaming
         private void lblPrimerNombre_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnActualizarDatos_Click(object sender, EventArgs e)
+        {
+            Form actualizar = new ActualizarDatosCliente();
+            actualizar.ShowDialog();
+            // hacer el reset de datos empleado
         }
     }
 }

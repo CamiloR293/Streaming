@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.pnlDesktop = new System.Windows.Forms.Panel();
+            this.cmbBoxPapel = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtFechaNacimiento = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtSegundoApellido = new System.Windows.Forms.TextBox();
@@ -46,8 +48,6 @@
             this.btnActualizar = new System.Windows.Forms.Button();
             this.pnlBanner = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbBoxPapel = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.pnlDesktop.SuspendLayout();
             this.pnlBanner.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +77,31 @@
             this.pnlDesktop.Name = "pnlDesktop";
             this.pnlDesktop.Size = new System.Drawing.Size(607, 416);
             this.pnlDesktop.TabIndex = 6;
+            // 
+            // cmbBoxPapel
+            // 
+            this.cmbBoxPapel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbBoxPapel.FormattingEnabled = true;
+            this.cmbBoxPapel.Items.AddRange(new object[] {
+            "Principal",
+            "Secundario"});
+            this.cmbBoxPapel.Location = new System.Drawing.Point(271, 92);
+            this.cmbBoxPapel.Name = "cmbBoxPapel";
+            this.cmbBoxPapel.Size = new System.Drawing.Size(144, 21);
+            this.cmbBoxPapel.TabIndex = 44;
+            this.cmbBoxPapel.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(151, 89);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 21);
+            this.label6.TabIndex = 43;
+            this.label6.Text = "Papel:";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // txtFechaNacimiento
             // 
@@ -246,6 +271,7 @@
             this.btnActualizar.TabIndex = 26;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // pnlBanner
             // 
@@ -268,31 +294,6 @@
             this.label1.Size = new System.Drawing.Size(241, 27);
             this.label1.TabIndex = 3;
             this.label1.Text = "ACTUALIZAR ACTORES";
-            // 
-            // cmbBoxPapel
-            // 
-            this.cmbBoxPapel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cmbBoxPapel.FormattingEnabled = true;
-            this.cmbBoxPapel.Items.AddRange(new object[] {
-            "Principal",
-            "Secundario"});
-            this.cmbBoxPapel.Location = new System.Drawing.Point(271, 92);
-            this.cmbBoxPapel.Name = "cmbBoxPapel";
-            this.cmbBoxPapel.Size = new System.Drawing.Size(144, 21);
-            this.cmbBoxPapel.TabIndex = 44;
-            this.cmbBoxPapel.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(151, 89);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 21);
-            this.label6.TabIndex = 43;
-            this.label6.Text = "Papel:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // ActualizarActoresPelicula
             // 

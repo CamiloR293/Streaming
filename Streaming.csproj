@@ -103,6 +103,12 @@
     <Compile Include="feedback\ActualizarActoresPelicula.Designer.cs">
       <DependentUpon>ActualizarActoresPelicula.cs</DependentUpon>
     </Compile>
+    <Compile Include="feedback\ActualizarDatosCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feedback\ActualizarDatosCliente.Designer.cs">
+      <DependentUpon>ActualizarDatosCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="feedback\AgregarActoresPelicula.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,12 @@
     <Compile Include="feedback\PlanSuscripcionCliente.Designer.cs">
       <DependentUpon>PlanSuscripcionCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="feedback\VerTarjetasCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feedback\VerTarjetasCliente.Designer.cs">
+      <DependentUpon>VerTarjetasCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="logica\actor.cs" />
     <Compile Include="logica\administrador.cs" />
     <Compile Include="logica\cliente_plan.cs" />
@@ -205,6 +217,9 @@
     <EmbeddedResource Include="feedback\ActualizarActoresPelicula.resx">
       <DependentUpon>ActualizarActoresPelicula.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="feedback\ActualizarDatosCliente.resx">
+      <DependentUpon>ActualizarDatosCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="feedback\AgregarActoresPelicula.resx">
       <DependentUpon>AgregarActoresPelicula.cs</DependentUpon>
     </EmbeddedResource>
@@ -237,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="feedback\PlanSuscripcionCliente.resx">
       <DependentUpon>PlanSuscripcionCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="feedback\VerTarjetasCliente.resx">
+      <DependentUpon>VerTarjetasCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -1,4 +1,5 @@
-﻿using Streaming.logica;
+﻿using Streaming.feedback;
+using Streaming.logica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,10 @@ namespace Streaming
         {
             InitializeComponent();
             this.cliente = cliente;
+            
+        }
+        private void setInfoClient(Cliente cliente)
+        {
             lblSegundoApellido.Text = cliente.SApellido;
             lblPrimerNombre.Text = cliente.PName;
             lblNombreUsuario.Text = cliente.User;
@@ -31,24 +36,26 @@ namespace Streaming
             lblCodigo.Text = cliente.Codigo.ToString();
         }
 
-        private void pnlDesktop_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblNombreUsuario_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label19_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnVerTarjetas_Click(object sender, EventArgs e)
         {
+            Form form = new VerTarjetasCliente();
+            form.ShowDialog();
+        }
 
+        private void btnActualizarDatosPersonales_Click(object sender, EventArgs e)
+        {
+            Form actualizar = new ActualizarDatosCliente();
+            actualizar.ShowDialog();
+            //volver a hacer el set de la informacion, no se como funciona el cliente aqui
+            //pero es volver a resetear las etiquetas con la info nueva
+            setInfoClient(cliente);
+        }
+
+        private void btnEliminarCuenta_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("¿Desea eliminar su cuenta?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+            //if (DialogResult.Yes.Equals(result)) //eliminar la cuenta
+                
         }
     }
 }

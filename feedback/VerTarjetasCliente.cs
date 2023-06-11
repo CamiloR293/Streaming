@@ -15,23 +15,19 @@ namespace Streaming.feedback
         public VerTarjetasCliente()
         {
             InitializeComponent();
-            llenarCmbBoxTarjetas();
+            llenarcmbBoxTarjeta();
         }
 
-        private void VerTarjetasCliente_Load(object sender, EventArgs e)
+        private void llenarcmbBoxTarjeta()
         {
-
+            cmbBoxTarjeta.Items.Clear();
+            //llenar todas las tarjetas relacionadas al cliente actual
+            //cmbBoxTarjeta.Items.Add();
+        }
+        private void cmbBoxTarjeta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //llenar todas las etiquetas correspondientes a la info de la tarjeta seleccionada
         }
 
-        private void llenarCmbBoxTarjetas()
-        {
-            //Llenar tarjetas en cmbBox, una consulta y se pone solo el nombre
-            cmbBoxTarjetas.Items.Clear();
-            //cmbBoxTarjetas.Items.Add();
-        }
-        private void cmbBoxTarjetas_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //rellenar las etiquetas correspondientes con los datos de las tarjetas
-        }
     }
 }

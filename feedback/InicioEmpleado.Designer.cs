@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.pnlLateral = new System.Windows.Forms.Panel();
+            this.pnlAdministrarActores = new System.Windows.Forms.Panel();
+            this.btnEliminarActores = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnAgregarActores = new System.Windows.Forms.Button();
+            this.btnAdministrarActores = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.pnlLateral1 = new System.Windows.Forms.Panel();
             this.btnDatosPersonales = new System.Windows.Forms.Button();
             this.btnRegistrarProducto = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.pnlDesktop = new System.Windows.Forms.Panel();
-            this.btnAdministrarActores = new System.Windows.Forms.Button();
-            this.pnlAdministrarActores = new System.Windows.Forms.Panel();
-            this.btnAgregarActores = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.btnEliminarActores = new System.Windows.Forms.Button();
             this.picBoxAdminIcon = new System.Windows.Forms.PictureBox();
+            this.pnlDesktop = new System.Windows.Forms.Panel();
             this.pnlLateral.SuspendLayout();
-            this.pnlLateral1.SuspendLayout();
             this.pnlAdministrarActores.SuspendLayout();
+            this.pnlLateral1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxAdminIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +61,73 @@
             this.pnlLateral.Name = "pnlLateral";
             this.pnlLateral.Size = new System.Drawing.Size(161, 561);
             this.pnlLateral.TabIndex = 0;
+            // 
+            // pnlAdministrarActores
+            // 
+            this.pnlAdministrarActores.Controls.Add(this.btnEliminarActores);
+            this.pnlAdministrarActores.Controls.Add(this.btnActualizar);
+            this.pnlAdministrarActores.Controls.Add(this.btnAgregarActores);
+            this.pnlAdministrarActores.Location = new System.Drawing.Point(0, 374);
+            this.pnlAdministrarActores.Name = "pnlAdministrarActores";
+            this.pnlAdministrarActores.Size = new System.Drawing.Size(161, 79);
+            this.pnlAdministrarActores.TabIndex = 6;
+            this.pnlAdministrarActores.Visible = false;
+            // 
+            // btnEliminarActores
+            // 
+            this.btnEliminarActores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
+            this.btnEliminarActores.FlatAppearance.BorderSize = 0;
+            this.btnEliminarActores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarActores.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarActores.Location = new System.Drawing.Point(0, 51);
+            this.btnEliminarActores.Name = "btnEliminarActores";
+            this.btnEliminarActores.Size = new System.Drawing.Size(161, 29);
+            this.btnEliminarActores.TabIndex = 2;
+            this.btnEliminarActores.Text = "Eliminar";
+            this.btnEliminarActores.UseVisualStyleBackColor = false;
+            this.btnEliminarActores.Click += new System.EventHandler(this.btnEliminarActores_Click);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
+            this.btnActualizar.FlatAppearance.BorderSize = 0;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.Location = new System.Drawing.Point(0, 25);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(161, 29);
+            this.btnActualizar.TabIndex = 1;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // btnAgregarActores
+            // 
+            this.btnAgregarActores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
+            this.btnAgregarActores.FlatAppearance.BorderSize = 0;
+            this.btnAgregarActores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarActores.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarActores.Location = new System.Drawing.Point(0, 0);
+            this.btnAgregarActores.Name = "btnAgregarActores";
+            this.btnAgregarActores.Size = new System.Drawing.Size(161, 29);
+            this.btnAgregarActores.TabIndex = 0;
+            this.btnAgregarActores.Text = "Agregar";
+            this.btnAgregarActores.UseVisualStyleBackColor = false;
+            this.btnAgregarActores.Click += new System.EventHandler(this.btnAgregarActores_Click);
+            // 
+            // btnAdministrarActores
+            // 
+            this.btnAdministrarActores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
+            this.btnAdministrarActores.FlatAppearance.BorderSize = 0;
+            this.btnAdministrarActores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdministrarActores.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdministrarActores.Location = new System.Drawing.Point(0, 307);
+            this.btnAdministrarActores.Name = "btnAdministrarActores";
+            this.btnAdministrarActores.Size = new System.Drawing.Size(161, 69);
+            this.btnAdministrarActores.TabIndex = 5;
+            this.btnAdministrarActores.Text = "ADMINISTRAR ACTORES";
+            this.btnAdministrarActores.UseVisualStyleBackColor = false;
+            this.btnAdministrarActores.Click += new System.EventHandler(this.btnAdministrarActores_Click);
             // 
             // btnCerrarSesion
             // 
@@ -119,7 +186,6 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(9, 148);
@@ -128,84 +194,8 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "ADMINISTRADOR";
             // 
-            // pnlDesktop
-            // 
-            this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDesktop.Location = new System.Drawing.Point(161, 0);
-            this.pnlDesktop.Name = "pnlDesktop";
-            this.pnlDesktop.Size = new System.Drawing.Size(639, 561);
-            this.pnlDesktop.TabIndex = 1;
-            // 
-            // btnAdministrarActores
-            // 
-            this.btnAdministrarActores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
-            this.btnAdministrarActores.FlatAppearance.BorderSize = 0;
-            this.btnAdministrarActores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdministrarActores.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdministrarActores.Location = new System.Drawing.Point(0, 307);
-            this.btnAdministrarActores.Name = "btnAdministrarActores";
-            this.btnAdministrarActores.Size = new System.Drawing.Size(161, 69);
-            this.btnAdministrarActores.TabIndex = 5;
-            this.btnAdministrarActores.Text = "ADMINISTRAR ACTORES";
-            this.btnAdministrarActores.UseVisualStyleBackColor = false;
-            this.btnAdministrarActores.Click += new System.EventHandler(this.btnAdministrarActores_Click);
-            // 
-            // pnlAdministrarActores
-            // 
-            this.pnlAdministrarActores.Controls.Add(this.btnEliminarActores);
-            this.pnlAdministrarActores.Controls.Add(this.btnActualizar);
-            this.pnlAdministrarActores.Controls.Add(this.btnAgregarActores);
-            this.pnlAdministrarActores.Location = new System.Drawing.Point(0, 374);
-            this.pnlAdministrarActores.Name = "pnlAdministrarActores";
-            this.pnlAdministrarActores.Size = new System.Drawing.Size(161, 79);
-            this.pnlAdministrarActores.TabIndex = 6;
-            this.pnlAdministrarActores.Visible = false;
-            // 
-            // btnAgregarActores
-            // 
-            this.btnAgregarActores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
-            this.btnAgregarActores.FlatAppearance.BorderSize = 0;
-            this.btnAgregarActores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarActores.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarActores.Location = new System.Drawing.Point(0, 0);
-            this.btnAgregarActores.Name = "btnAgregarActores";
-            this.btnAgregarActores.Size = new System.Drawing.Size(161, 29);
-            this.btnAgregarActores.TabIndex = 0;
-            this.btnAgregarActores.Text = "Agregar";
-            this.btnAgregarActores.UseVisualStyleBackColor = false;
-            this.btnAgregarActores.Click += new System.EventHandler(this.btnAgregarActores_Click);
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
-            this.btnActualizar.FlatAppearance.BorderSize = 0;
-            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.Location = new System.Drawing.Point(0, 25);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(161, 29);
-            this.btnActualizar.TabIndex = 1;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = false;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
-            // 
-            // btnEliminarActores
-            // 
-            this.btnEliminarActores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
-            this.btnEliminarActores.FlatAppearance.BorderSize = 0;
-            this.btnEliminarActores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarActores.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarActores.Location = new System.Drawing.Point(0, 51);
-            this.btnEliminarActores.Name = "btnEliminarActores";
-            this.btnEliminarActores.Size = new System.Drawing.Size(161, 29);
-            this.btnEliminarActores.TabIndex = 2;
-            this.btnEliminarActores.Text = "Eliminar";
-            this.btnEliminarActores.UseVisualStyleBackColor = false;
-            this.btnEliminarActores.Click += new System.EventHandler(this.btnEliminarActores_Click);
-            // 
             // picBoxAdminIcon
             // 
-            this.picBoxAdminIcon.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picBoxAdminIcon.Image = global::Streaming.Properties.Resources._585e4beacb11b227491c3399;
             this.picBoxAdminIcon.Location = new System.Drawing.Point(19, 25);
             this.picBoxAdminIcon.Name = "picBoxAdminIcon";
@@ -213,6 +203,15 @@
             this.picBoxAdminIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxAdminIcon.TabIndex = 0;
             this.picBoxAdminIcon.TabStop = false;
+            this.picBoxAdminIcon.Click += new System.EventHandler(this.picBoxAdminIcon_Click);
+            // 
+            // pnlDesktop
+            // 
+            this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDesktop.Location = new System.Drawing.Point(161, 0);
+            this.pnlDesktop.Name = "pnlDesktop";
+            this.pnlDesktop.Size = new System.Drawing.Size(639, 561);
+            this.pnlDesktop.TabIndex = 1;
             // 
             // InicioEmpleado
             // 
@@ -227,8 +226,8 @@
             this.Load += new System.EventHandler(this.InicioEmpleado_Load);
             this.pnlLateral.ResumeLayout(false);
             this.pnlLateral.PerformLayout();
-            this.pnlLateral1.ResumeLayout(false);
             this.pnlAdministrarActores.ResumeLayout(false);
+            this.pnlLateral1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxAdminIcon)).EndInit();
             this.ResumeLayout(false);
 

@@ -97,5 +97,10 @@ namespace Streaming
         {
             openForms(new EliminarActoresPelicula());
         }
+
+        private void picBoxAdminIcon_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

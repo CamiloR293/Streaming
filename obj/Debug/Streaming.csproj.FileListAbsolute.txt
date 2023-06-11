@@ -172,3 +172,5 @@ C:\Users\usuario\Source\Repos\Streaming\obj\Debug\Streaming.pdb
 D:\GitHub\Streaming\obj\Debug\Streaming.feedback.AgregarActoresPelicula.resources
 D:\GitHub\Streaming\obj\Debug\Streaming.feedback.ActualizarActoresPelicula.resources
 D:\GitHub\Streaming\obj\Debug\Streaming.feedback.EliminarActoresPelicula.resources
+D:\GitHub\Streaming\obj\Debug\Streaming.feedback.VerTarjetasCliente.resources
+D:\GitHub\Streaming\obj\Debug\Streaming.feedback.ActualizarDatosCliente.resources
