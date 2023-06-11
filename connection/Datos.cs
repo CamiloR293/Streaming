@@ -77,6 +77,73 @@ namespace Streaming.connection
 
             return id;
         }
+        public void ObtenerActoresProducto(int codigoProducto, OracleConnection connection)
+        {
+            try
+            {
+                using (OracleCommand command = new OracleCommand("lista_actores_producto", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    // Parámetro de entrada
+                    command.Parameters.Add("v_idProducto", OracleDbType.Int32).Value = codigoProducto;
+
+                    // Parámetros de salida
+                    command.Parameters.Add("table_plan", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+                    command.Parameters.Add("v_genero", OracleDbType.Varchar2, 100).Direction = ParameterDirection.Output;
+
+                    command.ExecuteNonQuery();
+
+                    // Obtener los resultados
+                    OracleDataReader reader = ((OracleRefCursor)command.Parameters["table_plan"].Value).GetDataReader();
+                    string genero = command.Parameters["v_genero"].Value.ToString();
+
+                    Console.WriteLine("ACTORES QUE PARTICIPAN EN LA PELÍCULA:");
+                    Console.WriteLine("-------------------------------------");
+
+                    int count = 0;
+                    while (reader.Read())
+                    {
+                        count++;
+                        int codigo = Convert.ToInt32(reader["CODIGO"]);
+                        string primerNombre = reader["PRIMERNOMBRE"].ToString();
+                        string segundoNombre = reader["SEGUNDONOMBRE"].ToString();
+                        string primerApellido = reader["PRIMERAPELLIDO"].ToString();
+                        string segundoApellido = reader["SEGUNDOAPELLIDO"].ToString();
+                        DateTime fechaNacimiento = Convert.ToDateTime(reader["FECHANACIMIENTO"]);
+                        string papel = reader["PAPEL"].ToString();
+
+                        Console.WriteLine($"CÓDIGO: {codigo}");
+                        Console.WriteLine($"NOMBRES: {primerNombre} {segundoNombre}");
+                        Console.WriteLine($"APELLIDOS: {primerApellido} {segundoApellido}");
+                        Console.WriteLine($"FECHA DE NACIMIENTO: {fechaNacimiento}");
+                        Console.WriteLine($"PAPEL: {papel}");
+                        Console.WriteLine("-------------------------------------");
+                    }
+
+                    Console.WriteLine($"En la película hay {count} actores");
+
+                    if (count > 0)
+                    {
+                        Console.WriteLine("LOS ACTORES TAMBIÉN PARTICIPAN EN LAS SIGUIENTES PELÍCULAS:");
+                        Console.WriteLine("-------------------------------------");
+
+                        reader.NextResult();
+                        while (reader.Read())
+                        {
+                            string nombrePelicula = reader["NOMBRE"].ToString();
+                            Console.WriteLine($"NOMBRE: {nombrePelicula}");
+                        }
+                    }
+
+                    reader.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ocurrió un error al obtener los actores del producto: " + ex.Message);
+            }
+        }
 
         //Metodo para ejecutar sentencias select
         public DataSet ejecutarSELECT(string consulta)
