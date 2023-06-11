@@ -97,6 +97,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="connection\Datos.cs" />
+    <Compile Include="feedback\ActualizarActoresPelicula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feedback\ActualizarActoresPelicula.Designer.cs">
+      <DependentUpon>ActualizarActoresPelicula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="feedback\AgregarActoresPelicula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feedback\AgregarActoresPelicula.Designer.cs">
+      <DependentUpon>AgregarActoresPelicula.cs</DependentUpon>
+    </Compile>
     <Compile Include="feedback\AgregarTarjeta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +126,12 @@
     </Compile>
     <Compile Include="feedback\DatosPersonalesEmpleado.Designer.cs">
       <DependentUpon>DatosPersonalesEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="feedback\EliminarActoresPelicula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feedback\EliminarActoresPelicula.Designer.cs">
+      <DependentUpon>EliminarActoresPelicula.cs</DependentUpon>
     </Compile>
     <Compile Include="feedback\InicioCliente.cs">
       <SubType>Form</SubType>
@@ -184,6 +202,12 @@
     <Compile Include="feedback\ViendoPelicula.Designer.cs">
       <DependentUpon>ViendoPelicula.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="feedback\ActualizarActoresPelicula.resx">
+      <DependentUpon>ActualizarActoresPelicula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="feedback\AgregarActoresPelicula.resx">
+      <DependentUpon>AgregarActoresPelicula.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="feedback\AgregarTarjeta.resx">
       <DependentUpon>AgregarTarjeta.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="feedback\DatosPersonalesEmpleado.resx">
       <DependentUpon>DatosPersonalesEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="feedback\EliminarActoresPelicula.resx">
+      <DependentUpon>EliminarActoresPelicula.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="feedback\InicioCliente.resx">
       <DependentUpon>InicioCliente.cs</DependentUpon>

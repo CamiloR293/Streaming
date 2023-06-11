@@ -1,4 +1,5 @@
-﻿using Streaming.logica;
+﻿using Streaming.feedback;
+using Streaming.logica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -67,6 +68,26 @@ namespace Streaming
             if (DialogResult.Yes.Equals(result)) 
                 this.Close();
             
+        }
+
+        private void btnAdministrarActores_Click(object sender, EventArgs e)
+        {
+            pnlAdministrarActores.Visible = true;
+        }
+
+        private void btnAgregarActores_Click(object sender, EventArgs e)
+        {
+            openForms(new AgregarActoresPelicula());
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            openForms(new ActualizarActoresPelicula());
+        }
+
+        private void btnEliminarActores_Click(object sender, EventArgs e)
+        {
+            openForms(new EliminarActoresPelicula());
         }
     }
 }

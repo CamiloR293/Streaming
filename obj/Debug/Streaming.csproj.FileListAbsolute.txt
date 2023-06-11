@@ -169,3 +169,6 @@ C:\Users\usuario\Source\Repos\Streaming\obj\Debug\Streaming.csproj.CoreCompileIn
 C:\Users\usuario\Source\Repos\Streaming\obj\Debug\Streaming.csproj.CopyComplete
 C:\Users\usuario\Source\Repos\Streaming\obj\Debug\Streaming.exe
 C:\Users\usuario\Source\Repos\Streaming\obj\Debug\Streaming.pdb
+D:\GitHub\Streaming\obj\Debug\Streaming.feedback.AgregarActoresPelicula.resources
+D:\GitHub\Streaming\obj\Debug\Streaming.feedback.ActualizarActoresPelicula.resources
+D:\GitHub\Streaming\obj\Debug\Streaming.feedback.EliminarActoresPelicula.resources
