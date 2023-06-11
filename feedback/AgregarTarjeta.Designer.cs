@@ -101,7 +101,6 @@ namespace Streaming
             this.pnlDesktop = new System.Windows.Forms.Panel();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.cmbBoxTipoTarjeta = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.btnRegistrarme = new System.Windows.Forms.Button();
             this.txtCVV = new System.Windows.Forms.TextBox();
             this.txtFechaExpedicion = new System.Windows.Forms.TextBox();
@@ -136,7 +135,6 @@ namespace Streaming
             this.pnlDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(195)))), ((int)(((byte)(156)))));
             this.pnlDesktop.Controls.Add(this.btnRegistrar);
             this.pnlDesktop.Controls.Add(this.cmbBoxTipoTarjeta);
-            this.pnlDesktop.Controls.Add(this.label8);
             this.pnlDesktop.Controls.Add(this.btnRegistrarme);
             this.pnlDesktop.Controls.Add(this.txtCVV);
             this.pnlDesktop.Controls.Add(this.txtFechaExpedicion);
@@ -167,8 +165,6 @@ namespace Streaming
             this.btnRegistrar.TabIndex = 24;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = false;
-            this.btnRegistrar.Click += BtnRegistrar_Click;
-
             // 
             // cmbBoxTipoTarjeta
             // 
@@ -184,17 +180,6 @@ namespace Streaming
             this.cmbBoxTipoTarjeta.TabIndex = 23;
             this.cmbBoxTipoTarjeta.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(188, -20);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(199, 21);
-            this.label8.TabIndex = 22;
-            this.label8.Text = "Informacion de la tarjeta";
-            // 
             // btnRegistrarme
             // 
             this.btnRegistrarme.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -209,7 +194,6 @@ namespace Streaming
             this.btnRegistrarme.TabIndex = 21;
             this.btnRegistrarme.Text = "Registrarme";
             this.btnRegistrarme.UseVisualStyleBackColor = false;
-            this.btnRegistrarme.Click += BtnRegistrarme_Click;
             // 
             // txtCVV
             // 
@@ -380,7 +364,6 @@ namespace Streaming
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlSuperior;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.ComboBox cmbBoxTipoTarjeta;
         private System.Windows.Forms.Button btnRegistrar;

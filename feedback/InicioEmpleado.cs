@@ -31,6 +31,8 @@ namespace Streaming
         {
             btnDatosPersonales.BackColor = colorBlancoSeleccionado;
             btnRegistrarProducto.BackColor = colorBlancoPredeterminado;
+            btnAdministrarActores.BackColor = colorBlancoPredeterminado;
+            pnlAdministrarActores.Visible = false;
             administrador cliente = new administrador();
             cliente=cliente.ObtenerAdministradorPorUsuario(username);
             openForms(new DatosPersonalesEmpleado(cliente));
@@ -40,6 +42,8 @@ namespace Streaming
         {
             btnDatosPersonales.BackColor = colorBlancoPredeterminado;
             btnRegistrarProducto.BackColor = colorBlancoSeleccionado;
+            btnAdministrarActores.BackColor = colorBlancoPredeterminado;
+            pnlAdministrarActores.Visible = false;
             openForms(new RegistrarProductoEmpleado(username));
         }
         #region OpenForm
@@ -72,7 +76,11 @@ namespace Streaming
 
         private void btnAdministrarActores_Click(object sender, EventArgs e)
         {
+            btnDatosPersonales.BackColor = colorBlancoPredeterminado;
+            btnRegistrarProducto.BackColor = colorBlancoPredeterminado;
+            btnAdministrarActores.BackColor = colorBlancoSeleccionado;
             pnlAdministrarActores.Visible = true;
+            btnAgregarActores_Click(sender,e);
         }
 
         private void btnAgregarActores_Click(object sender, EventArgs e)

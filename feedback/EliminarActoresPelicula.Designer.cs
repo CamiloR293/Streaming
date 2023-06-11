@@ -33,7 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cmbBoxPelicula = new System.Windows.Forms.ComboBox();
             this.lblPelicula = new System.Windows.Forms.Label();
-            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.pnlBanner = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlDesktop.SuspendLayout();
@@ -47,13 +47,12 @@
             this.pnlDesktop.Controls.Add(this.label2);
             this.pnlDesktop.Controls.Add(this.cmbBoxPelicula);
             this.pnlDesktop.Controls.Add(this.lblPelicula);
-            this.pnlDesktop.Controls.Add(this.btnActualizar);
+            this.pnlDesktop.Controls.Add(this.btnEliminar);
             this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDesktop.Location = new System.Drawing.Point(0, 67);
             this.pnlDesktop.Name = "pnlDesktop";
             this.pnlDesktop.Size = new System.Drawing.Size(607, 416);
             this.pnlDesktop.TabIndex = 8;
-            this.pnlDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDesktop_Paint);
             // 
             // cmbBoxActor
             // 
@@ -63,7 +62,6 @@
             this.cmbBoxActor.Name = "cmbBoxActor";
             this.cmbBoxActor.Size = new System.Drawing.Size(144, 21);
             this.cmbBoxActor.TabIndex = 30;
-            this.cmbBoxActor.SelectedIndexChanged += new System.EventHandler(this.cmbBoxActor_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -75,7 +73,6 @@
             this.label2.Size = new System.Drawing.Size(55, 21);
             this.label2.TabIndex = 29;
             this.label2.Text = "Actor:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // cmbBoxPelicula
             // 
@@ -85,7 +82,6 @@
             this.cmbBoxPelicula.Name = "cmbBoxPelicula";
             this.cmbBoxPelicula.Size = new System.Drawing.Size(144, 21);
             this.cmbBoxPelicula.TabIndex = 28;
-            this.cmbBoxPelicula.SelectedIndexChanged += new System.EventHandler(this.cmbBoxPelicula_SelectedIndexChanged);
             // 
             // lblPelicula
             // 
@@ -98,22 +94,22 @@
             this.lblPelicula.TabIndex = 27;
             this.lblPelicula.Text = "Pelicula:";
             this.lblPelicula.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblPelicula.Click += new System.EventHandler(this.lblPelicula_Click);
             // 
-            // btnActualizar
+            // btnEliminar
             // 
-            this.btnActualizar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(117)))));
-            this.btnActualizar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(144)))), ((int)(((byte)(76)))));
-            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnActualizar.Location = new System.Drawing.Point(430, 324);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(106, 40);
-            this.btnActualizar.TabIndex = 26;
-            this.btnActualizar.Text = "Eliminar";
-            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(117)))));
+            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(144)))), ((int)(((byte)(76)))));
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEliminar.Location = new System.Drawing.Point(430, 324);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(106, 40);
+            this.btnEliminar.TabIndex = 26;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // pnlBanner
             // 
@@ -124,7 +120,6 @@
             this.pnlBanner.Name = "pnlBanner";
             this.pnlBanner.Size = new System.Drawing.Size(607, 67);
             this.pnlBanner.TabIndex = 7;
-            this.pnlBanner.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBanner_Paint);
             // 
             // label1
             // 
@@ -137,7 +132,6 @@
             this.label1.Size = new System.Drawing.Size(213, 27);
             this.label1.TabIndex = 3;
             this.label1.Text = "ELIMINAR ACTORES";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // EliminarActoresPelicula
             // 
@@ -164,7 +158,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbBoxPelicula;
         private System.Windows.Forms.Label lblPelicula;
-        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Panel pnlBanner;
         private System.Windows.Forms.Label label1;
     }

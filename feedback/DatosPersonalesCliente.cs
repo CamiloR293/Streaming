@@ -45,5 +45,10 @@ namespace Streaming
         {
 
         }
+
+        private void btnVerTarjetas_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

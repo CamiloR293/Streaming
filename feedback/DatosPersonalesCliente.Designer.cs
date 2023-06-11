@@ -98,6 +98,7 @@
             this.btnVerTarjetas.TabIndex = 24;
             this.btnVerTarjetas.Text = "Ver mis tarjetas";
             this.btnVerTarjetas.UseVisualStyleBackColor = false;
+            this.btnVerTarjetas.Click += new System.EventHandler(this.btnVerTarjetas_Click);
             // 
             // btnEliminarCuenta
             // 

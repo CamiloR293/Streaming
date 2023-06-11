@@ -161,7 +161,6 @@
             this.cmbBoxPelicula.Name = "cmbBoxPelicula";
             this.cmbBoxPelicula.Size = new System.Drawing.Size(196, 21);
             this.cmbBoxPelicula.TabIndex = 28;
-            this.cmbBoxPelicula.SelectedIndexChanged += new System.EventHandler(this.cmbBoxPelicula_SelectedIndexChanged);
             // 
             // lblPelicula
             // 
