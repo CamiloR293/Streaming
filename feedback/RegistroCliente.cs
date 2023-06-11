@@ -54,7 +54,7 @@ namespace Streaming
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cliente miCLiente = new cliente();
+            Cliente miCLiente = new Cliente();
             // contador para originar codigo de cliente
             int contador = 40;
             //creación de variable para capturar la fecha actual

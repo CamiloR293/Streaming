@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Streaming.logica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,26 @@ namespace Streaming
 {
     public partial class DatosPersonalesCliente : Form
     {
-        public DatosPersonalesCliente()
+
+        private Cliente cliente;
+        Main iniciosesion = new Main();
+        public DatosPersonalesCliente(Cliente cliente)
         {
             InitializeComponent();
+            this.cliente = cliente;
+            lblPrimerNombre.Text = cliente.PName;
+            lblNombreUsuario.Text = cliente.User;
+            lblSegundoNombre.Text = cliente.SName;
+            lblPrimerApellido.Text = cliente.PApellido;
+            lblFechaNacimiento.Text = cliente.FNacimiento;
+            lblCorreo.Text = cliente.Correo;
+            lblTelefono.Text = cliente.Telefono;
+            lblCodigo.Text = cliente.Codigo.ToString();
+        }
+
+        private void pnlDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

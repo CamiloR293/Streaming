@@ -1,14 +1,27 @@
-﻿using Streaming.connection;
+﻿using Oracle.ManagedDataAccess.Client;
+using Streaming.connection;
 using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Streaming.logica
 {
-    internal class cliente
+    public class Cliente
     {
+        // Atributos del cliente
+        private int codigo;
+        private string user;
+        private string pName;
+        private string sName;
+        private string pApellido;
+        private string sapellido;
+        private string password;
+        private string fNacimiento;
+        private string telefono;
+        private string correo;
 
 
-        public cliente(string user, string pName, string sName, string pApellido, string sapellido, string password, string fNacimiento, string telefono, string correo)
+        public Cliente(int codigo, string user, string pName, string sName, string pApellido, string sapellido, string password, string fNacimiento, string telefono, string correo)
         {
             this.user = user;
             this.pName = pName;
@@ -21,6 +34,9 @@ namespace Streaming.logica
             this.correo = correo;
         }
 
+        public Cliente()
+        {
+        }
 
         Datos dt = new Datos();
 
@@ -35,6 +51,7 @@ namespace Streaming.logica
             resultado = dt.ejecutarDML(consulta);
             return resultado;
         }
+
         public DataSet consultarRegistro()
         {
             string consulta;
@@ -42,6 +59,7 @@ namespace Streaming.logica
             DataSet miDs = dt.ejecutarSELECT(consulta);
             return miDs;
         }
+
         public DataSet consultarInfo(int nitBanco, string fechaIngreso)
         {
             DataSet miDs = new DataSet();
@@ -53,69 +71,106 @@ namespace Streaming.logica
             miDs = dt.ejecutarSELECT(consulta);
             return miDs;
         }
-        private string user;
+
+        // ...
+
+        public Cliente ObtenerClientePorUsuario(string usuario)
+        {
+            Cliente cliente = null;
+
+            string consulta = "SELECT CODIGO, NOMBRE_USUARIO_CLIENTE, PRIMERNOMBRE, SEGUNDONOMBRE, PRIMERAPELLIDO, SEGUNDOAPELLIDO, FECHANACIMIENTO, CONTRASENIA, TELEFONO, CORREO FROM CLIENTE WHERE NOMBRE_USUARIO_CLIENTE = :Usuario";
+            using (OracleConnection conexion = new OracleConnection(dt.getCadenaConexion()))
+            {
+                OracleCommand comando = new OracleCommand(consulta, conexion);
+                comando.Parameters.Add(new OracleParameter(":Usuario", OracleDbType.Varchar2)).Value = usuario;
+                conexion.Open();
+
+                OracleDataReader reader = comando.ExecuteReader();
+                if (reader.Read())
+                {
+                    int codigo= int.Parse(reader["CODIGO"].ToString());
+                    string user = reader["NOMBRE_USUARIO_CLIENTE"].ToString();
+                    string pName = reader["PRIMERNOMBRE"].ToString();
+                    string sName = reader["SEGUNDONOMBRE"].ToString();
+                    string pApellido = reader["PRIMERAPELLIDO"].ToString();
+                    string sapellido = reader["SEGUNDOAPELLIDO"].ToString();
+                    string password = reader["CONTRASENIA"].ToString();
+                    string fNacimiento = reader["FECHANACIMIENTO"].ToString();
+                    string telefono = reader["TELEFONO"].ToString();
+                    string correo = reader["CORREO"].ToString();
+
+                    cliente = new Cliente(codigo,user, pName, sName, pApellido, sapellido, password, fNacimiento, telefono, correo);
+                }
+
+                conexion.Close();
+            }
+
+            return cliente;
+        }
+
+
+        // ...
+
+
+        // Getters y Setters
+        public int Codigo
+        {
+            get { return codigo; }
+            set { codigo = value; }
+        }
+ 
         public string User
         {
             get { return user; }
             set { user = value; }
         }
 
-        private string pName;
         public string PName
         {
             get { return pName; }
             set { pName = value; }
         }
 
-        private string sName;
         public string SName
         {
             get { return sName; }
             set { sName = value; }
         }
 
-        private string pApellido;
         public string PApellido
         {
             get { return pApellido; }
             set { pApellido = value; }
         }
 
-        private string sapellido;
         public string SApellido
         {
             get { return sapellido; }
             set { sapellido = value; }
         }
 
-        private string password;
         public string Password
         {
             get { return password; }
             set { password = value; }
         }
 
-        private string fNacimiento;
         public string FNacimiento
         {
             get { return fNacimiento; }
             set { fNacimiento = value; }
         }
 
-        private string telefono;
         public string Telefono
         {
             get { return telefono; }
             set { telefono = value; }
         }
 
-        private string correo;
         public string Correo
         {
             get { return correo; }
             set { correo = value; }
         }
-
-
     }
 }

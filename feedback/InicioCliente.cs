@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using Streaming.logica;
+using System.Drawing;
 using System.Linq.Expressions;
 using System.Windows.Forms;
 
@@ -6,13 +7,24 @@ namespace Streaming
 {
     public partial class InicioCliente : Form
     {
+        public Cliente cliente;
         private Color colorNaranjaPredeterminado = Color.FromArgb(255, 144, 76);
         private Color colorNaranjaSeleccionado = Color.FromArgb(192, 108, 56);
+
+
+        public InicioCliente(Cliente cliente)
+        {
+            InitializeComponent();
+            this.cliente=cliente;
+            openForms(new MenuPrincipalCliente());
+        }
+
         public InicioCliente()
         {
             InitializeComponent();
             openForms(new MenuPrincipalCliente());
         }
+
         public void InicioCliente_Load(object sender, System.EventArgs e)
         {
             btnMenuPrincipal_Click(sender, e);
@@ -51,7 +63,7 @@ namespace Streaming
             btnMenuPrincipal.BackColor = colorNaranjaPredeterminado;
             btnAddMetodosPago.BackColor = colorNaranjaPredeterminado;
             btnDatosPersonales.BackColor = colorNaranjaSeleccionado;
-            openForms(new DatosPersonalesCliente());
+            openForms(new DatosPersonalesCliente(cliente));
         }
 
         private void btnAddMetodosPago_Click(object sender, System.EventArgs e)

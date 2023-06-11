@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.pnlDesktop = new System.Windows.Forms.Panel();
+            this.btnVerTarjetas = new System.Windows.Forms.Button();
+            this.btnEliminarCuenta = new System.Windows.Forms.Button();
             this.btnActualizarDatosPersonales = new System.Windows.Forms.Button();
             this.lblSegundoApellido = new System.Windows.Forms.Label();
             this.lblSegundoNombre = new System.Windows.Forms.Label();
@@ -48,8 +50,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnEliminarCuenta = new System.Windows.Forms.Button();
-            this.btnVerTarjetas = new System.Windows.Forms.Button();
             this.pnlDesktop.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,6 +82,37 @@
             this.pnlDesktop.Name = "pnlDesktop";
             this.pnlDesktop.Size = new System.Drawing.Size(629, 452);
             this.pnlDesktop.TabIndex = 1;
+            this.pnlDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDesktop_Paint);
+            // 
+            // btnVerTarjetas
+            // 
+            this.btnVerTarjetas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVerTarjetas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(117)))));
+            this.btnVerTarjetas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(144)))), ((int)(((byte)(76)))));
+            this.btnVerTarjetas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerTarjetas.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerTarjetas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnVerTarjetas.Location = new System.Drawing.Point(347, 280);
+            this.btnVerTarjetas.Name = "btnVerTarjetas";
+            this.btnVerTarjetas.Size = new System.Drawing.Size(270, 32);
+            this.btnVerTarjetas.TabIndex = 24;
+            this.btnVerTarjetas.Text = "Ver mis tarjetas";
+            this.btnVerTarjetas.UseVisualStyleBackColor = false;
+            // 
+            // btnEliminarCuenta
+            // 
+            this.btnEliminarCuenta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminarCuenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(117)))));
+            this.btnEliminarCuenta.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(144)))), ((int)(((byte)(76)))));
+            this.btnEliminarCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarCuenta.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarCuenta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEliminarCuenta.Location = new System.Drawing.Point(347, 389);
+            this.btnEliminarCuenta.Name = "btnEliminarCuenta";
+            this.btnEliminarCuenta.Size = new System.Drawing.Size(270, 32);
+            this.btnEliminarCuenta.TabIndex = 23;
+            this.btnEliminarCuenta.Text = "Eliminar mi cuenta";
+            this.btnEliminarCuenta.UseVisualStyleBackColor = false;
             // 
             // btnActualizarDatosPersonales
             // 
@@ -313,36 +344,6 @@
             this.label2.Size = new System.Drawing.Size(129, 21);
             this.label2.TabIndex = 2;
             this.label2.Text = "Primer nombre:";
-            // 
-            // btnEliminarCuenta
-            // 
-            this.btnEliminarCuenta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminarCuenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(117)))));
-            this.btnEliminarCuenta.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(144)))), ((int)(((byte)(76)))));
-            this.btnEliminarCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarCuenta.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarCuenta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEliminarCuenta.Location = new System.Drawing.Point(347, 389);
-            this.btnEliminarCuenta.Name = "btnEliminarCuenta";
-            this.btnEliminarCuenta.Size = new System.Drawing.Size(270, 32);
-            this.btnEliminarCuenta.TabIndex = 23;
-            this.btnEliminarCuenta.Text = "Eliminar mi cuenta";
-            this.btnEliminarCuenta.UseVisualStyleBackColor = false;
-            // 
-            // btnVerTarjetas
-            // 
-            this.btnVerTarjetas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVerTarjetas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(117)))));
-            this.btnVerTarjetas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(144)))), ((int)(((byte)(76)))));
-            this.btnVerTarjetas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerTarjetas.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerTarjetas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnVerTarjetas.Location = new System.Drawing.Point(347, 280);
-            this.btnVerTarjetas.Name = "btnVerTarjetas";
-            this.btnVerTarjetas.Size = new System.Drawing.Size(270, 32);
-            this.btnVerTarjetas.TabIndex = 24;
-            this.btnVerTarjetas.Text = "Ver mis tarjetas";
-            this.btnVerTarjetas.UseVisualStyleBackColor = false;
             // 
             // DatosPersonalesCliente
             // 

@@ -17,7 +17,7 @@ namespace Streaming
             MessageBox.Show("¡Haz hecho clic en Registrarme!");
 
             tarjeta mitarjeta = new tarjeta();
-            cliente miCLiente = new cliente();
+            Cliente miCLiente = new Cliente();
 
             //enviar datos de caja de texto para agregar nuevo usuario
             int resultado = miCLiente.ingresarRegistro(txtUsuario, txtPNombre, txtPApellido,

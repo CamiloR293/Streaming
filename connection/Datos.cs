@@ -10,6 +10,10 @@ namespace Streaming.connection
     {
         //Creo la cadena de conexion 
         string cadenaConexion = "Data Source = localhost; User ID = admin; Password=admin123";
+        public string getCadenaConexion()
+        {
+            return cadenaConexion;
+        }
 
         //Metodo para ejecutar una sentencia insert , update o delete
         public int ejecutarDML(string consulta)

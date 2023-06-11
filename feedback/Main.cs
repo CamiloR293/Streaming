@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
+using Streaming.logica;
 
 namespace Streaming
 {
     public partial class Main : Form
     {
+
+        public Cliente ClienteGlobal;
         private string cadenaConexion = "Data Source=localhost;User ID=admin;Password=admin123";
 
         public Main()
@@ -79,6 +82,8 @@ namespace Streaming
             string username = txtUserName.Text;
             string password = txtPassword.Text;
 
+            Cliente micliente=new Cliente();
+
             // Verificar las credenciales en la base de datos
             if (VerificarCredenciales(username, password))
             {
@@ -86,7 +91,8 @@ namespace Streaming
                 MessageBox.Show("Inicio de sesión exitoso");
                 // Abre la siguiente ventana o realiza las acciones necesarias después del inicio de sesión exitoso
                 lblRegister.ForeColor = System.Drawing.Color.FromArgb(196, 110, 56);
-                openForms(new InicioCliente());
+                ClienteGlobal=micliente.ObtenerClientePorUsuario(username);
+                openForms(new InicioCliente(ClienteGlobal));
             }
             else
             {
