@@ -164,6 +164,7 @@
             this.label19.Size = new System.Drawing.Size(149, 21);
             this.label19.TabIndex = 19;
             this.label19.Text = "Segundo apellido:";
+            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // label18
             // 
@@ -224,6 +225,7 @@
             this.lblNombreUsuario.Size = new System.Drawing.Size(80, 21);
             this.lblNombreUsuario.TabIndex = 14;
             this.lblNombreUsuario.Text = "**********";
+            this.lblNombreUsuario.Click += new System.EventHandler(this.lblNombreUsuario_Click);
             // 
             // lblCodigo
             // 

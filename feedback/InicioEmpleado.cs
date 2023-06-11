@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Streaming.logica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,7 +30,9 @@ namespace Streaming
         {
             btnDatosPersonales.BackColor = colorBlancoSeleccionado;
             btnRegistrarProducto.BackColor = colorBlancoPredeterminado;
-            openForms(new DatosPersonalesEmpleado());
+            administrador cliente = new administrador();
+            cliente=cliente.ObtenerAdministradorPorUsuario(username);
+            openForms(new DatosPersonalesEmpleado(cliente));
         }
 
         private void btnRegistrarProducto_Click(object sender, EventArgs e)

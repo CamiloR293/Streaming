@@ -19,7 +19,7 @@ namespace Streaming
         private String txtFechaNacimiento;
         private String txtTelefono;
         private String txtCorreo;
-        public AgregarTarjeta(Panel panelContainer, Form register, String txtUsuario, String txtPNombre, String txtPApellido,
+        public AgregarTarjeta(Panel panelContainer, Form register,String txtUsuario, String txtPNombre, String txtPApellido,
                 String txtSNombre, String txtSApellido, String txtPasswordRegistro, String txtFechaNacimiento, String txtTelefono
                 , String txtCorreo)
         {

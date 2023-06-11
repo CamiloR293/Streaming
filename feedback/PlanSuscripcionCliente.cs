@@ -13,9 +13,11 @@ namespace Streaming
 {
     public partial class PlanSuscripcionCliente : Form
     {
+        Cliente cliente;
         Panel panelContainer = new Panel();
-        public PlanSuscripcionCliente(Panel panelContainer, Form activeForm)
+        public PlanSuscripcionCliente(Panel panelContainer, Form activeForm, Cliente cliente)
         {
+            this.cliente= cliente;
             InitializeComponent();
             this.panelContainer = panelContainer;
             this.activeForm = activeForm;
@@ -34,7 +36,7 @@ namespace Streaming
             if (resultado > 0)
             {
                 MessageBox.Show("¡Compra exitosa!");
-                openForms(new InicioCliente());
+                openForms(new InicioCliente(cliente));
 
             }
         }

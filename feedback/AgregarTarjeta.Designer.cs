@@ -18,7 +18,6 @@ namespace Streaming
 
             tarjeta mitarjeta = new tarjeta();
             Cliente miCLiente = new Cliente();
-
             //enviar datos de caja de texto para agregar nuevo usuario
             int resultado = miCLiente.ingresarRegistro(txtUsuario, txtPNombre, txtPApellido,
                 txtSNombre, txtSApellido, txtPasswordRegistro, txtFechaNacimiento, txtTelefono
@@ -31,7 +30,11 @@ namespace Streaming
             //validacion
             if (resultado > 0 && resultado2 > 0) { 
                 MessageBox.Show("Usuario y Tarjeta registrada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                openForms(new PlanSuscripcionCliente( panelContainer, this));
+
+                miCLiente = miCLiente.ObtenerClientePorUsuario(txtUsuario);
+                
+                openForms(new PlanSuscripcionCliente( panelContainer, this, cliente));
+
             }
             else
                 MessageBox.Show("No se ha completado el proceso satisfactoriamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -61,7 +64,7 @@ namespace Streaming
             if ( resultado2 > 0)
             {
                 MessageBox.Show("Tarjeta registrada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                openForms(new PlanSuscripcionCliente(panelContainer, this));
+                openForms(new PlanSuscripcionCliente(panelContainer, this, cliente));
             }
             else
                 MessageBox.Show("No se ha completado el proceso satisfactoriamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);

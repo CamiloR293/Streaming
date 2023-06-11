@@ -48,6 +48,8 @@ namespace Streaming
         #endregion
         #region OpenForm
         private Form activeForm = null;
+        private Panel panelContainer;
+
         public void openForms(Form newForm)
         {
             if (activeForm != null) activeForm.Close();
@@ -82,17 +84,37 @@ namespace Streaming
             string username = txtUserName.Text;
             string password = txtPassword.Text;
 
-            Cliente micliente=new Cliente();
+            Cliente micliente = new Cliente();
 
             // Verificar las credenciales en la base de datos
             if (VerificarCredenciales(username, password))
             {
                 // Credenciales válidas, el inicio de sesión es exitoso
-                MessageBox.Show("Inicio de sesión exitoso");
-                // Abre la siguiente ventana o realiza las acciones necesarias después del inicio de sesión exitoso
-                lblRegister.ForeColor = System.Drawing.Color.FromArgb(196, 110, 56);
-                ClienteGlobal=micliente.ObtenerClientePorUsuario(username);
-                openForms(new InicioCliente(ClienteGlobal));
+
+
+                plansuscripcion miPlan = new plansuscripcion();
+                try
+                {
+                    lblRegister.ForeColor = System.Drawing.Color.FromArgb(196, 110, 56);
+                    ClienteGlobal = micliente.ObtenerClientePorUsuario(username);
+                    //miPlan.consultarSuscripcion(ClienteGlobal.Codigo);
+                    openForms(new InicioCliente(ClienteGlobal));
+                }
+                catch (OracleException ex)
+                {
+                    if (ex.Number == -20001)
+                    {
+                        // La suscripción ha vencido, mostrar mensaje y suspender acceso al contenido
+                        MessageBox.Show("La suscripción ha vencido. Por favor renovar para disfrutar del contenido :)");
+                        openForms(new PlanSuscripcionCliente(panelContainer, this,ClienteGlobal));
+
+                    }
+                    else
+                    {
+                        // Ocurrió otra excepción, muestra un mensaje genérico o realiza las acciones correspondientes
+                        MessageBox.Show("Error en el inicio de sesión: " + ex.Message);
+                    }
+                }
             }
             else
             {
@@ -100,6 +122,7 @@ namespace Streaming
                 MessageBox.Show("Credenciales inválidas");
             }
         }
+
 
         private bool VerificarCredenciales(string username, string password)
         {

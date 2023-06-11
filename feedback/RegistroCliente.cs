@@ -45,41 +45,13 @@ namespace Streaming
             }
             else
             {
-                openForms(new AgregarTarjeta(panelContainer, this, txtUsuario.Text, txtPNombre.Text, txtPApellido.Text,
-                    txtSNombre.Text, txtSApellido.Text, txtPassword.Text, txtFechaNacimiento.Text, txtTelefono.Text
+
+                openForms(new AgregarTarjeta(panelContainer, this, txtUsuario.Text, txtPNombre.Text, txtSNombre.Text, txtPApellido.Text
+                    , txtSApellido.Text, txtPassword.Text, txtFechaNacimiento.Text, txtTelefono.Text
                     , txtCorreo.Text));
                
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Cliente miCLiente = new Cliente();
-            // contador para originar codigo de cliente
-            int contador = 40;
-            //creación de variable para capturar la fecha actual
-            // enviar datos de caja de texto para agregar nuevo usuario
-            Console.WriteLine(txtUsuario.Text);
-            int resultado = miCLiente.ingresarRegistro(txtUsuario.Text, txtPNombre.Text, txtPApellido.Text,
-                txtSNombre.Text, txtSApellido.Text,txtPassword.Text, txtFechaNacimiento.Text, txtTelefono.Text
-                , txtCorreo.Text);
-            //validacion
-            if (resultado > 0 & txtPassword.Text.Equals(txtRepPassword.Text))
-                MessageBox.Show("Usuario registrado", "Mensanje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else
-                MessageBox.Show("Usuario NO registrado", "Mensanje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //limpiar cajas de texto
-            txtRepPassword.Clear();
-            txtPassword.Clear();
-            txtUsuario.Clear();
-            txtCorreo.Clear();
-            txtTelefono.Clear();
-            txtFechaNacimiento.Clear();
-            txtSApellido.Clear();
-            txtPApellido.Clear();
-            txtSNombre.Clear();
-            txtPNombre.Clear();
-            contador++;
-        }
     }
 }

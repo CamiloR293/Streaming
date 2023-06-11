@@ -20,6 +20,7 @@ namespace Streaming
         {
             InitializeComponent();
             this.cliente = cliente;
+            lblSegundoApellido.Text = cliente.SApellido;
             lblPrimerNombre.Text = cliente.PName;
             lblNombreUsuario.Text = cliente.User;
             lblSegundoNombre.Text = cliente.SName;
@@ -31,6 +32,16 @@ namespace Streaming
         }
 
         private void pnlDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblNombreUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
         {
 
         }
