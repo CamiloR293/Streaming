@@ -295,5 +295,8 @@ namespace Streaming.connection
             adaptador.Fill(ds, "ResultadoDatos");
             return ds;
         }
+
+
+    
     }
 }

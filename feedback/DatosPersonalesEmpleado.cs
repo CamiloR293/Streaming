@@ -37,8 +37,9 @@ namespace Streaming
 
         private void btnActualizarDatos_Click(object sender, EventArgs e)
         {
-            Form actualizar = new ActualizarDatosCliente();
-            actualizar.ShowDialog();
+            
+            //Form actualizar = new ActualizarDatosCliente(cliente);
+            //actualizar.ShowDialog();
             // hacer el reset de datos empleado
         }
     }

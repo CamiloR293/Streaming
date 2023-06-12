@@ -54,6 +54,17 @@ namespace Streaming.logica
             return resultado;
         }
 
+        public int updateRegistro(Cliente cliente)
+        {
+            string consulta = "UPDATE CLIENTE SET NOMBRE_USUARIO_CLIENTE = '"+cliente.User+"', PRIMERNOMBRE = '"+cliente.PName+"', " +
+                "SEGUNDONOMBRE = '"+ cliente.SName+"', PRIMERAPELLIDO = '"+ cliente.PApellido +"', SEGUNDOAPELLIDO ='"+cliente.SApellido+"', " +
+                "FECHANACIMIENTO = to_Date('"+cliente.FNacimiento+"','dd-mm-yyyy'), CONTRASENIA = '"+ cliente.password+"', TELEFONO ='"+cliente.Telefono+"', " +
+                "CORREO ='"+cliente.Correo+"' WHERE CODIGO= " + codigo;
+            MessageBox.Show(consulta);
+            int resultado = dt.ejecutarDML(consulta);
+            return resultado;
+
+        }
         public DataSet consultarRegistro()
         {
             string consulta;
@@ -96,7 +107,11 @@ namespace Streaming.logica
 
             return cliente;
         }
-
+        public void updateCliente(Cliente cliente)
+        {
+            dt.updateDatosCliente( cliente.Codigo,  cliente.User,  cliente.PName,  cliente.SName, 
+                cliente.PApellido,  cliente.SApellido,  DateTime.Parse(cliente.FNacimiento),  cliente.Password,  cliente.Telefono,  cliente.Correo);
+        }
 
         // ...
 

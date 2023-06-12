@@ -102,7 +102,7 @@ namespace Streaming
                     int resultado;
                     resultado = miPlan.consultarSuscripcion(ClienteGlobal.Codigo);
                     bool verify;
-                    /*ValidarSuscripcion(ClienteGlobal.Codigo, out verify);*/
+                    ValidarSuscripcion(ClienteGlobal.Codigo, out verify);
                     if (resultado==20001 /*&& verify*/)
                     {
                         // La suscripción ha vencido, mostrar mensaje y suspender acceso al contenido
@@ -111,7 +111,7 @@ namespace Streaming
                     }
                     else
                     {
-                        if (resultado > 0 /*&& verify==false*/)
+                        if (resultado > 0 /*&& /*verify==false*/)
                         {
                             // La suscripción está activa, permitir acceso al contenido
                             openForms(new InicioCliente(ClienteGlobal));

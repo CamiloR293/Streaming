@@ -45,7 +45,7 @@ namespace Streaming
 
         private void btnActualizarDatosPersonales_Click(object sender, EventArgs e)
         {
-            Form actualizar = new ActualizarDatosCliente();
+            Form actualizar = new ActualizarDatosCliente(cliente);
             actualizar.ShowDialog();
             //volver a hacer el set de la informacion, no se como funciona el cliente aqui
             //pero es volver a resetear las etiquetas con la info nueva
