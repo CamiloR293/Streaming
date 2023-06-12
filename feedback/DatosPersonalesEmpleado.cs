@@ -19,17 +19,21 @@ namespace Streaming
         {
             InitializeComponent();
             this.cliente=admin;
+            this.actualizarLabel(cliente);
+          
+        }
+        private void actualizarLabel(administrador admin) {
             lblPrimerNombre.Text = cliente.PName;
             lblNombreUsuario.Text = cliente.User;
             lblSegundoNombre.Text = cliente.SName;
             lblPrimerApellido.Text = cliente.PApellido;
+            lblSegundoApellido.Text = cliente.SApellido;
             lblFechaNacimiento.Text = cliente.FNacimiento;
             lblCorreo.Text = cliente.Correo;
             lblTelefono.Text = cliente.Telefono;
             lblCodigo.Text = cliente.Codigo.ToString();
-            lblIdAdmin.Text=cliente.IdAdmin.ToString();
+            lblIdAdmin.Text = cliente.IdAdmin.ToString();
         }
-
         private void lblPrimerNombre_Click(object sender, EventArgs e)
         {
 
@@ -38,8 +42,9 @@ namespace Streaming
         private void btnActualizarDatos_Click(object sender, EventArgs e)
         {
             
-            //Form actualizar = new ActualizarDatosCliente(cliente);
-            //actualizar.ShowDialog();
+            Form actualizar = new ActualizarDatosCliente(cliente, "1");
+            actualizar.ShowDialog();
+            this.actualizarLabel(cliente);
             // hacer el reset de datos empleado
         }
     }

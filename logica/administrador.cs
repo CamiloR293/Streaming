@@ -2,6 +2,7 @@
 using Streaming.connection;
 using System;
 using System.Data;
+using System.Windows.Forms;
 
 namespace Streaming.logica
 {
@@ -115,7 +116,17 @@ namespace Streaming.logica
             resultado = dt.ejecutarDML(consulta);
             return resultado;
         }
+        public int updateRegistro(administrador cliente)
+        {
+            string consulta = "UPDATE ADMINISTRADOR SET NOMBRE_USUARIO_ADMIN = '" + cliente.User + "', PRIMERNOMBRE = '" + cliente.PName + "', " +
+                "SEGUNDONOMBRE = '" + cliente.SName + "', PRIMERAPELLIDO = '" + cliente.PApellido + "', SEGUNDOAPELLIDO ='" + cliente.SApellido + "', " +
+                "FECHANACIMIENTO = to_Date('" + cliente.FNacimiento + "','dd-mm-yyyy'), CONTRASENIA = '" + cliente.password + "', TELEFONO ='" + cliente.Telefono + "', " +
+                "CORREO ='" + cliente.Correo + "' WHERE CODIGO= " + codigo;
+            MessageBox.Show(consulta);
+            int resultado = dt.ejecutarDML(consulta);
+            return resultado;
 
+        }
         public DataSet consultarAdmin()
         {
             DataSet miDs = new DataSet();
