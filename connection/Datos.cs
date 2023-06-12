@@ -296,6 +296,28 @@ namespace Streaming.connection
             return ds;
         }
 
-    
+        public void obtenerPeliculas(ComboBox cmbBoxPelicula)
+        {
+            try
+            {
+                using (OracleConnection miConexion = new OracleConnection(cadenaConexion)) 
+                {
+                    miConexion.Open();
+                    string consulta = "select nombre from producto";    
+                    OracleCommand comando = new OracleCommand(consulta, miConexion);
+                    OracleDataReader reader = comando.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        string nombrePelicula = reader.GetString(0);
+                        cmbBoxPelicula.Items.Add(nombrePelicula);
+                    }
+                    reader.Close();
+                }
+            }catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            
+        }
     }
 }

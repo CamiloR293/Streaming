@@ -1,4 +1,5 @@
-﻿using Streaming.logica;
+﻿using Streaming.connection;
+using Streaming.logica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,7 +30,11 @@ namespace Streaming.feedback
             string segundoApellido = txtSegundoApellido.Text;
             string fechaNacimiento = txtFechaNacimiento.Text;
             string papel = cmbBoxPapel.SelectedItem.ToString();
-            string nombrePelicula = cmbBoxPelicula.SelectedItem.ToString();
+
+            //rellenar peliculas
+            Datos misDatos = new Datos();
+            misDatos.obtenerPeliculas(cmbBoxPelicula);
+            string nombrePelicula = cmbBoxPelicula.Text; // guardar en una variable
 
             //Ejecutar la insercion de un actor a la pelicula
             int resultado = miActor.ingresarActor(primerNombre, segundoNombre, primerApellido, segundoApellido, fechaNacimiento);

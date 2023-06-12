@@ -30,6 +30,8 @@
         {
             this.pnlMain = new System.Windows.Forms.Panel();
             this.pnlDesktop = new System.Windows.Forms.Panel();
+            this.cmbBoxPapel = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtFechaNacimiento = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtSegundoApellido = new System.Windows.Forms.TextBox();
@@ -45,8 +47,7 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.pnlBanner = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbBoxPapel = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.oracleCommand1 = new Oracle.ManagedDataAccess.Client.OracleCommand();
             this.pnlMain.SuspendLayout();
             this.pnlDesktop.SuspendLayout();
             this.pnlBanner.SuspendLayout();
@@ -58,8 +59,9 @@
             this.pnlMain.Controls.Add(this.pnlBanner);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(623, 522);
+            this.pnlMain.Size = new System.Drawing.Size(831, 642);
             this.pnlMain.TabIndex = 0;
             // 
             // pnlDesktop
@@ -81,21 +83,49 @@
             this.pnlDesktop.Controls.Add(this.txtPrimerNombre);
             this.pnlDesktop.Controls.Add(this.lblNombre);
             this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDesktop.Location = new System.Drawing.Point(0, 67);
+            this.pnlDesktop.Location = new System.Drawing.Point(0, 82);
+            this.pnlDesktop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlDesktop.Name = "pnlDesktop";
-            this.pnlDesktop.Size = new System.Drawing.Size(623, 455);
+            this.pnlDesktop.Size = new System.Drawing.Size(831, 560);
             this.pnlDesktop.TabIndex = 4;
             this.pnlDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDesktop_Paint);
+            // 
+            // cmbBoxPapel
+            // 
+            this.cmbBoxPapel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbBoxPapel.FormattingEnabled = true;
+            this.cmbBoxPapel.Items.AddRange(new object[] {
+            "Principal",
+            "Secundario"});
+            this.cmbBoxPapel.Location = new System.Drawing.Point(289, 364);
+            this.cmbBoxPapel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbBoxPapel.Name = "cmbBoxPapel";
+            this.cmbBoxPapel.Size = new System.Drawing.Size(260, 24);
+            this.cmbBoxPapel.TabIndex = 46;
+            this.cmbBoxPapel.SelectedIndexChanged += new System.EventHandler(this.cmbBoxPapel_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(199, 361);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 26);
+            this.label6.TabIndex = 45;
+            this.label6.Text = "Papel:";
             // 
             // txtFechaNacimiento
             // 
             this.txtFechaNacimiento.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtFechaNacimiento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechaNacimiento.Location = new System.Drawing.Point(217, 199);
+            this.txtFechaNacimiento.Location = new System.Drawing.Point(289, 245);
+            this.txtFechaNacimiento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtFechaNacimiento.Multiline = true;
             this.txtFechaNacimiento.Name = "txtFechaNacimiento";
-            this.txtFechaNacimiento.Size = new System.Drawing.Size(196, 20);
+            this.txtFechaNacimiento.Size = new System.Drawing.Size(261, 25);
             this.txtFechaNacimiento.TabIndex = 34;
             // 
             // label4
@@ -103,9 +133,10 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(34, 198);
+            this.label4.Location = new System.Drawing.Point(45, 244);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(172, 21);
+            this.label4.Size = new System.Drawing.Size(212, 26);
             this.label4.TabIndex = 33;
             this.label4.Text = "Fecha de nacimiento:";
             // 
@@ -114,10 +145,11 @@
             this.txtSegundoApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSegundoApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSegundoApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSegundoApellido.Location = new System.Drawing.Point(316, 110);
+            this.txtSegundoApellido.Location = new System.Drawing.Point(421, 135);
+            this.txtSegundoApellido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSegundoApellido.Multiline = true;
             this.txtSegundoApellido.Name = "txtSegundoApellido";
-            this.txtSegundoApellido.Size = new System.Drawing.Size(188, 20);
+            this.txtSegundoApellido.Size = new System.Drawing.Size(251, 25);
             this.txtSegundoApellido.TabIndex = 32;
             // 
             // label2
@@ -125,9 +157,10 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(314, 86);
+            this.label2.Location = new System.Drawing.Point(419, 106);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 21);
+            this.label2.Size = new System.Drawing.Size(181, 26);
             this.label2.TabIndex = 31;
             this.label2.Text = "Segundo apellido:";
             // 
@@ -136,10 +169,11 @@
             this.txtSegundoNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSegundoNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSegundoNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSegundoNombre.Location = new System.Drawing.Point(316, 45);
+            this.txtSegundoNombre.Location = new System.Drawing.Point(421, 55);
+            this.txtSegundoNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSegundoNombre.Multiline = true;
             this.txtSegundoNombre.Name = "txtSegundoNombre";
-            this.txtSegundoNombre.Size = new System.Drawing.Size(188, 20);
+            this.txtSegundoNombre.Size = new System.Drawing.Size(251, 25);
             this.txtSegundoNombre.TabIndex = 30;
             // 
             // label3
@@ -147,9 +181,10 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(314, 21);
+            this.label3.Location = new System.Drawing.Point(419, 26);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(146, 21);
+            this.label3.Size = new System.Drawing.Size(178, 26);
             this.label3.TabIndex = 29;
             this.label3.Text = "Segundo nombre:";
             // 
@@ -157,9 +192,10 @@
             // 
             this.cmbBoxPelicula.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbBoxPelicula.FormattingEnabled = true;
-            this.cmbBoxPelicula.Location = new System.Drawing.Point(217, 249);
+            this.cmbBoxPelicula.Location = new System.Drawing.Point(289, 306);
+            this.cmbBoxPelicula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbBoxPelicula.Name = "cmbBoxPelicula";
-            this.cmbBoxPelicula.Size = new System.Drawing.Size(196, 21);
+            this.cmbBoxPelicula.Size = new System.Drawing.Size(260, 24);
             this.cmbBoxPelicula.TabIndex = 28;
             // 
             // lblPelicula
@@ -167,9 +203,10 @@
             this.lblPelicula.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPelicula.AutoSize = true;
             this.lblPelicula.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPelicula.Location = new System.Drawing.Point(131, 249);
+            this.lblPelicula.Location = new System.Drawing.Point(175, 306);
+            this.lblPelicula.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPelicula.Name = "lblPelicula";
-            this.lblPelicula.Size = new System.Drawing.Size(75, 21);
+            this.lblPelicula.Size = new System.Drawing.Size(91, 26);
             this.lblPelicula.TabIndex = 27;
             this.lblPelicula.Text = "Pelicula:";
             this.lblPelicula.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -182,9 +219,10 @@
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRegistrar.Location = new System.Drawing.Point(439, 348);
+            this.btnRegistrar.Location = new System.Drawing.Point(585, 428);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(106, 40);
+            this.btnRegistrar.Size = new System.Drawing.Size(141, 49);
             this.btnRegistrar.TabIndex = 26;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = false;
@@ -195,10 +233,11 @@
             this.txtPrimerApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPrimerApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrimerApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrimerApellido.Location = new System.Drawing.Point(38, 110);
+            this.txtPrimerApellido.Location = new System.Drawing.Point(51, 135);
+            this.txtPrimerApellido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPrimerApellido.Multiline = true;
             this.txtPrimerApellido.Name = "txtPrimerApellido";
-            this.txtPrimerApellido.Size = new System.Drawing.Size(180, 20);
+            this.txtPrimerApellido.Size = new System.Drawing.Size(240, 25);
             this.txtPrimerApellido.TabIndex = 23;
             // 
             // lblApellido
@@ -206,9 +245,10 @@
             this.lblApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblApellido.AutoSize = true;
             this.lblApellido.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellido.Location = new System.Drawing.Point(34, 86);
+            this.lblApellido.Location = new System.Drawing.Point(45, 106);
+            this.lblApellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(132, 21);
+            this.lblApellido.Size = new System.Drawing.Size(162, 26);
             this.lblApellido.TabIndex = 20;
             this.lblApellido.Text = "Primer apellido:";
             // 
@@ -217,10 +257,11 @@
             this.txtPrimerNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPrimerNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrimerNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrimerNombre.Location = new System.Drawing.Point(38, 45);
+            this.txtPrimerNombre.Location = new System.Drawing.Point(51, 55);
+            this.txtPrimerNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPrimerNombre.Multiline = true;
             this.txtPrimerNombre.Name = "txtPrimerNombre";
-            this.txtPrimerNombre.Size = new System.Drawing.Size(180, 20);
+            this.txtPrimerNombre.Size = new System.Drawing.Size(240, 25);
             this.txtPrimerNombre.TabIndex = 13;
             // 
             // lblNombre
@@ -228,9 +269,10 @@
             this.lblNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(34, 21);
+            this.lblNombre.Location = new System.Drawing.Point(45, 26);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(129, 21);
+            this.lblNombre.Size = new System.Drawing.Size(159, 26);
             this.lblNombre.TabIndex = 12;
             this.lblNombre.Text = "Primer nombre:";
             // 
@@ -240,8 +282,9 @@
             this.pnlBanner.Controls.Add(this.label1);
             this.pnlBanner.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBanner.Location = new System.Drawing.Point(0, 0);
+            this.pnlBanner.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlBanner.Name = "pnlBanner";
-            this.pnlBanner.Size = new System.Drawing.Size(623, 67);
+            this.pnlBanner.Size = new System.Drawing.Size(831, 82);
             this.pnlBanner.TabIndex = 0;
             // 
             // label1
@@ -250,43 +293,25 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(188, 20);
+            this.label1.Location = new System.Drawing.Point(251, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 27);
+            this.label1.Size = new System.Drawing.Size(287, 36);
             this.label1.TabIndex = 3;
             this.label1.Text = "REGISTRAR ACTORES";
             // 
-            // cmbBoxPapel
+            // oracleCommand1
             // 
-            this.cmbBoxPapel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cmbBoxPapel.FormattingEnabled = true;
-            this.cmbBoxPapel.Items.AddRange(new object[] {
-            "Principal",
-            "Secundario"});
-            this.cmbBoxPapel.Location = new System.Drawing.Point(217, 296);
-            this.cmbBoxPapel.Name = "cmbBoxPapel";
-            this.cmbBoxPapel.Size = new System.Drawing.Size(196, 21);
-            this.cmbBoxPapel.TabIndex = 46;
-            this.cmbBoxPapel.SelectedIndexChanged += new System.EventHandler(this.cmbBoxPapel_SelectedIndexChanged);
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(149, 293);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 21);
-            this.label6.TabIndex = 45;
-            this.label6.Text = "Papel:";
+            this.oracleCommand1.Transaction = null;
             // 
             // AgregarActoresPelicula
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(623, 522);
+            this.ClientSize = new System.Drawing.Size(831, 642);
             this.Controls.Add(this.pnlMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AgregarActoresPelicula";
             this.Text = "AgregarActoresPelicula";
             this.pnlMain.ResumeLayout(false);
@@ -319,5 +344,6 @@
         private System.Windows.Forms.TextBox txtFechaNacimiento;
         private System.Windows.Forms.ComboBox cmbBoxPapel;
         private System.Windows.Forms.Label label6;
+        private Oracle.ManagedDataAccess.Client.OracleCommand oracleCommand1;
     }
 }
