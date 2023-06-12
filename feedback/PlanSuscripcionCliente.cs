@@ -13,14 +13,22 @@ namespace Streaming
 {
     public partial class PlanSuscripcionCliente : Form
     {
-        Cliente cliente;
+        Cliente cliente = new Cliente();
         Panel panelContainer = new Panel();
         public PlanSuscripcionCliente(Panel panelContainer, Form activeForm, Cliente cliente)
         {
-            this.cliente= cliente;
             InitializeComponent();
+
+            this.cliente = cliente;
             this.panelContainer = panelContainer;
             this.activeForm = activeForm;
+        }
+        public PlanSuscripcionCliente(Panel panelContainer, Cliente cliente)
+        {
+            InitializeComponent();
+
+            this.cliente = cliente;
+            this.panelContainer = panelContainer;
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -30,15 +38,14 @@ namespace Streaming
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            cliente = cliente.ObtenerClientePorUsuario(cliente.User);
             cliente_plan miRelacionClientePlan = new cliente_plan();
             MessageBox.Show("¡Haz hecho clic en Plan mensual!");
-            int resultado = miRelacionClientePlan.ingresarRelacionClientePlan("sysdate+30");
-            if (resultado > 0)
-            {
-                MessageBox.Show("¡Compra exitosa!");
-                openForms(new InicioCliente(cliente));
+            miRelacionClientePlan.ingresarRelacionClientePlan(cliente.Codigo, 1, "Mensual");
+            MessageBox.Show("¡Compra exitosa!");
+            openForms(new InicioCliente(cliente));
 
-            }
         }
         private Form activeForm = null;
         private void openForms(Form newForm)
@@ -60,15 +67,13 @@ namespace Streaming
 
         private void button2_Click(object sender, EventArgs e)
         {
+            cliente = cliente.ObtenerClientePorUsuario(cliente.User);
             cliente_plan miRelacionClientePlan = new cliente_plan();
             MessageBox.Show("¡Haz hecho clic en Plan anual!");
-            int resultado = miRelacionClientePlan.ingresarRelacionClientePlan("sysdate+365");
-            if (resultado > 0)
-            {
-                MessageBox.Show("¡Compra exitosa!");
-                openForms(new InicioCliente());
+            miRelacionClientePlan.ingresarRelacionClientePlan(cliente.Codigo,4,"Anual");
+            MessageBox.Show("¡Compra exitosa!");
+            openForms(new InicioCliente(cliente));
 
-            }
 
         }
     }

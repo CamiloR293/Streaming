@@ -7,7 +7,7 @@ namespace Streaming
 {
     public partial class InicioCliente : Form
     {
-        public Cliente cliente;
+        public Cliente cliente = new Cliente();
         private Color colorNaranjaPredeterminado = Color.FromArgb(255, 144, 76);
         private Color colorNaranjaSeleccionado = Color.FromArgb(192, 108, 56);
 
@@ -15,7 +15,7 @@ namespace Streaming
         public InicioCliente(Cliente cliente)
         {
             InitializeComponent();
-            this.cliente=cliente;
+            this.cliente = cliente;
             openForms(new MenuPrincipalCliente());
         }
 
@@ -48,7 +48,7 @@ namespace Streaming
             newForm.Show();
         }
         #endregion
-        
+
         private void btnMenuPrincipal_Click(object sender, System.EventArgs e)
         {
             btnMenuPrincipal.BackColor = colorNaranjaSeleccionado;
@@ -60,6 +60,7 @@ namespace Streaming
 
         private void btnDatosPersonales_Click(object sender, System.EventArgs e)
         {
+            cliente = cliente.ObtenerClientePorUsuario(cliente.User);
             btnMenuPrincipal.BackColor = colorNaranjaPredeterminado;
             btnAddMetodosPago.BackColor = colorNaranjaPredeterminado;
             btnDatosPersonales.BackColor = colorNaranjaSeleccionado;
@@ -77,13 +78,15 @@ namespace Streaming
         private void btnCerrarSesion_Click(object sender, System.EventArgs e)
         {
             //Poner una notificacion
-            DialogResult result = MessageBox.Show("¿Desea cerrar sesion?","Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("¿Desea cerrar sesion?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (DialogResult.Yes.Equals(result))
             {
+                openForms(new Main());
                 this.Close();
-            }  
-                
-            
+
+            }
+
+
 
         }
         private void txtBuscar_Click(object sender, System.EventArgs e)
@@ -98,6 +101,11 @@ namespace Streaming
         private void picBoxBuscar_Click(object sender, System.EventArgs e)
         {
             //buscar segun txtBuscar
+        }
+
+        private void pnlDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -2,6 +2,7 @@
 using Streaming.connection;
 using System;
 using System.Data;
+using System.Windows.Forms;
 
 namespace Streaming.logica
 {
@@ -19,12 +20,14 @@ namespace Streaming.logica
         }
         public int consultarSuscripcion(int codigo)
         {
-            DateTime fechaVencimiento=this.ObtenerFechaVencimientoClientePlan(codigo);
-            int resultado;
-            string consulta;
-            consulta = "update plansuscripcion set fecha_vencimiento=to_Date('"+fechaVencimiento+ "','dd-mm-yyyy')" + "WHERE codigo_cliente="+ codigo;
-            resultado = dt.ejecutarDML(consulta);
-            return resultado;
+            //DateTime fechaVencimiento=this.ObtenerFechaVencimientoClientePlan(codigo);
+
+                String consulta2 = "update cliente set codigo=" + codigo + " WHERE codigo=" + codigo;
+                int resultado2 = dt.ejecutarDML(consulta2);
+                return resultado2;
+                
+            
+
         }
         public DateTime ObtenerFechaVencimientoClientePlan(int codigoCliente)
         {

@@ -15,13 +15,14 @@ namespace Streaming
     public partial class DatosPersonalesCliente : Form
     {
 
-        private Cliente cliente;
+        private Cliente cliente = new Cliente();
         Main iniciosesion = new Main();
         public DatosPersonalesCliente(Cliente cliente)
         {
             InitializeComponent();
             this.cliente = cliente;
-            
+            this.setInfoClient(cliente);
+
         }
         private void setInfoClient(Cliente cliente)
         {
@@ -55,7 +56,12 @@ namespace Streaming
         {
             DialogResult result = MessageBox.Show("¿Desea eliminar su cuenta?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
             //if (DialogResult.Yes.Equals(result)) //eliminar la cuenta
-                
+
+        }
+
+        private void pnlDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

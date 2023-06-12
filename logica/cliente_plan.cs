@@ -13,14 +13,9 @@ namespace Streaming.logica
     {
         Datos dt = new Datos();
 
-        public int ingresarRelacionClientePlan(string fechaVencimiento)
+        public void ingresarRelacionClientePlan(int codigoCliente,int codigoPlan, String plan)
         {
-            int resultado;
-            string consulta;
-            consulta = "insert into cliente_plan " +
-                "values((select max(codigo + 1) from CLIENTE_PLAN),(select max(codigo) from CLIENTE), 4, to_Date(sysdate,'dd-mm-yyyy'), to_Date(" + fechaVencimiento + ",'dd-mm-yyyy'))";
-            resultado = dt.ejecutarDML(consulta);
-            return resultado;
+            dt.procedureIdEstadoSuscripcion(codigoCliente, codigoPlan,plan);
         }
         public DataSet consultarRegistro()
         {
@@ -31,3 +26,4 @@ namespace Streaming.logica
         }
     }
 }
+

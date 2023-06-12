@@ -7,6 +7,7 @@ namespace Streaming
 {
     public partial class Main : Form
     {
+        Panel panel = new Panel();
 
         public Cliente ClienteGlobal;
         private string cadenaConexion = "Data Source=localhost;User ID=admin;Password=admin123";
@@ -93,28 +94,32 @@ namespace Streaming
 
 
                 plansuscripcion miPlan = new plansuscripcion();
-                try
-                {
-                    lblRegister.ForeColor = System.Drawing.Color.FromArgb(196, 110, 56);
-                    ClienteGlobal = micliente.ObtenerClientePorUsuario(username);
-                    //miPlan.consultarSuscripcion(ClienteGlobal.Codigo);
-                    openForms(new InicioCliente(ClienteGlobal));
-                }
-                catch (OracleException ex)
-                {
-                    if (ex.Number == -20001)
-                    {
-                        // La suscripción ha vencido, mostrar mensaje y suspender acceso al contenido
-                        MessageBox.Show("La suscripción ha vencido. Por favor renovar para disfrutar del contenido :)");
-                        openForms(new PlanSuscripcionCliente(panelContainer, this,ClienteGlobal));
 
+                lblRegister.ForeColor = System.Drawing.Color.FromArgb(196, 110, 56);
+                ClienteGlobal = micliente.ObtenerClientePorUsuario(username);
+                MessageBox.Show(ClienteGlobal.Codigo.ToString());
+                int resultado = miPlan.consultarSuscripcion(ClienteGlobal.Codigo);
+                if (resultado == 20001)
+                {
+                    // La suscripción ha vencido, mostrar mensaje y suspender acceso al contenido
+                    MessageBox.Show("La suscripción ha vencido. Por favor renovar para disfrutar del contenido :)");
+                    openForms(new PlanSuscripcionCliente(pnlDesktop, ClienteGlobal));
+
+                }
+                else
+                {
+                    if (resultado > 0)
+                    {
+                        openForms(new InicioCliente(ClienteGlobal));
                     }
                     else
                     {
+
                         // Ocurrió otra excepción, muestra un mensaje genérico o realiza las acciones correspondientes
-                        MessageBox.Show("Error en el inicio de sesión: " + ex.Message);
+                        MessageBox.Show("Error en el inicio de sesión");
                     }
                 }
+
             }
             else
             {
@@ -122,6 +127,7 @@ namespace Streaming
                 MessageBox.Show("Credenciales inválidas");
             }
         }
+
 
 
         private bool VerificarCredenciales(string username, string password)
@@ -138,9 +144,10 @@ namespace Streaming
                     comando.Parameters.Add(":password", OracleDbType.Varchar2).Value = password;
 
                     int count = Convert.ToInt32(comando.ExecuteScalar());
-
+                    miConexion.Close();
                     return count > 0;
                 }
+
             }
         }
 

@@ -48,10 +48,60 @@ namespace Streaming.connection
                 miConexion.Close();
                 return filasAfectadas;
             }
-            catch (Exception E)
+            catch (OracleException E)
             {
                 MessageBox.Show(E.Message);
+                if(E.Number == 20001)
+                {
+                    return E.Number;
+                }
                 return -1;
+            }
+        }
+        public void procedureIdEstadoSuscripcion(int codigoC, int plan, String planDuracion)
+        {
+            using (OracleConnection connection = new OracleConnection(this.getCadenaConexion()))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Insertar registro
+                    OracleCommand insertCommand = new OracleCommand();
+                    insertCommand.Connection = connection;
+                    insertCommand.CommandText = "INSERT INTO CLIENTE_PLAN (CODIGO, CODIGO_CLIENTE, CODIGO_PLAN, FECHA_COMPRA, FECHA_VENCIMIENTO, ESTADO) VALUES ((select max(codigo)+1 FROM CLIENTE_PLAN), :codigoCliente, :codigoPlan, :fechaCompra, :fechaVencimiento, :estado)";
+                    insertCommand.Parameters.Add(":codigoCliente", OracleDbType.Decimal).Value = codigoC; // Código de cliente
+                    insertCommand.Parameters.Add(":codigoPlan", OracleDbType.Decimal).Value = plan; // Código de plan
+                    insertCommand.Parameters.Add(":fechaCompra", OracleDbType.Date).Value = DateTime.Now; // Fecha de compra
+                    if (planDuracion.Equals("Anual"))
+                    {
+                        insertCommand.Parameters.Add(":fechaVencimiento", OracleDbType.Date).Value = DateTime.Now.AddDays(366); // Fecha de vencimiento
+
+                    }
+                    else
+                    {
+                        insertCommand.Parameters.Add(":fechaVencimiento", OracleDbType.Date).Value = DateTime.Now.AddDays(31); // Fecha de vencimiento
+                    }
+                    insertCommand.Parameters.Add(":estado", OracleDbType.Varchar2).Value = "ACTIVO"; // Estado
+                    insertCommand.ExecuteNonQuery();
+
+                    // Ejecutar procedimiento
+                    OracleCommand procedureCommand = new OracleCommand();
+                    procedureCommand.Connection = connection;
+                    procedureCommand.CommandText = "ACTUALIZAR_ESTADO_CLIENTE_PLAN";
+                    procedureCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                    procedureCommand.ExecuteNonQuery();
+
+                    Console.WriteLine("Inserción y ejecución del procedimiento completadas correctamente.");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error al realizar la inserción y ejecutar el procedimiento: " + ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
             }
         }
         public int procedureIdAdmin(string usuario)

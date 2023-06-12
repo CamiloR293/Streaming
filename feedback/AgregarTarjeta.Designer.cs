@@ -28,12 +28,13 @@ namespace Streaming
                                                        txtNombre.Text, txtCVV.Text, cmbBoxTipoTarjeta.SelectedItem.ToString());
 
             //validacion
-            if (resultado > 0 && resultado2 > 0) { 
+            if (resultado > 0 && resultado2 > 0)
+            {
                 MessageBox.Show("Usuario y Tarjeta registrada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 miCLiente = miCLiente.ObtenerClientePorUsuario(txtUsuario);
-                
-                openForms(new PlanSuscripcionCliente( panelContainer, this, cliente));
+
+                openForms(new PlanSuscripcionCliente(panelContainer, this, miCLiente));
 
             }
             else
@@ -57,11 +58,11 @@ namespace Streaming
 
 
             //enviar datos de caja de texto para agregar tarjeta
-            int resultado2 = mitarjeta.ingresartarjetaLogin(cliente.Codigo,txtNumero.Text, txtFechaExpedicion.Text,
+            int resultado2 = mitarjeta.ingresartarjetaLogin(cliente.Codigo, txtNumero.Text, txtFechaExpedicion.Text,
                                                        txtNombre.Text, txtCVV.Text, cmbBoxTipoTarjeta.SelectedItem.ToString());
 
             //validacion
-            if ( resultado2 > 0)
+            if (resultado2 > 0)
             {
                 MessageBox.Show("Tarjeta registrada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 openForms(new PlanSuscripcionCliente(panelContainer, this, cliente));
@@ -165,6 +166,9 @@ namespace Streaming
             this.btnRegistrar.TabIndex = 24;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = false;
+
+            /*this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click_1);*/
+            this.btnRegistrar.Click += BtnRegistrar_Click;
             // 
             // cmbBoxTipoTarjeta
             // 
@@ -194,6 +198,7 @@ namespace Streaming
             this.btnRegistrarme.TabIndex = 21;
             this.btnRegistrarme.Text = "Registrarme";
             this.btnRegistrarme.UseVisualStyleBackColor = false;
+            this.btnRegistrarme.Click += BtnRegistrarme_Click;
             // 
             // txtCVV
             // 
