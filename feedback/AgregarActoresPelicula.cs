@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Streaming.logica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,17 +20,34 @@ namespace Streaming.feedback
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            //crear un objeto tipo actor
+            actor miActor = new actor();
+            //
             string primerNombre = txtPrimerNombre.Text;
             string segundoNombre = txtSegundoNombre.Text;
             string primerApellido = txtPrimerApellido.Text;
             string segundoApellido = txtSegundoApellido.Text;
             string fechaNacimiento = txtFechaNacimiento.Text;
-
-            //Realizar insert de actor
-
-            string nombrePelicula = cmbBoxPelicula.Text;
+            string papel = cmbBoxPapel.SelectedItem.ToString();
+            string nombrePelicula = cmbBoxPelicula.SelectedItem.ToString();
 
             //Ejecutar la insercion de un actor a la pelicula
+            int resultado = miActor.ingresarActor(primerNombre, segundoNombre, primerApellido, segundoApellido, fechaNacimiento);
+            int resultado2 = miActor.registrarProductoActor(nombrePelicula, papel);
+            if (resultado > 0 && resultado2 > 0)
+            {
+                MessageBox.Show("Actor y productos registrados con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //limpiar text box
+                txtFechaNacimiento.Clear();
+                txtPrimerApellido.Clear();
+                txtPrimerNombre.Clear();
+                txtSegundoApellido.Clear();
+                txtSegundoNombre.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Actor y productos registrados No se registraron", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void cmbBoxPapel_SelectedIndexChanged(object sender, EventArgs e)

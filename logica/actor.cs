@@ -11,15 +11,17 @@ namespace Streaming.logica
     internal class actor
     {
         Datos dt = new Datos();
-        public int ingresaractor(int codigo, string primernombre, string segundonombre,
+
+        public int ingresarActor(string primernombre, string segundonombre,
             string primerapellido, string segundoapellido, string fechanacimiento)
         {
             int resultado;
-            string consulta = "insert into actor values(" + codigo + ",'" + primernombre + "', '" + segundonombre + "', '"
+            string consulta = "insert into actor values((select nvl(max(codigo) + 1, 1) as codigo from CLIENTE), '" + primernombre + "', '" + segundonombre + "', '"
                 + primerapellido + "', '" + segundoapellido + "', '" + "to_Date('" + fechanacimiento + "','dd/mm/yyyy'))";
             resultado = dt.ejecutarDML(consulta);
             return resultado;
         }
+
         public DataSet consultaActor()
         {
             DataSet miDs = new DataSet();
@@ -27,6 +29,14 @@ namespace Streaming.logica
             consulta = "select * from actor";
             miDs = dt.ejecutarSELECT(consulta);
             return miDs;
+        }
+        public int registrarProductoActor(string producto, string papel)
+        {
+            string consulta = "insert into actor_producto values ((select codigo from actor), '" + producto + "', '" + 
+                                papel + "');";
+            int resultado;
+            resultado = dt.ejecutarDML(consulta);
+            return resultado;
         }
     }
 }
