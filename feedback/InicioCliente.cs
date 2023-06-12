@@ -1,4 +1,6 @@
 ﻿using Streaming.logica;
+using System.Data;
+using System;
 using System.Drawing;
 using System.Linq.Expressions;
 using System.Windows.Forms;
@@ -17,12 +19,14 @@ namespace Streaming
             InitializeComponent();
             this.cliente = cliente;
             openForms(new MenuPrincipalCliente());
+            cargarPeliculas();
         }
 
         public InicioCliente()
         {
             InitializeComponent();
             openForms(new MenuPrincipalCliente());
+            cargarPeliculas();
         }
 
         public void InicioCliente_Load(object sender, System.EventArgs e)
@@ -41,8 +45,7 @@ namespace Streaming
             newForm.FormBorderStyle = FormBorderStyle.None;
             activeForm.Dock = DockStyle.Fill;
 
-            pnlDesktop.Controls.Add(newForm);
-            pnlDesktop.Tag = newForm;
+
 
             newForm.BringToFront();
             newForm.Show();
@@ -74,6 +77,68 @@ namespace Streaming
             btnDatosPersonales.BackColor = colorNaranjaPredeterminado;
             openForms(new AgregarTarjeta(cliente));
         }
+        private void cargarPeliculas()
+        {
+            producto peliculas = new producto();
+            DataSet dsResultado = new DataSet();
+            dsResultado = peliculas.consultarProducto();
+            if (dsResultado.Tables[0].Rows.Count > 0)
+            {
+
+                for (int i = 0; i < dsResultado.Tables[0].Rows.Count; i++)
+                {
+                    Button button = new Button();
+                    Font myFont = new Font("Impact", 10);
+                    button.Text = dsResultado.Tables[0].Rows[i]["nombre"].ToString() + "-" + dsResultado.Tables[0].Rows[i]["genero"].ToString();
+                    button.Width = 150;
+                    button.Height = 150;
+                    button.BackgroundImageLayout = ImageLayout.Zoom;
+                    button.ForeColor = Color.Red;
+                    button.BackColor = Color.White;
+                    button.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+                    button.Font = myFont;
+                    button.Name = dsResultado.Tables[0].Rows[i]["codigo"].ToString();
+
+                    String direccion = "C:\\Users\\Usuario\\Documents\\GitHub\\Streaming\\CamiloR293\\Streaming\\Resources\\" + dsResultado.Tables[0].Rows[i]["nombre"].ToString() + ".png";
+                    if (dsResultado.Tables[0].Rows[i]["nombre"].ToString().Contains(":"))
+                    {
+
+                        String[] linea = dsResultado.Tables[0].Rows[i]["nombre"].ToString().Split(':');
+                        direccion = "C:\\Users\\Usuario\\Documents\\GitHub\\Streaming\\CamiloR293\\Streaming\\Resources\\" + linea[0] + ".png";
+
+                    }
+                    button.BackgroundImage = Image.FromFile(direccion);
+                    button.BackgroundImageLayout = ImageLayout.Stretch;
+                    flowLayoutPanel1.Controls.Add(button);
+
+
+                    button.Click += button_Click;
+
+
+                }
+
+
+            }
+            else
+            {
+                MessageBox.Show("error");
+            }
+
+        }
+
+        private void button_Click(object sender, EventArgs e)
+        {
+            Button clickedButton = (Button)sender;
+            producto peliculas = new producto();
+            DataSet dsResultado = new DataSet();
+            dsResultado = peliculas.obtenerProducto(int.Parse(clickedButton.Name));
+
+            VerPeliculaCliente form2 = new VerPeliculaCliente();
+            form2.informacion(dsResultado);
+            form2.ShowDialog();
+
+
+        }
 
         private void btnCerrarSesion_Click(object sender, System.EventArgs e)
         {
@@ -104,6 +169,11 @@ namespace Streaming
         }
 
         private void pnlDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnlMain_Paint(object sender, PaintEventArgs e)
         {
 
         }

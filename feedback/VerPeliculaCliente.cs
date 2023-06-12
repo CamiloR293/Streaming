@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -32,7 +34,7 @@ namespace Streaming
             newForm.TopLevel = false;
             newForm.FormBorderStyle = FormBorderStyle.None;
             activeForm.Dock = DockStyle.Fill;
-            
+
             //pnlDesktop.Controls.Add(newForm);
             //pnlDesktop.Tag = newForm;
 
@@ -40,5 +42,15 @@ namespace Streaming
             newForm.Show();
         }
         #endregion
+        public void informacion(DataSet dsResultado)
+        {
+            lblTituloPelicula.Text = dsResultado.Tables[0].Rows[0]["nombre"].ToString();
+            lblDescripcion.Text = dsResultado.Tables[0].Rows[0]["descripcion"].ToString();
+
+        }
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

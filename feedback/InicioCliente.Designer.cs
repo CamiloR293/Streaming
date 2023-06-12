@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.pnlDesktop = new System.Windows.Forms.Panel();
             this.pnlLateral = new System.Windows.Forms.Panel();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.btnAddMetodosPago = new System.Windows.Forms.Button();
@@ -39,6 +38,7 @@
             this.picBoxBuscar = new System.Windows.Forms.PictureBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlMain.SuspendLayout();
             this.pnlLateral.SuspendLayout();
             this.banner.SuspendLayout();
@@ -48,7 +48,6 @@
             // pnlMain
             // 
             this.pnlMain.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pnlMain.Controls.Add(this.pnlDesktop);
             this.pnlMain.Controls.Add(this.pnlLateral);
             this.pnlMain.Controls.Add(this.banner);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -56,15 +55,7 @@
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(800, 561);
             this.pnlMain.TabIndex = 0;
-            // 
-            // pnlDesktop
-            // 
-            this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDesktop.Location = new System.Drawing.Point(155, 70);
-            this.pnlDesktop.Name = "pnlDesktop";
-            this.pnlDesktop.Size = new System.Drawing.Size(645, 491);
-            this.pnlDesktop.TabIndex = 3;
-            this.pnlDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDesktop_Paint);
+            this.pnlMain.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMain_Paint);
             // 
             // pnlLateral
             // 
@@ -194,11 +185,24 @@
             this.lblTitle.TabIndex = 23;
             this.lblTitle.Text = "StreamingBD";
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(170, 75);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(619, 475);
+            this.flowLayoutPanel1.TabIndex = 4;
+            // 
             // InicioCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 561);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.pnlMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InicioCliente";
@@ -220,11 +224,12 @@
         private System.Windows.Forms.PictureBox picBoxBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Panel pnlDesktop;
         private System.Windows.Forms.Panel pnlLateral;
         private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.Button btnAddMetodosPago;
         private System.Windows.Forms.Button btnDatosPersonales;
         private System.Windows.Forms.Button btnMenuPrincipal;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        //private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

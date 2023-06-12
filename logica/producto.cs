@@ -1,4 +1,6 @@
-﻿using Streaming.connection;
+﻿
+using Oracle.ManagedDataAccess.Client;
+using Streaming.connection;
 using System.Data;
 
 namespace Streaming.logica
@@ -6,17 +8,40 @@ namespace Streaming.logica
     internal class producto
     {
         Datos dt = new Datos();
-        public int ingresarproducto( int codigo_admin, string nombre, string descripcion,
+        public int ingresarproducto(int codigo_admin, string nombre, string descripcion,
             string fechaestreno, string duracion, string genero, string tipo_producto, int estado, int vistas)
         {
             int resultado;
             string consulta;
             consulta = "insert into producto values((select max(codigo + 1) from PRODUCTO)," + codigo_admin + ", '" + nombre + "', '"
-                + descripcion + "', " + "to_Date('" + fechaestreno + "','dd/mm/yyyy'), '" + duracion + "', '" + genero + "', '" + tipo_producto + "', "+ estado +","+ vistas+")";
+                + descripcion + "', " + "to_Date('" + fechaestreno + "','dd/mm/yyyy'), '" + duracion + "', '" + genero + "', '" + tipo_producto + "', " + estado + "," + vistas + ")";
             resultado = dt.ejecutarDML(consulta);
             return resultado;
         }
+        public DataSet obtenerProducto(int codigo)
+        {
+            DataSet miDs = new DataSet();
+            string consulta;
+            consulta = "select * from producto where codigo=" + codigo;
+            miDs = dt.ejecutarSELECT(consulta);
+            return miDs;
+        }
 
+        public void peliculasRecomendadas(int codigo)
+        {
+            OracleConnection connection = new OracleConnection(dt.getCadenaConexion());
+            connection.Open();
+            OracleCommand command = new OracleCommand("PQU_FUNCIONES.OBTENER_RECOMENDADOS", connection);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.Add("PRM_COD_CLIENTE", OracleDbType.Int32).Value = codigo;
+
+            OracleDataAdapter adapter = new OracleDataAdapter(command);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+
+            connection.Close();
+
+        }
         public DataSet consultarProducto()
         {
             DataSet miDs = new DataSet();
