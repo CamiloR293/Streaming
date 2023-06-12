@@ -30,9 +30,9 @@ namespace Streaming.logica
             miDs = dt.ejecutarSELECT(consulta);
             return miDs;
         }
-        public int registrarProductoActor(string producto, string papel)
+        public int registrarProductoActor(string papel)
         {
-            string consulta = "insert into actor_producto values ((select codigo from actor), '" + producto + "', '" + 
+            string consulta = "insert into actor_producto values (select max(codigo) from actor, select max(codigo) from producto, '" + 
                                 papel + "');";
             int resultado;
             resultado = dt.ejecutarDML(consulta);
