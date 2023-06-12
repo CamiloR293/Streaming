@@ -93,7 +93,6 @@ namespace Streaming
             {
                 // Credenciales válidas, el inicio de sesión es exitoso
 
-
                 plansuscripcion miPlan = new plansuscripcion();
                 try
                 {
@@ -103,7 +102,7 @@ namespace Streaming
                     resultado = miPlan.consultarSuscripcion(ClienteGlobal.Codigo);
                     bool verify;
                     ValidarSuscripcion(ClienteGlobal.Codigo, out verify);
-                    if (resultado==20001 /*&& verify*/)
+                    if (resultado == 20001 /*&& verify*/)
                     {
                         // La suscripción ha vencido, mostrar mensaje y suspender acceso al contenido
                         MessageBox.Show("La suscripción ha vencido. Por favor renovar para disfrutar del contenido :)");
@@ -163,11 +162,12 @@ namespace Streaming
                     comando.CommandType = CommandType.StoredProcedure;
 
                     comando.Parameters.Add("p_codigo_cliente", OracleDbType.Int32).Value = codigoCliente;
-                    comando.Parameters.Add("p_resultado", OracleDbType.Boolean).Direction = ParameterDirection.Output;
+                    comando.Parameters.Add("p_cursor", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
 
-                    comando.ExecuteNonQuery();
-
-                    resultado = ((OracleBoolean)comando.Parameters["p_resultado"].Value).Value;
+                    using (OracleDataReader reader = comando.ExecuteReader())
+                    {
+                        resultado = reader.HasRows;
+                    }
                 }
             }
         }
