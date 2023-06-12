@@ -106,7 +106,7 @@ namespace Streaming
                     {
                         // La suscripción ha vencido, mostrar mensaje y suspender acceso al contenido
                         MessageBox.Show("La suscripción ha vencido. Por favor renovar para disfrutar del contenido :)");
-                        openForms(new PlanSuscripcionCliente(panelContainer, this, ClienteGlobal));
+                        openForms(new PlanSuscripcionCliente(pnlDesktop, ClienteGlobal));
                     }
                     else
                     {

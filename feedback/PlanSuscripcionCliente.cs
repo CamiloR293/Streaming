@@ -11,8 +11,10 @@ using System.Windows.Forms;
 
 namespace Streaming
 {
+
     public partial class PlanSuscripcionCliente : Form
     {
+        private Form activeForm = null;
         Cliente cliente = new Cliente();
         Panel panelContainer = new Panel();
         public PlanSuscripcionCliente(Panel panelContainer, Form activeForm, Cliente cliente)
@@ -47,7 +49,7 @@ namespace Streaming
             openForms(new InicioCliente(cliente));
 
         }
-        private Form activeForm = null;
+        
         private void openForms(Form newForm)
         {
             if (activeForm != null) activeForm.Close();
