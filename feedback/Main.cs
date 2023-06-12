@@ -1,13 +1,14 @@
 ﻿using System;
+using System.Data;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
 using Streaming.logica;
 
 namespace Streaming
 {
     public partial class Main : Form
     {
-        Panel panel = new Panel();
 
         public Cliente ClienteGlobal;
         private string cadenaConexion = "Data Source=localhost;User ID=admin;Password=admin123";
@@ -94,32 +95,29 @@ namespace Streaming
 
 
                 plansuscripcion miPlan = new plansuscripcion();
-
-                lblRegister.ForeColor = System.Drawing.Color.FromArgb(196, 110, 56);
-                ClienteGlobal = micliente.ObtenerClientePorUsuario(username);
-                MessageBox.Show(ClienteGlobal.Codigo.ToString());
-                int resultado = miPlan.consultarSuscripcion(ClienteGlobal.Codigo);
-                if (resultado == 20001)
+                try
                 {
-                    // La suscripción ha vencido, mostrar mensaje y suspender acceso al contenido
-                    MessageBox.Show("La suscripción ha vencido. Por favor renovar para disfrutar del contenido :)");
-                    openForms(new PlanSuscripcionCliente(pnlDesktop, ClienteGlobal));
-
-                }
-                else
-                {
-                    if (resultado > 0)
+                    lblRegister.ForeColor = System.Drawing.Color.FromArgb(196, 110, 56);
+                    ClienteGlobal = micliente.ObtenerClientePorUsuario(username);
+                    bool resultado;
+                    ValidarSuscripcion(ClienteGlobal.Codigo, out resultado);
+                    if (resultado)
                     {
-                        openForms(new InicioCliente(ClienteGlobal));
+                        // La suscripción ha vencido, mostrar mensaje y suspender acceso al contenido
+                        MessageBox.Show("La suscripción ha vencido. Por favor renovar para disfrutar del contenido :)");
+                        openForms(new PlanSuscripcionCliente(panelContainer, this, ClienteGlobal));
                     }
                     else
                     {
-
-                        // Ocurrió otra excepción, muestra un mensaje genérico o realiza las acciones correspondientes
-                        MessageBox.Show("Error en el inicio de sesión");
+                        // La suscripción está activa, permitir acceso al contenido
+                        openForms(new InicioCliente(ClienteGlobal));
                     }
                 }
-
+                catch (OracleException ex)
+                {
+                    // Ocurrió una excepción, muestra un mensaje genérico o realiza las acciones correspondientes
+                    MessageBox.Show("Error en el inicio de sesión: " + ex.Message);
+                }
             }
             else
             {
@@ -127,7 +125,6 @@ namespace Streaming
                 MessageBox.Show("Credenciales inválidas");
             }
         }
-
 
 
         private bool VerificarCredenciales(string username, string password)
@@ -144,10 +141,29 @@ namespace Streaming
                     comando.Parameters.Add(":password", OracleDbType.Varchar2).Value = password;
 
                     int count = Convert.ToInt32(comando.ExecuteScalar());
-                    miConexion.Close();
+
                     return count > 0;
                 }
+            }
+        }
 
+        private void ValidarSuscripcion(int codigoCliente, out bool resultado)
+        {
+            using (OracleConnection miConexion = new OracleConnection(cadenaConexion))
+            {
+                miConexion.Open();
+
+                using (OracleCommand comando = new OracleCommand("validar_suscripcion", miConexion))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+
+                    comando.Parameters.Add("p_codigo_cliente", OracleDbType.Int32).Value = codigoCliente;
+                    comando.Parameters.Add("p_resultado", OracleDbType.Boolean).Direction = ParameterDirection.Output;
+
+                    comando.ExecuteNonQuery();
+
+                    resultado = ((OracleBoolean)comando.Parameters["p_resultado"].Value).Value;
+                }
             }
         }
 

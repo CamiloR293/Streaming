@@ -179,3 +179,8 @@ C:\Users\Usuario\Documents\GitHub\Streaming\CamiloR293\Streaming\obj\Debug\Strea
 C:\Users\Usuario\Documents\GitHub\Streaming\CamiloR293\Streaming\obj\Debug\Streaming.feedback.AgregarActoresPelicula.resources
 C:\Users\Usuario\Documents\GitHub\Streaming\CamiloR293\Streaming\obj\Debug\Streaming.feedback.EliminarActoresPelicula.resources
 C:\Users\Usuario\Documents\GitHub\Streaming\CamiloR293\Streaming\obj\Debug\Streaming.feedback.VerTarjetasCliente.resources
+C:\Users\usuario\Source\Repos\Streaming\obj\Debug\Streaming.feedback.ActualizarActoresPelicula.resources
+C:\Users\usuario\Source\Repos\Streaming\obj\Debug\Streaming.feedback.ActualizarDatosCliente.resources
+C:\Users\usuario\Source\Repos\Streaming\obj\Debug\Streaming.feedback.AgregarActoresPelicula.resources
+C:\Users\usuario\Source\Repos\Streaming\obj\Debug\Streaming.feedback.EliminarActoresPelicula.resources
+C:\Users\usuario\Source\Repos\Streaming\obj\Debug\Streaming.feedback.VerTarjetasCliente.resources
