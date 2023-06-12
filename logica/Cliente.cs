@@ -107,11 +107,6 @@ namespace Streaming.logica
 
             return cliente;
         }
-        public void updateCliente(Cliente cliente)
-        {
-            dt.updateDatosCliente( cliente.Codigo,  cliente.User,  cliente.PName,  cliente.SName, 
-                cliente.PApellido,  cliente.SApellido,  DateTime.Parse(cliente.FNacimiento),  cliente.Password,  cliente.Telefono,  cliente.Correo);
-        }
 
         // ...
 
