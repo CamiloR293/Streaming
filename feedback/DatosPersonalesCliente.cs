@@ -39,7 +39,7 @@ namespace Streaming
 
         private void btnVerTarjetas_Click(object sender, EventArgs e)
         {
-            Form form = new VerTarjetasCliente();
+            Form form = new VerTarjetasCliente(cliente);
             form.ShowDialog();
         }
 

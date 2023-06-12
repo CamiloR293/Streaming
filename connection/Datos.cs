@@ -1,8 +1,11 @@
-﻿using System;
+﻿
+using System;
 using System.Data;
 using Oracle.ManagedDataAccess.Client;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Types;
+using System.Collections;
+using Streaming.logica;
 
 namespace Streaming.connection
 {
@@ -51,7 +54,7 @@ namespace Streaming.connection
             catch (OracleException E)
             {
                 MessageBox.Show(E.Message);
-                if(E.Number == 20001)
+                if (E.Number == 20001)
                 {
                     return E.Number;
                 }
@@ -97,6 +100,86 @@ namespace Streaming.connection
                 catch (Exception ex)
                 {
                     Console.WriteLine("Error al realizar la inserción y ejecutar el procedimiento: " + ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+        }
+        public tarjeta BuscarTarjeta(int codigoCliente, string numeroTarjeta)
+        {
+
+            using (OracleConnection connection = new OracleConnection(this.cadenaConexion))
+            {
+                connection.Open();
+
+                string query = "SELECT CLIENTE, CODIGO, NUMEROTARJETA, FECHAEXP, NOMBRETARJETA, CVV, TIPOTARJETA FROM TARJETA WHERE CLIENTE = :cliente AND NUMEROTARJETA = :numeroTarjeta";
+                using (OracleCommand command = new OracleCommand(query, connection))
+                {
+                    command.Parameters.Add(new OracleParameter("cliente", codigoCliente));
+                    command.Parameters.Add(new OracleParameter("numeroTarjeta", numeroTarjeta));
+
+                    using (OracleDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            tarjeta tarjeta = new tarjeta()
+                            {
+                                Cliente = reader.GetInt32(0),
+                                Codigo = reader.GetInt32(1),
+                                NumeroTarjeta = reader.GetString(2),
+                                FechaExpiracion = reader.GetDateTime(3),
+                                NombreTarjeta = reader.GetString(4),
+                                CVV = reader.GetString(5),
+                                TipoTarjeta = reader.GetString(6)
+                            };
+
+                            return tarjeta;
+                        }
+                    }
+                }
+            }
+
+            return null; // Si no se encuentra la tarjeta, se retorna null
+        }
+        public ArrayList MostrarDatosVistaClienteTarjeta(int codigoCliente)
+        {
+            VistaTarjeta relacionTarjetaCliente;
+            ArrayList list = new ArrayList();
+
+            using (OracleConnection connection = new OracleConnection(this.cadenaConexion))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Consulta para seleccionar los registros de la vista CLIENTE_TARJETA para un cliente específico
+                    string query = $"SELECT CODIGO, PRIMERNOMBRE, PRIMERAPELLIDO, NUMEROTARJETA, NOMBRETARJETA FROM VISTA_CLIENTE_TARJETA WHERE CODIGO = {codigoCliente}";
+
+                    OracleCommand command = new OracleCommand(query, connection);
+                    OracleDataAdapter adapter = new OracleDataAdapter(command);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    // Mostrar los datos en tu aplicación
+                    // Puedes asignar los valores a controles de interfaz de usuario como etiquetas o cuadros de texto
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        string codigo = row["CODIGO"].ToString();
+                        string primerNombre = row["PRIMERNOMBRE"].ToString();
+                        string primerApellido = row["PRIMERAPELLIDO"].ToString();
+                        string numeroTarjeta = row["NUMEROTARJETA"].ToString();
+                        string nombreTarjeta = row["NOMBRETARJETA"].ToString();
+                        relacionTarjetaCliente = new VistaTarjeta(codigo, primerNombre, primerApellido, numeroTarjeta, nombreTarjeta);
+                        list.Add(relacionTarjetaCliente);
+                    }
+                    return list;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al obtener los datos de la vista CLIENTE_TARJETA: " + ex.Message);
+                    return null;
                 }
                 finally
                 {

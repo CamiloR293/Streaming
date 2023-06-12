@@ -99,9 +99,11 @@ namespace Streaming
                 {
                     lblRegister.ForeColor = System.Drawing.Color.FromArgb(196, 110, 56);
                     ClienteGlobal = micliente.ObtenerClientePorUsuario(username);
-                    bool resultado;
-                    ValidarSuscripcion(ClienteGlobal.Codigo, out resultado);
-                    if (resultado)
+                    int resultado;
+                    resultado = miPlan.consultarSuscripcion(ClienteGlobal.Codigo);
+                    bool verify;
+                    /*ValidarSuscripcion(ClienteGlobal.Codigo, out verify);*/
+                    if (resultado==20001 /*&& verify*/)
                     {
                         // La suscripción ha vencido, mostrar mensaje y suspender acceso al contenido
                         MessageBox.Show("La suscripción ha vencido. Por favor renovar para disfrutar del contenido :)");
@@ -109,8 +111,11 @@ namespace Streaming
                     }
                     else
                     {
-                        // La suscripción está activa, permitir acceso al contenido
-                        openForms(new InicioCliente(ClienteGlobal));
+                        if (resultado > 0 /*&& verify==false*/)
+                        {
+                            // La suscripción está activa, permitir acceso al contenido
+                            openForms(new InicioCliente(ClienteGlobal));
+                        }
                     }
                 }
                 catch (OracleException ex)
