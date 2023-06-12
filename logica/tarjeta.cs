@@ -28,7 +28,9 @@ namespace Streaming.logica
         {
             int resultado;
             string consulta;
-            consulta = "insert into tarjeta values((select max(codigo) from CLIENTE),(select max(codigo + 1) from TARJETA), '" + numerotarjeta + "', '" + fechaexp + "', '" + nombretarjeta + "', '" + cvv + "', '" + tipotarjeta + "')";
+            consulta = "insert into tarjeta values((select max(codigo) from CLIENTE)," +
+                        "(select nvl(max(codigo) + 1, 1) from TARJETA), '" + numerotarjeta + "', '" + fechaexp + "', '" + 
+                        nombretarjeta + "', '" + cvv + "', '" + tipotarjeta + "')";
             resultado = dt.ejecutarDML(consulta);
             return resultado;
         }
