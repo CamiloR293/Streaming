@@ -38,8 +38,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtSegundoNombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cmbBoxPelicula = new System.Windows.Forms.ComboBox();
-            this.lblPelicula = new System.Windows.Forms.Label();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.txtPrimerApellido = new System.Windows.Forms.TextBox();
             this.lblApellido = new System.Windows.Forms.Label();
@@ -75,8 +73,6 @@
             this.pnlDesktop.Controls.Add(this.label2);
             this.pnlDesktop.Controls.Add(this.txtSegundoNombre);
             this.pnlDesktop.Controls.Add(this.label3);
-            this.pnlDesktop.Controls.Add(this.cmbBoxPelicula);
-            this.pnlDesktop.Controls.Add(this.lblPelicula);
             this.pnlDesktop.Controls.Add(this.btnRegistrar);
             this.pnlDesktop.Controls.Add(this.txtPrimerApellido);
             this.pnlDesktop.Controls.Add(this.lblApellido);
@@ -97,10 +93,10 @@
             this.cmbBoxPapel.Items.AddRange(new object[] {
             "Principal",
             "Secundario"});
-            this.cmbBoxPapel.Location = new System.Drawing.Point(289, 364);
+            this.cmbBoxPapel.Location = new System.Drawing.Point(289, 307);
             this.cmbBoxPapel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbBoxPapel.Name = "cmbBoxPapel";
-            this.cmbBoxPapel.Size = new System.Drawing.Size(260, 24);
+            this.cmbBoxPapel.Size = new System.Drawing.Size(261, 24);
             this.cmbBoxPapel.TabIndex = 46;
             this.cmbBoxPapel.SelectedIndexChanged += new System.EventHandler(this.cmbBoxPapel_SelectedIndexChanged);
             // 
@@ -109,7 +105,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(199, 361);
+            this.label6.Location = new System.Drawing.Point(199, 304);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 26);
@@ -187,29 +183,6 @@
             this.label3.Size = new System.Drawing.Size(178, 26);
             this.label3.TabIndex = 29;
             this.label3.Text = "Segundo nombre:";
-            // 
-            // cmbBoxPelicula
-            // 
-            this.cmbBoxPelicula.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cmbBoxPelicula.FormattingEnabled = true;
-            this.cmbBoxPelicula.Location = new System.Drawing.Point(289, 306);
-            this.cmbBoxPelicula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cmbBoxPelicula.Name = "cmbBoxPelicula";
-            this.cmbBoxPelicula.Size = new System.Drawing.Size(260, 24);
-            this.cmbBoxPelicula.TabIndex = 28;
-            // 
-            // lblPelicula
-            // 
-            this.lblPelicula.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblPelicula.AutoSize = true;
-            this.lblPelicula.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPelicula.Location = new System.Drawing.Point(175, 306);
-            this.lblPelicula.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPelicula.Name = "lblPelicula";
-            this.lblPelicula.Size = new System.Drawing.Size(91, 26);
-            this.lblPelicula.TabIndex = 27;
-            this.lblPelicula.Text = "Pelicula:";
-            this.lblPelicula.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnRegistrar
             // 
@@ -329,13 +302,11 @@
         private System.Windows.Forms.Panel pnlBanner;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlDesktop;
-        private System.Windows.Forms.Label lblPelicula;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.TextBox txtPrimerApellido;
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.TextBox txtPrimerNombre;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.ComboBox cmbBoxPelicula;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtSegundoApellido;
         private System.Windows.Forms.Label label2;

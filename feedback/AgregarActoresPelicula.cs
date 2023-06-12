@@ -31,14 +31,9 @@ namespace Streaming.feedback
             string fechaNacimiento = txtFechaNacimiento.Text;
             string papel = cmbBoxPapel.SelectedItem.ToString();
 
-            //rellenar peliculas
-            Datos misDatos = new Datos();
-            misDatos.obtenerPeliculas(cmbBoxPelicula);
-            string nombrePelicula = cmbBoxPelicula.Text; // guardar en una variable
-
             //Ejecutar la insercion de un actor a la pelicula
             int resultado = miActor.ingresarActor(primerNombre, segundoNombre, primerApellido, segundoApellido, fechaNacimiento);
-            int resultado2 = miActor.registrarProductoActor(nombrePelicula, papel);
+            int resultado2 = miActor.registrarProductoActor(papel);
             if (resultado > 0 && resultado2 > 0)
             {
                 MessageBox.Show("Actor y productos registrados con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
