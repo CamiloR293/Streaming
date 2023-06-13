@@ -50,5 +50,13 @@ namespace Streaming.logica
             miDs = dt.ejecutarSELECT(consulta);
             return miDs;
         }
+
+        public DataSet extraerPeliculasPorGenero(string genero)
+        {
+            DataSet miDs = new DataSet();
+            string consulta = "select * from producto where genero = " + genero;
+            miDs = dt.ejecutarSELECT(consulta);
+            return miDs;
+        }
     }
 }
