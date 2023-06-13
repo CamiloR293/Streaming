@@ -18,15 +18,13 @@ namespace Streaming
         {
             InitializeComponent();
             this.cliente = cliente;
-            openForms(new MenuPrincipalCliente());
-            cargarPeliculas();
+            openForms(new MenuPrincipalCliente(cliente));
         }
 
         public InicioCliente()
         {
             InitializeComponent();
-            openForms(new MenuPrincipalCliente());
-            cargarPeliculas();
+            openForms(new MenuPrincipalCliente(cliente));
         }
 
         public void InicioCliente_Load(object sender, System.EventArgs e)
@@ -45,6 +43,9 @@ namespace Streaming
             newForm.FormBorderStyle = FormBorderStyle.None;
             activeForm.Dock = DockStyle.Fill;
 
+
+            pnlDesktop.Controls.Add(newForm);
+            pnlDesktop.Tag = newForm;
 
 
             newForm.BringToFront();
@@ -77,6 +78,7 @@ namespace Streaming
             btnDatosPersonales.BackColor = colorNaranjaPredeterminado;
             openForms(new AgregarTarjeta(cliente));
         }
+        /*
         private void cargarPeliculas()
         {
             producto peliculas = new producto();
@@ -99,12 +101,14 @@ namespace Streaming
                     button.Font = myFont;
                     button.Name = dsResultado.Tables[0].Rows[i]["codigo"].ToString();
 
-                    String direccion = "C:\\Users\\Usuario\\Documents\\GitHub\\Streaming\\CamiloR293\\Streaming\\Resources\\" + dsResultado.Tables[0].Rows[i]["nombre"].ToString() + ".png";
+                    //String direccion = "C:\\Users\\Usuario\\Documents\\GitHub\\Streaming\\CamiloR293\\Streaming\\Resources\\" + dsResultado.Tables[0].Rows[i]["nombre"].ToString() + ".png";
+                    String direccion = "D:\\GitHub\\Streaming\\Resources\\" + dsResultado.Tables[0].Rows[i]["nombre"].ToString() + ".png";
                     if (dsResultado.Tables[0].Rows[i]["nombre"].ToString().Contains(":"))
                     {
 
                         String[] linea = dsResultado.Tables[0].Rows[i]["nombre"].ToString().Split(':');
-                        direccion = "C:\\Users\\Usuario\\Documents\\GitHub\\Streaming\\CamiloR293\\Streaming\\Resources\\" + linea[0] + ".png";
+                        //direccion = "C:\\Users\\Usuario\\Documents\\GitHub\\Streaming\\CamiloR293\\Streaming\\Resources\\" + linea[0] + ".png";
+                        direccion = "D:\\GitHub\\Streaming\\Resources\\" + linea[0] + ".png";
 
                     }
                     button.BackgroundImage = Image.FromFile(direccion);
@@ -139,7 +143,7 @@ namespace Streaming
 
 
         }
-
+        */
         private void btnCerrarSesion_Click(object sender, System.EventArgs e)
         {
             //Poner una notificacion
@@ -176,6 +180,13 @@ namespace Streaming
         private void pnlMain_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        public void hideControls()
+        {
+            pnlDesktop.Visible = false;
+            banner.Visible = false;
+            pnlLateral.Visible = false;
         }
     }
 }
