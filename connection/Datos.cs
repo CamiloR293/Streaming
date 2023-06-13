@@ -452,6 +452,7 @@ namespace Streaming.connection
         public ArrayList obtenerCoincidenciasGeneroTodosActores(int codigoProducto)
         {
             ArrayList listaProductos = new ArrayList();
+            producto p;
 
 
             try
@@ -488,8 +489,10 @@ namespace Streaming.connection
                         // Recorrer el cursor y agregar los nombres de los productos al ArrayList
                         while (reader.Read())
                         {
-                            string nombreProducto = reader.GetString(0);
-                            listaProductos.Add(nombreProducto);
+                            int codigoproducto = int.Parse(reader.GetString(0));
+                            string  nombre=reader.GetString(2);
+                            p =  new producto(codigoproducto, nombre);
+                            listaProductos.Add(p);
                         }
                     }
                 }
