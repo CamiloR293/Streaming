@@ -19,6 +19,7 @@ namespace Streaming.feedback
         {
             InitializeComponent();
             llenarCmbBoxPeliculas();
+            llenarCmbBoxActores();
         }
         private void llenarCmbBoxPeliculas()
         {
@@ -27,7 +28,7 @@ namespace Streaming.feedback
         }
         private void llenarCmbBoxActores()
         {
-            misDatos.obtenerPeliculas(cmbBoxActor);
+            misDatos.obtenerActores(cmbBoxActor);
             //cmbBoxActor.Items.Add(); //Ciclo que llene todos los actores de una pelicula seleccionada
         }
 

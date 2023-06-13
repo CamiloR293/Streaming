@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Streaming.logica
 {
@@ -16,8 +17,9 @@ namespace Streaming.logica
             string primerapellido, string segundoapellido, string fechanacimiento)
         {
             int resultado;
-            string consulta = "insert into actor values((select nvl(max(codigo) + 1, 1) as codigo from CLIENTE), '" + primernombre + "', '" + segundonombre + "', '"
-                + primerapellido + "', '" + segundoapellido + "', '" + "to_Date('" + fechanacimiento + "','dd/mm/yyyy'))";
+            string consulta = "insert into actor values((select nvl(max(codigo) + 1, 1) from actor), '" + primernombre + "', '" + segundonombre + "', '"
+                + primerapellido + "', '" + segundoapellido + "', " + "to_Date('" + fechanacimiento + "','dd/mm/yyyy'))";
+            MessageBox.Show(consulta);
             resultado = dt.ejecutarDML(consulta);
             return resultado;
         }
@@ -41,7 +43,7 @@ namespace Streaming.logica
         public int registrarProductoActor(string producto, string papel)
         {
             string consulta = "insert into actor_producto values ((select max(codigo) from actor), (select codigo from producto where nombre = '" + producto
-                                + "'), " + papel + "');";
+                                + "'),'" + papel + "')";
             int resultado;
             resultado = dt.ejecutarDML(consulta);
             return resultado;
@@ -50,13 +52,13 @@ namespace Streaming.logica
         {
             string consulta = "update actor set primernombre = '" + primerNombre + "', segundonombre = '" + 
                                 segundoNombre + "', primerapellido = '" + primerApellido + "', segundoapellido = '" +
-                                segundoApellido + "', fechanacimiento = '" + fechaNacimiento + "' where codigo = " + codigo + ";";
+                                segundoApellido + "', fechanacimiento = '" + fechaNacimiento + "' where codigo = " + codigo;
             int resultado = dt.ejecutarDML(consulta);
             return resultado;
         }
         public int eliminarActor(int codigo)
         {
-            string consulta = "delete from actor where codigo = " + codigo + ";";
+            string consulta = "delete from actor where codigo = " + codigo;
             int resultado = dt.ejecutarDML(consulta);
             return resultado;
         }
