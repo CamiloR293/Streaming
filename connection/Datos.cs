@@ -295,5 +295,84 @@ namespace Streaming.connection
             adaptador.Fill(ds, "ResultadoDatos");
             return ds;
         }
+        public void obtenerPeliculas(ComboBox cmbBoxPelicula)
+        {
+            try
+            {
+                using (OracleConnection miConexion = new OracleConnection(cadenaConexion))
+                {
+                    miConexion.Open();
+                    string consulta = "select nombre from producto";
+                    OracleCommand comando = new OracleCommand(consulta, miConexion);
+                    OracleDataReader reader = comando.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        string nombrePelicula = reader.GetString(0);
+                        cmbBoxPelicula.Items.Add(nombrePelicula);
+                    }
+                    reader.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+        }
+        public void obtenerActores(ComboBox cmbBoxActores)
+        {
+            try
+            {
+                using (OracleConnection miConexion = new OracleConnection(cadenaConexion))
+                {
+                    miConexion.Open();
+                    string consulta = "select primernombre from actor";
+                    OracleCommand comando = new OracleCommand(consulta, miConexion);
+                    OracleDataReader reader = comando.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        string nombreActor = reader.GetString(0);
+                        string segundoNombreActor = reader.GetString(1);
+                        cmbBoxActores.Items.Add(nombreActor + " " + segundoNombreActor);
+                    }
+                    reader.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+        public int ObtenerCodigoActor(string primerNombre, string primerApellido)
+        {
+            int codigoActor = 0;
+
+            try
+            {
+                using (OracleConnection miConexion = new OracleConnection(cadenaConexion))
+                {
+                    miConexion.Open();
+                    string consulta = "SELECT codigo FROM actor WHERE primernombre = :primerNombre AND primerapellido = :primerApellido";
+                    OracleCommand comando = new OracleCommand(consulta, miConexion);
+                    comando.Parameters.Add(new OracleParameter("primerNombre", primerNombre));
+                    comando.Parameters.Add(new OracleParameter("primerApellido", primerApellido));
+                    OracleDataReader reader = comando.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        string codigoActorStr = reader.GetString(0);
+                        int.TryParse(codigoActorStr, out codigoActor);
+                    }
+
+                    reader.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("error al actualizar ->" + e.Message);
+            }
+
+            return codigoActor;
+        }
     }
 }
