@@ -38,6 +38,23 @@ namespace Streaming.logica
             resultado = dt.ejecutarDML(consulta);
             return resultado;
         }
+        public int registrarProductoActor(string producto, string papel)
+        {
+            string consulta = "insert into actor_producto values ((select max(codigo) from actor), (select codigo from producto where nombre = '" + producto
+                                + "'), " + papel + "');";
+            int resultado;
+            resultado = dt.ejecutarDML(consulta);
+            return resultado;
+        }
+        public int actualizarActor(string primerNombre, string segundoNombre, string primerApellido, string segundoApellido, string fechaNacimiento, int codigo)
+        {
+            string consulta = "update actor set primernombre = '" + primerNombre + "', segundonombre = '" + 
+                                segundoNombre + "', primerapellido = '" + primerApellido + "', segundoapellido = '" +
+                                segundoApellido + "', fechanacimiento = '" + fechaNacimiento + "' where codigo = " + codigo;
+            int resultado = dt.ejecutarDML(consulta);
+            return resultado;
+        }
+        
     }
 }
 
