@@ -613,9 +613,10 @@ namespace Streaming.connection
                     comando.ExecuteNonQuery();
                     OracleDecimal resultadoOracle = (OracleDecimal)comando.Parameters["p_precioFinal"].Value;
                     return resultadoOracle.ToInt32();
-                   // MessageBox.Show("Precio Final: " + precioFinal);
-
                     conexion.Close();
+                    // MessageBox.Show("Precio Final: " + precioFinal);
+
+
                 }
             }
             catch (OracleException e)
