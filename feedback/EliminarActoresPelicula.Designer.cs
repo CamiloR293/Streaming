@@ -49,51 +49,61 @@
             this.pnlDesktop.Controls.Add(this.lblPelicula);
             this.pnlDesktop.Controls.Add(this.btnEliminar);
             this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDesktop.Location = new System.Drawing.Point(0, 67);
+            this.pnlDesktop.Location = new System.Drawing.Point(0, 82);
+            this.pnlDesktop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlDesktop.Name = "pnlDesktop";
-            this.pnlDesktop.Size = new System.Drawing.Size(607, 416);
+            this.pnlDesktop.Size = new System.Drawing.Size(809, 512);
             this.pnlDesktop.TabIndex = 8;
+            this.pnlDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDesktop_Paint);
             // 
             // cmbBoxActor
             // 
             this.cmbBoxActor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbBoxActor.FormattingEnabled = true;
-            this.cmbBoxActor.Location = new System.Drawing.Point(271, 184);
+            this.cmbBoxActor.Location = new System.Drawing.Point(361, 226);
+            this.cmbBoxActor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbBoxActor.Name = "cmbBoxActor";
-            this.cmbBoxActor.Size = new System.Drawing.Size(144, 21);
+            this.cmbBoxActor.Size = new System.Drawing.Size(191, 24);
             this.cmbBoxActor.TabIndex = 30;
+            this.cmbBoxActor.SelectedIndexChanged += new System.EventHandler(this.cmbBoxActor_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(151, 181);
+            this.label2.Location = new System.Drawing.Point(201, 223);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 21);
+            this.label2.Size = new System.Drawing.Size(69, 26);
             this.label2.TabIndex = 29;
             this.label2.Text = "Actor:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // cmbBoxPelicula
             // 
             this.cmbBoxPelicula.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbBoxPelicula.FormattingEnabled = true;
-            this.cmbBoxPelicula.Location = new System.Drawing.Point(271, 108);
+            this.cmbBoxPelicula.Location = new System.Drawing.Point(361, 133);
+            this.cmbBoxPelicula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbBoxPelicula.Name = "cmbBoxPelicula";
-            this.cmbBoxPelicula.Size = new System.Drawing.Size(144, 21);
+            this.cmbBoxPelicula.Size = new System.Drawing.Size(191, 24);
             this.cmbBoxPelicula.TabIndex = 28;
+            this.cmbBoxPelicula.SelectedIndexChanged += new System.EventHandler(this.cmbBoxPelicula_SelectedIndexChanged);
             // 
             // lblPelicula
             // 
             this.lblPelicula.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPelicula.AutoSize = true;
             this.lblPelicula.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPelicula.Location = new System.Drawing.Point(151, 108);
+            this.lblPelicula.Location = new System.Drawing.Point(201, 133);
+            this.lblPelicula.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPelicula.Name = "lblPelicula";
-            this.lblPelicula.Size = new System.Drawing.Size(75, 21);
+            this.lblPelicula.Size = new System.Drawing.Size(91, 26);
             this.lblPelicula.TabIndex = 27;
             this.lblPelicula.Text = "Pelicula:";
             this.lblPelicula.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPelicula.Click += new System.EventHandler(this.lblPelicula_Click);
             // 
             // btnEliminar
             // 
@@ -103,9 +113,10 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEliminar.Location = new System.Drawing.Point(430, 324);
+            this.btnEliminar.Location = new System.Drawing.Point(573, 399);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(106, 40);
+            this.btnEliminar.Size = new System.Drawing.Size(141, 49);
             this.btnEliminar.TabIndex = 26;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -117,9 +128,11 @@
             this.pnlBanner.Controls.Add(this.label1);
             this.pnlBanner.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBanner.Location = new System.Drawing.Point(0, 0);
+            this.pnlBanner.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlBanner.Name = "pnlBanner";
-            this.pnlBanner.Size = new System.Drawing.Size(607, 67);
+            this.pnlBanner.Size = new System.Drawing.Size(809, 82);
             this.pnlBanner.TabIndex = 7;
+            this.pnlBanner.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBanner_Paint);
             // 
             // label1
             // 
@@ -127,20 +140,23 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(180, 20);
+            this.label1.Location = new System.Drawing.Point(240, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 27);
+            this.label1.Size = new System.Drawing.Size(271, 36);
             this.label1.TabIndex = 3;
             this.label1.Text = "ELIMINAR ACTORES";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // EliminarActoresPelicula
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(607, 483);
+            this.ClientSize = new System.Drawing.Size(809, 594);
             this.Controls.Add(this.pnlDesktop);
             this.Controls.Add(this.pnlBanner);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EliminarActoresPelicula";
             this.Text = "EliminarActoresPelicula";
             this.pnlDesktop.ResumeLayout(false);

@@ -14,6 +14,7 @@ namespace Streaming.feedback
 {
     public partial class ActualizarActoresPelicula : Form
     {
+        Datos misDatos = new Datos();
         public ActualizarActoresPelicula()
         {
             InitializeComponent();
@@ -21,18 +22,18 @@ namespace Streaming.feedback
         }
         private void llenarCmbBoxPeliculas()
         {
-            cmbBoxPelicula.Items.Clear();
+            misDatos.obtenerPeliculas(cmbBoxPelicula);
             //cmbBoxPelicula.Items.Add(); //Ciclo que llene todas las peliculas para seleccionar
         }
-        private void llenarCmbBoxActores(int idPelicula)
+        private void llenarCmbBoxActores()
         {
-            cmbBoxActor.Items.Clear();
+            misDatos.obtenerPeliculas(cmbBoxActor);
             //cmbBoxActor.Items.Add(); //Ciclo que llene todos los actores de una pelicula seleccionada
         }
 
         private void cmbBoxPelicula_SelectedIndexChanged(object sender, EventArgs e)
         {
-            llenarCmbBoxActores(0); //Cuando se seleccione una pelicula llenar el combo box de actores
+            //llenarCmbBoxActores(0); //Cuando se seleccione una pelicula llenar el combo box de actores
         }
 
         private void cmbBoxActor_SelectedIndexChanged(object sender, EventArgs e)

@@ -14,9 +14,12 @@ namespace Streaming.feedback
 {
     public partial class AgregarActoresPelicula : Form
     {
+        Datos misDatos = new Datos();
+
         public AgregarActoresPelicula()
         {
             InitializeComponent();
+            misDatos.obtenerPeliculas(cmbBoxPelicula);
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -31,8 +34,6 @@ namespace Streaming.feedback
             string fechaNacimiento = txtFechaNacimiento.Text;
             string papel = cmbBoxPapel.SelectedItem.ToString();
             //rellenar peliculas
-            Datos misDatos = new Datos();
-            misDatos.obtenerPeliculas(cmbBoxPelicula);
             string nombrePelicula = cmbBoxPelicula.SelectedItem.ToString(); // guardar en una variable
             //Ejecutar la insercion de un actor a la pelicula
             int resultado = miActor.ingresarActor(primerNombre, segundoNombre, primerApellido, segundoApellido, fechaNacimiento);

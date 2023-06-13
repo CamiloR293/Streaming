@@ -14,21 +14,19 @@ namespace Streaming.feedback
 {
     public partial class EliminarActoresPelicula : Form
     {
+        Datos misDatos = new Datos();
         public EliminarActoresPelicula()
         {
             InitializeComponent();
+            misDatos.obtenerActores(cmbBoxActor);
+            misDatos.obtenerPeliculas(cmbBoxPelicula);
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             //crear un objeto tipo actor y Datos para manipular la base de datos
             actor miActor = new actor();
-            Datos misDatos = new Datos();
-            //obtener todos los actores
-            misDatos.obtenerActores(cmbBoxActor);
-            //obtener todas las peliculas
-            misDatos.obtenerPeliculas(cmbBoxPelicula);
-             // Obtener el nombre completo del actor seleccionado en el ComboBox
+            // Obtener el nombre completo del actor seleccionado en el ComboBox
             string nombreCompleto = cmbBoxActor.SelectedItem.ToString();
             // Dividir el nombre completo en primer nombre y primer apellido
             string[] nombreApellido = nombreCompleto.Split(' ');
@@ -47,6 +45,41 @@ namespace Streaming.feedback
             {
                 MessageBox.Show("Actor No eliminado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void pnlDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cmbBoxActor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbBoxPelicula_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPelicula_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlBanner_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
