@@ -7,6 +7,25 @@ namespace Streaming.logica
 {
     internal class producto
     {
+        private int codigo;
+        private string nombre;
+
+        public int Codigo
+        {
+            get { return codigo; }
+            set { codigo = value; }
+        }
+
+        public string Nombre
+        {
+            get { return nombre; }
+            set { nombre = value; }
+        }
+        public producto(int codigo, string nombre)
+        {
+            this.codigo = codigo;
+            this.nombre = nombre;
+        }
         Datos dt = new Datos();
         public int ingresarproducto(int codigo_admin, string nombre, string descripcion,
             string fechaestreno, string duracion, string genero, string tipo_producto, int estado, int vistas)
@@ -47,6 +66,14 @@ namespace Streaming.logica
             DataSet miDs = new DataSet();
             string consulta;
             consulta = "select * from producto";
+            miDs = dt.ejecutarSELECT(consulta);
+            return miDs;
+        }
+
+        public DataSet extraerPeliculasPorGenero(string genero)
+        {
+            DataSet miDs = new DataSet();
+            string consulta = "select * from producto where genero = " + genero;
             miDs = dt.ejecutarSELECT(consulta);
             return miDs;
         }

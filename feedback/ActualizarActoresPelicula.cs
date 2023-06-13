@@ -19,21 +19,24 @@ namespace Streaming.feedback
         {
             InitializeComponent();
             llenarCmbBoxPeliculas();
-            llenarCmbBoxActores();
+            
         }
         private void llenarCmbBoxPeliculas()
         {
             misDatos.obtenerPeliculas(cmbBoxPelicula);
             //cmbBoxPelicula.Items.Add(); //Ciclo que llene todas las peliculas para seleccionar
         }
-        private void llenarCmbBoxActores()
+        private void llenarCmbBoxActores(String nPelicula)
         {
-            misDatos.obtenerActores(cmbBoxActor);
+            MessageBox.Show(nPelicula);
+            misDatos.procedimientoObtenerActores(cmbBoxActor, nPelicula);
             //cmbBoxActor.Items.Add(); //Ciclo que llene todos los actores de una pelicula seleccionada
         }
 
         private void cmbBoxPelicula_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            llenarCmbBoxActores(cmbBoxPelicula.SelectedItem.ToString());
             //llenarCmbBoxActores(0); //Cuando se seleccione una pelicula llenar el combo box de actores
         }
 

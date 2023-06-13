@@ -344,6 +344,168 @@ namespace Streaming.connection
                 MessageBox.Show(e.Message);
             }
         }
+        public void procedimientoObtenerActores(ComboBox cmbBoxActores, string nombrePelicula)
+        {
+
+            try
+            {
+                // Crear una instancia de OracleConnection y OracleCommand
+                using (OracleConnection connection = new OracleConnection(this.cadenaConexion))
+                {
+                    using (OracleCommand command = new OracleCommand("MostrarActoresPelicula", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        // Agregar parámetro de entrada
+                        OracleParameter nombrePeliculaParam = new OracleParameter("p_nombre_pelicula", OracleDbType.Varchar2);
+                        nombrePeliculaParam.Direction = ParameterDirection.Input;
+                        nombrePeliculaParam.Value = nombrePelicula;
+                        command.Parameters.Add(nombrePeliculaParam);
+
+                        // Agregar parámetro de salida
+                        OracleParameter actoresCursorParam = new OracleParameter();
+                        actoresCursorParam.ParameterName = "p_cursor";
+                        actoresCursorParam.Direction = ParameterDirection.Output;
+                        actoresCursorParam.OracleDbType = OracleDbType.RefCursor;
+                        command.Parameters.Add(actoresCursorParam);
+
+                        // Abrir la conexión a la base de datos
+                        connection.Open();
+
+                        // Ejecutar el procedimiento almacenado
+                        command.ExecuteNonQuery();
+
+                        // Obtener el cursor de salida con los resultados
+                        OracleDataReader reader = ((OracleRefCursor)actoresCursorParam.Value).GetDataReader();
+
+                        // Limpiar el ComboBox
+                        cmbBoxActores.Items.Clear();
+
+                        // Recorrer el cursor y agregar los nombres de los actores al ComboBox
+                        while (reader.Read())
+                        {
+                            string nombreActor = reader.GetString(0);
+                            cmbBoxActores.Items.Add(nombreActor);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejar cualquier excepción ocurrida
+                Console.WriteLine("Error al obtener los actores: " + ex.Message);
+            }
+        }
+
+        public void obtenerCoincidenciasGeneroTodosActores(ComboBox cmbBoxProductos, int codigoProducto)
+        {
+
+            try
+            {
+                // Crear una instancia de OracleConnection y OracleCommand
+                using (OracleConnection connection = new OracleConnection(this.cadenaConexion))
+                {
+                    using (OracleCommand command = new OracleCommand("ObtenerCoincidenciasGeneroTodosActores", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        // Agregar parámetro de entrada
+                        OracleParameter codigoProductoParam = new OracleParameter("p_codigo_producto", OracleDbType.Decimal);
+                        codigoProductoParam.Direction = ParameterDirection.Input;
+                        codigoProductoParam.Value = codigoProducto;
+                        command.Parameters.Add(codigoProductoParam);
+
+                        // Agregar parámetro de salida
+                        OracleParameter productosCursorParam = new OracleParameter();
+                        productosCursorParam.ParameterName = "p_cursor";
+                        productosCursorParam.Direction = ParameterDirection.Output;
+                        productosCursorParam.OracleDbType = OracleDbType.RefCursor;
+                        command.Parameters.Add(productosCursorParam);
+
+                        // Abrir la conexión a la base de datos
+                        connection.Open();
+
+                        // Ejecutar el procedimiento almacenado
+                        command.ExecuteNonQuery();
+
+                        // Obtener el cursor de salida con los resultados
+                        OracleDataReader reader = ((OracleRefCursor)productosCursorParam.Value).GetDataReader();
+
+                        // Limpiar el ComboBox
+                        cmbBoxProductos.Items.Clear();
+
+                        // Recorrer el cursor y agregar los nombres de los productos al ComboBox
+                        while (reader.Read())
+                        {
+                            string nombreProducto = reader["NOMBRE"].ToString();
+                            cmbBoxProductos.Items.Add(nombreProducto);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejar cualquier excepción ocurrida
+                MessageBox.Show("Error al obtener las coincidencias de productos: " + ex.Message);
+            }
+        }
+
+        public ArrayList obtenerCoincidenciasGeneroTodosActores(int codigoProducto)
+        {
+            ArrayList listaProductos = new ArrayList();
+            producto p;
+
+
+            try
+            {
+                // Crear una instancia de OracleConnection y OracleCommand
+                using (OracleConnection connection = new OracleConnection(this.cadenaConexion))
+                {
+                    using (OracleCommand command = new OracleCommand("ObtenerCoincidenciasGeneroTodosActores", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        // Agregar parámetro de entrada
+                        OracleParameter codigoProductoParam = new OracleParameter("p_codigo_producto", OracleDbType.Decimal);
+                        codigoProductoParam.Direction = ParameterDirection.Input;
+                        codigoProductoParam.Value = codigoProducto;
+                        command.Parameters.Add(codigoProductoParam);
+
+                        // Agregar parámetro de salida
+                        OracleParameter productosCursorParam = new OracleParameter();
+                        productosCursorParam.ParameterName = "p_cursor";
+                        productosCursorParam.Direction = ParameterDirection.Output;
+                        productosCursorParam.OracleDbType = OracleDbType.RefCursor;
+                        command.Parameters.Add(productosCursorParam);
+
+                        // Abrir la conexión a la base de datos
+                        connection.Open();
+
+                        // Ejecutar el procedimiento almacenado
+                        command.ExecuteNonQuery();
+
+                        // Obtener el cursor de salida con los resultados
+                        OracleDataReader reader = ((OracleRefCursor)productosCursorParam.Value).GetDataReader();
+
+                        // Recorrer el cursor y agregar los nombres de los productos al ArrayList
+                        while (reader.Read())
+                        {
+                            int codigoproducto = int.Parse(reader.GetString(0));
+                            string  nombre=reader.GetString(2);
+                            p =  new producto(codigoproducto, nombre);
+                            listaProductos.Add(p);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejar cualquier excepción ocurrida
+                MessageBox.Show("Error al obtener las coincidencias de productos: " + ex.Message);
+            }
+
+            return listaProductos;
+        }
         public int ObtenerCodigoActor(string primerNombre, string primerApellido)
         {
             int codigoActor = 0;

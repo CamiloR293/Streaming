@@ -57,6 +57,7 @@ namespace Streaming
             this.flowPanelCatalogo.Name = "flowPanelCatalogo";
             this.flowPanelCatalogo.Size = new System.Drawing.Size(645, 451);
             this.flowPanelCatalogo.TabIndex = 1;
+            this.flowPanelCatalogo.Paint += new System.Windows.Forms.PaintEventHandler(this.flowPanelCatalogo_Paint);
             // 
             // pnlBanner
             // 
@@ -76,6 +77,7 @@ namespace Streaming
             this.cmbBoxGenero.Size = new System.Drawing.Size(160, 28);
             this.cmbBoxGenero.TabIndex = 0;
             this.cmbBoxGenero.Text = "Genero";
+            this.cmbBoxGenero.SelectedIndexChanged += new System.EventHandler(this.cmbBoxGenero_SelectedIndexChanged);
             // 
             // MenuPrincipalCliente
             // 

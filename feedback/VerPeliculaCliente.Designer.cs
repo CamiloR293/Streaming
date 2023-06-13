@@ -33,6 +33,7 @@
             this.btnVerAhora = new System.Windows.Forms.Button();
             this.lblTituloPelicula = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.flowPanelPeliculasRelacionadas = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -92,12 +93,21 @@
             // 
             this.panel2.AutoScroll = true;
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel2.Controls.Add(this.flowPanelPeliculasRelacionadas);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 228);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(613, 333);
             this.panel2.TabIndex = 1;
+            // 
+            // flowPanelPeliculasRelacionadas
+            // 
+            this.flowPanelPeliculasRelacionadas.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowPanelPeliculasRelacionadas.Location = new System.Drawing.Point(0, 60);
+            this.flowPanelPeliculasRelacionadas.Name = "flowPanelPeliculasRelacionadas";
+            this.flowPanelPeliculasRelacionadas.Size = new System.Drawing.Size(613, 273);
+            this.flowPanelPeliculasRelacionadas.TabIndex = 28;
             // 
             // label1
             // 
@@ -136,5 +146,6 @@
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Button btnVerAhora;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.FlowLayoutPanel flowPanelPeliculasRelacionadas;
     }
 }
