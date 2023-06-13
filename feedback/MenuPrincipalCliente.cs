@@ -109,6 +109,16 @@ namespace Streaming
             newForm.BringToFront();
             newForm.Show();
         }
+
+        private void flowPanelCatalogo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cmbBoxGenero_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
         #endregion
         //Las picture box deben generarse de acuerdo a la cantidad de peliculas de la base
         //de datos
