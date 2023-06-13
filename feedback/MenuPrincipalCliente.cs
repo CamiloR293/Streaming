@@ -86,8 +86,8 @@ namespace Streaming
             producto peliculas = new producto();
             DataSet dsResultado = new DataSet();
             dsResultado = peliculas.obtenerProducto(int.Parse(clickedButton.Name));
-
-            VerPeliculaCliente form = new VerPeliculaCliente();
+            
+            VerPeliculaCliente form = new VerPeliculaCliente(dsResultado.Tables[0].Rows[0]["nombre"].ToString());
             form.informacion(dsResultado);
             form.ShowDialog();
             

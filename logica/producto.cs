@@ -9,11 +9,16 @@ namespace Streaming.logica
     {
         private int codigo;
         private string nombre;
-
+        private string genero;
         public int Codigo
         {
             get { return codigo; }
             set { codigo = value; }
+        }
+        public string Genero
+        {
+            get { return genero; }
+            set { genero = value; }
         }
 
         public string Nombre
@@ -21,10 +26,15 @@ namespace Streaming.logica
             get { return nombre; }
             set { nombre = value; }
         }
-        public producto(int codigo, string nombre)
+        public producto(int codigo, string nombre, string genero)
         {
             this.codigo = codigo;
             this.nombre = nombre;
+            this.genero = genero;
+        }
+        public producto()
+        {
+
         }
         Datos dt = new Datos();
         public int ingresarproducto(int codigo_admin, string nombre, string descripcion,
@@ -45,6 +55,11 @@ namespace Streaming.logica
             miDs = dt.ejecutarSELECT(consulta);
             return miDs;
         }
+        public int idPelicula(string nombreP)
+        {
+            return dt.idProducto(nombreP);
+        }
+
 
         public void peliculasRecomendadas(int codigo)
         {

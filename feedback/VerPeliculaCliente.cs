@@ -10,16 +10,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Streaming.logica;
+using Streaming.connection;
+using System.Collections;
 
 namespace Streaming
 {
     public partial class VerPeliculaCliente : Form
     {
+        String nPelicula;
         Panel main = new Panel();
-        public VerPeliculaCliente()
+        public VerPeliculaCliente(String nPelicula)
         {
             InitializeComponent();
-            AgregarPeliculas();
+            this.nPelicula = nPelicula;
+            AgregarPeliculas(nPelicula);
         }
 
         private void btnVerAhora_Click(object sender, EventArgs e)
@@ -40,21 +44,23 @@ namespace Streaming
 
         }
 
-        private void AgregarPeliculas() //Lo llamo en el constructor, se necesita pasar el genero de la pelicula
+        private void AgregarPeliculas(String nombreP) //Lo llamo en el constructor, se necesita pasar el genero de la pelicula
                                         // se hace otro select? o se usa el texto del boton presionado
         {
-            producto peliculas = new producto();
-            DataSet dsResultado = new DataSet();
-            string genero = "brayan homosexual";
-            dsResultado = peliculas.extraerPeliculasPorGenero(genero);
-            if (dsResultado.Tables[0].Rows.Count > 0)
+
+            Datos dt = new Datos();
+            producto pr=new producto();
+            ArrayList lista= new ArrayList();
+            lista = dt.obtenerCoincidenciasGeneroTodosActores(pr.idPelicula(nombreP));
+            if (lista.Count > 0)
             {
 
-                for (int i = 0; i < dsResultado.Tables[0].Rows.Count; i++)
+                for (int i = 0; i < lista.Count; i++)
                 {
                     Button button = new Button();
                     Font myFont = new Font("Impact", 10);
-                    button.Text = dsResultado.Tables[0].Rows[i]["nombre"].ToString() + "-" + dsResultado.Tables[0].Rows[i]["genero"].ToString();
+                    producto p = (producto)lista[i];
+                    button.Text = p.Nombre + "-" + p.Genero;
                     button.Width = 150;
                     button.Height = 150;
                     button.BackgroundImageLayout = ImageLayout.Zoom;
@@ -62,14 +68,14 @@ namespace Streaming
                     button.BackColor = Color.White;
                     button.TextAlign = System.Drawing.ContentAlignment.TopLeft;
                     button.Font = myFont;
-                    button.Name = dsResultado.Tables[0].Rows[i]["codigo"].ToString();
+                    button.Name = p.Codigo.ToString();
                     //Modificar esta direccion para que funcione, es la direccion de donde se toman las fotos
-                    String direccion = "C:\\Users\\Usuario\\Documents\\GitHub\\Streaming\\CamiloR293\\Streaming\\Resources\\" + dsResultado.Tables[0].Rows[i]["nombre"].ToString() + ".png";
+                    String direccion = "C:\\Users\\Usuario\\Documents\\GitHub\\Streaming\\CamiloR293\\Streaming\\Resources\\" + p.Nombre + ".png";
                     //String direccion = "D:\\GitHub\\Streaming\\Resources\\" + dsResultado.Tables[0].Rows[i]["nombre"].ToString() + ".png";
-                    if (dsResultado.Tables[0].Rows[i]["nombre"].ToString().Contains(":"))
+                    if (p.Nombre.Contains(":"))
                     {
 
-                        String[] linea = dsResultado.Tables[0].Rows[i]["nombre"].ToString().Split(':');
+                        String[] linea = p.Nombre.Split(':');
                         //Esta tambien favor comentarlas y no borrarlas
                         direccion = "C:\\Users\\Usuario\\Documents\\GitHub\\Streaming\\CamiloR293\\Streaming\\Resources\\" + linea[0] + ".png";
                         //direccion = "D:\\GitHub\\Streaming\\Resources\\" + linea[0] + ".png";
@@ -90,7 +96,6 @@ namespace Streaming
             }
             else
             {
-                MessageBox.Show("error");
             }
         }
 
@@ -100,8 +105,8 @@ namespace Streaming
             producto peliculas = new producto();
             DataSet dsResultado = new DataSet();
             dsResultado = peliculas.obtenerProducto(int.Parse(clickedButton.Name));
-
-            VerPeliculaCliente form = new VerPeliculaCliente();
+            string nombre=dsResultado.Tables[0].Rows[0]["nombre"].ToString();
+            VerPeliculaCliente form = new VerPeliculaCliente(nombre);
             form.informacion(dsResultado);
             form.ShowDialog();
 

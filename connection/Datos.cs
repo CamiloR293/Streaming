@@ -62,7 +62,33 @@ namespace Streaming.connection
                 return -1;
             }
         }
-        public void procedureIdEstadoSuscripcion(int codigoC, int plan, String planDuracion)
+
+        public int idProducto(String nombreProducto)
+        {
+            string query = "SELECT CODIGO FROM PRODUCTO WHERE NOMBRE = :nombreProducto";
+
+            using (OracleConnection connection = new OracleConnection(this.cadenaConexion))
+            {
+                using (OracleCommand command = new OracleCommand(query, connection))
+                {
+                    command.Parameters.Add(new OracleParameter("nombreProducto", nombreProducto));
+                    connection.Open();
+
+                    object result = command.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        return Convert.ToInt32(result);
+                    }
+                    else
+                    {
+                        return -1; // Valor por defecto si no se encuentra el producto
+                    }
+                }
+            }
+        }
+            
+            public void procedureIdEstadoSuscripcion(int codigoC, int plan, String planDuracion)
         {
             using (OracleConnection connection = new OracleConnection(this.getCadenaConexion()))
             {
@@ -492,7 +518,8 @@ namespace Streaming.connection
                         {
                             int codigoproducto = int.Parse(reader.GetString(0));
                             string  nombre=reader.GetString(2);
-                            p =  new producto(codigoproducto, nombre);
+                            string genero=reader.GetString(6);
+                            p =  new producto(codigoproducto, nombre, genero);
                             listaProductos.Add(p);
                         }
                     }
