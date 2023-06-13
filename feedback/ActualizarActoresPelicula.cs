@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Streaming.connection;
+using Streaming.logica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -62,6 +64,23 @@ namespace Streaming.feedback
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             //Actualiza la informacion en la base de datos
+            actor miActor = new actor();
+            Datos misDatos = new Datos();
+            int resultado = miActor.actualizarActor(txtPrimerNombre.Text, txtSegundoNombre.Text, txtPrimerApellido.Text,
+                                                    txtSegundoApellido.Text, txtFechaNacimiento.Text, misDatos.ObtenerCodigoActor(txtPrimerNombre.Text, txtPrimerApellido.Text));
+            if(resultado > 0)
+            {
+                MessageBox.Show("Actor actualizado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtPrimerNombre.Clear();
+                txtPrimerNombre.Clear();
+                txtSegundoNombre.Clear();
+                txtFechaNacimiento.Clear();
+                txtPrimerApellido.Clear();
+            }
+            else
+            {
+                MessageBox.Show("actor no se ha actualizado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

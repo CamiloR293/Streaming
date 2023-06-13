@@ -46,6 +46,8 @@
             this.pnlBanner = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.oracleCommand1 = new Oracle.ManagedDataAccess.Client.OracleCommand();
+            this.cmbBoxPelicula = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.pnlMain.SuspendLayout();
             this.pnlDesktop.SuspendLayout();
             this.pnlBanner.SuspendLayout();
@@ -57,7 +59,7 @@
             this.pnlMain.Controls.Add(this.pnlBanner);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
-            this.pnlMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(4);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(831, 642);
             this.pnlMain.TabIndex = 0;
@@ -65,6 +67,8 @@
             // pnlDesktop
             // 
             this.pnlDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(194)))), ((int)(((byte)(157)))));
+            this.pnlDesktop.Controls.Add(this.label5);
+            this.pnlDesktop.Controls.Add(this.cmbBoxPelicula);
             this.pnlDesktop.Controls.Add(this.cmbBoxPapel);
             this.pnlDesktop.Controls.Add(this.label6);
             this.pnlDesktop.Controls.Add(this.txtFechaNacimiento);
@@ -80,7 +84,7 @@
             this.pnlDesktop.Controls.Add(this.lblNombre);
             this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDesktop.Location = new System.Drawing.Point(0, 82);
-            this.pnlDesktop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlDesktop.Margin = new System.Windows.Forms.Padding(4);
             this.pnlDesktop.Name = "pnlDesktop";
             this.pnlDesktop.Size = new System.Drawing.Size(831, 560);
             this.pnlDesktop.TabIndex = 4;
@@ -94,7 +98,7 @@
             "Principal",
             "Secundario"});
             this.cmbBoxPapel.Location = new System.Drawing.Point(289, 307);
-            this.cmbBoxPapel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbBoxPapel.Margin = new System.Windows.Forms.Padding(4);
             this.cmbBoxPapel.Name = "cmbBoxPapel";
             this.cmbBoxPapel.Size = new System.Drawing.Size(261, 24);
             this.cmbBoxPapel.TabIndex = 46;
@@ -118,7 +122,7 @@
             this.txtFechaNacimiento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFechaNacimiento.Location = new System.Drawing.Point(289, 245);
-            this.txtFechaNacimiento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFechaNacimiento.Margin = new System.Windows.Forms.Padding(4);
             this.txtFechaNacimiento.Multiline = true;
             this.txtFechaNacimiento.Name = "txtFechaNacimiento";
             this.txtFechaNacimiento.Size = new System.Drawing.Size(261, 25);
@@ -129,7 +133,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(45, 244);
+            this.label4.Location = new System.Drawing.Point(56, 245);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(212, 26);
@@ -142,7 +146,7 @@
             this.txtSegundoApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSegundoApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSegundoApellido.Location = new System.Drawing.Point(421, 135);
-            this.txtSegundoApellido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSegundoApellido.Margin = new System.Windows.Forms.Padding(4);
             this.txtSegundoApellido.Multiline = true;
             this.txtSegundoApellido.Name = "txtSegundoApellido";
             this.txtSegundoApellido.Size = new System.Drawing.Size(251, 25);
@@ -166,7 +170,7 @@
             this.txtSegundoNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSegundoNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSegundoNombre.Location = new System.Drawing.Point(421, 55);
-            this.txtSegundoNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSegundoNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtSegundoNombre.Multiline = true;
             this.txtSegundoNombre.Name = "txtSegundoNombre";
             this.txtSegundoNombre.Size = new System.Drawing.Size(251, 25);
@@ -193,7 +197,7 @@
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnRegistrar.Location = new System.Drawing.Point(585, 428);
-            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(141, 49);
             this.btnRegistrar.TabIndex = 26;
@@ -207,7 +211,7 @@
             this.txtPrimerApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrimerApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrimerApellido.Location = new System.Drawing.Point(51, 135);
-            this.txtPrimerApellido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrimerApellido.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrimerApellido.Multiline = true;
             this.txtPrimerApellido.Name = "txtPrimerApellido";
             this.txtPrimerApellido.Size = new System.Drawing.Size(240, 25);
@@ -231,7 +235,7 @@
             this.txtPrimerNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrimerNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrimerNombre.Location = new System.Drawing.Point(51, 55);
-            this.txtPrimerNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrimerNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrimerNombre.Multiline = true;
             this.txtPrimerNombre.Name = "txtPrimerNombre";
             this.txtPrimerNombre.Size = new System.Drawing.Size(240, 25);
@@ -255,7 +259,7 @@
             this.pnlBanner.Controls.Add(this.label1);
             this.pnlBanner.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBanner.Location = new System.Drawing.Point(0, 0);
-            this.pnlBanner.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlBanner.Margin = new System.Windows.Forms.Padding(4);
             this.pnlBanner.Name = "pnlBanner";
             this.pnlBanner.Size = new System.Drawing.Size(831, 82);
             this.pnlBanner.TabIndex = 0;
@@ -277,6 +281,27 @@
             // 
             this.oracleCommand1.Transaction = null;
             // 
+            // cmbBoxPelicula
+            // 
+            this.cmbBoxPelicula.FormattingEnabled = true;
+            this.cmbBoxPelicula.Location = new System.Drawing.Point(289, 368);
+            this.cmbBoxPelicula.Name = "cmbBoxPelicula";
+            this.cmbBoxPelicula.Size = new System.Drawing.Size(261, 24);
+            this.cmbBoxPelicula.TabIndex = 47;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(177, 363);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 26);
+            this.label5.TabIndex = 48;
+            this.label5.Text = "Pelicula:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
             // AgregarActoresPelicula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -284,7 +309,7 @@
             this.ClientSize = new System.Drawing.Size(831, 642);
             this.Controls.Add(this.pnlMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AgregarActoresPelicula";
             this.Text = "AgregarActoresPelicula";
             this.pnlMain.ResumeLayout(false);
@@ -316,5 +341,7 @@
         private System.Windows.Forms.ComboBox cmbBoxPapel;
         private System.Windows.Forms.Label label6;
         private Oracle.ManagedDataAccess.Client.OracleCommand oracleCommand1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbBoxPelicula;
     }
 }

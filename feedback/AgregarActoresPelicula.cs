@@ -30,10 +30,13 @@ namespace Streaming.feedback
             string segundoApellido = txtSegundoApellido.Text;
             string fechaNacimiento = txtFechaNacimiento.Text;
             string papel = cmbBoxPapel.SelectedItem.ToString();
-
+            //rellenar peliculas
+            Datos misDatos = new Datos();
+            misDatos.obtenerPeliculas(cmbBoxPelicula);
+            string nombrePelicula = cmbBoxPelicula.SelectedItem.ToString(); // guardar en una variable
             //Ejecutar la insercion de un actor a la pelicula
             int resultado = miActor.ingresarActor(primerNombre, segundoNombre, primerApellido, segundoApellido, fechaNacimiento);
-            int resultado2 = miActor.registrarProductoActor(papel);
+            int resultado2 = miActor.registrarProductoActor(nombrePelicula, papel);
             if (resultado > 0 && resultado2 > 0)
             {
                 MessageBox.Show("Actor y productos registrados con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -62,6 +65,11 @@ namespace Streaming.feedback
 
 
         private void cmbBoxPelicula_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }
