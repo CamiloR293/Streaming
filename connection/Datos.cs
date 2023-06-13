@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Types;
 using System.Collections;
 using Streaming.logica;
+using System.Text;
 
 namespace Streaming.connection
 {
@@ -372,6 +373,27 @@ namespace Streaming.connection
                 MessageBox.Show("error al actualizar ->" + e.Message);
             }
             return codigoActor;
+        }
+        public int calcularPrecioProducto(string nombreProducto)
+        {
+            try
+            {
+                using (OracleConnection conexion = new OracleConnection(cadenaConexion))
+                {
+                    conexion.Open();//abrir conexion
+                    OracleCommand comando = new OracleCommand();
+                    comando.CommandType = CommandType.StoredProcedure;//para ejecutar en la base de datos procedimientos o funciones almacenadas
+                    comando.Parameters.Add(new OracleParameter(":p_nombreProducto", cadenaConexion));//para pasar por parametros de entrada
+                    object resultado = comando.ExecuteScalar();//ejecuta consulta y guarda en una variable
+                    conexion.Close();//cerrar conexion
+                    return int.Parse((string)resultado);//pasar entero como parametro
+                }
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("Error en procedimiento ->" + e.Message);
+                return -1;
+            }
         }
     }
 }
