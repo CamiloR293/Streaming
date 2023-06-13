@@ -326,14 +326,14 @@ namespace Streaming.connection
                 using (OracleConnection miConexion = new OracleConnection(cadenaConexion))
                 {
                     miConexion.Open();
-                    string consulta = "select primernombre from actor";
+                    string consulta = "SELECT primernombre, primerapellido FROM actor";
                     OracleCommand comando = new OracleCommand(consulta, miConexion);
                     OracleDataReader reader = comando.ExecuteReader();
                     while (reader.Read())
                     {
                         string nombreActor = reader.GetString(0);
-                        string segundoNombreActor = reader.GetString(1);
-                        cmbBoxActores.Items.Add(nombreActor + " " + segundoNombreActor);
+                        string primerApellidoActor = reader.GetString(1);
+                        cmbBoxActores.Items.Add(nombreActor + " " + primerApellidoActor);
                     }
                     reader.Close();
                 }
@@ -371,7 +371,6 @@ namespace Streaming.connection
             {
                 MessageBox.Show("error al actualizar ->" + e.Message);
             }
-
             return codigoActor;
         }
     }

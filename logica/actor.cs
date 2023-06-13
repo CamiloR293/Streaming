@@ -50,11 +50,16 @@ namespace Streaming.logica
         {
             string consulta = "update actor set primernombre = '" + primerNombre + "', segundonombre = '" + 
                                 segundoNombre + "', primerapellido = '" + primerApellido + "', segundoapellido = '" +
-                                segundoApellido + "', fechanacimiento = '" + fechaNacimiento + "' where codigo = " + codigo;
+                                segundoApellido + "', fechanacimiento = '" + fechaNacimiento + "' where codigo = " + codigo + ";";
             int resultado = dt.ejecutarDML(consulta);
             return resultado;
         }
-        
+        public int eliminarActor(int codigo)
+        {
+            string consulta = "delete from actor where codigo = " + codigo + ";";
+            int resultado = dt.ejecutarDML(consulta);
+            return resultado;
+        }
     }
 }
 
