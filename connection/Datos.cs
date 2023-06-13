@@ -343,6 +343,58 @@ namespace Streaming.connection
                 MessageBox.Show(e.Message);
             }
         }
+        public void procedimientoObtenerActores(ComboBox cmbBoxActores, string nombrePelicula)
+        {
+
+            try
+            {
+                // Crear una instancia de OracleConnection y OracleCommand
+                using (OracleConnection connection = new OracleConnection(this.cadenaConexion))
+                {
+                    using (OracleCommand command = new OracleCommand("MostrarActoresPelicula", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        // Agregar parámetro de entrada
+                        OracleParameter nombrePeliculaParam = new OracleParameter("p_nombre_pelicula", OracleDbType.Varchar2);
+                        nombrePeliculaParam.Direction = ParameterDirection.Input;
+                        nombrePeliculaParam.Value = nombrePelicula;
+                        command.Parameters.Add(nombrePeliculaParam);
+
+                        // Agregar parámetro de salida
+                        OracleParameter actoresCursorParam = new OracleParameter();
+                        actoresCursorParam.ParameterName = "p_cursor";
+                        actoresCursorParam.Direction = ParameterDirection.Output;
+                        actoresCursorParam.OracleDbType = OracleDbType.RefCursor;
+                        command.Parameters.Add(actoresCursorParam);
+
+                        // Abrir la conexión a la base de datos
+                        connection.Open();
+
+                        // Ejecutar el procedimiento almacenado
+                        command.ExecuteNonQuery();
+
+                        // Obtener el cursor de salida con los resultados
+                        OracleDataReader reader = ((OracleRefCursor)actoresCursorParam.Value).GetDataReader();
+
+                        // Limpiar el ComboBox
+                        cmbBoxActores.Items.Clear();
+
+                        // Recorrer el cursor y agregar los nombres de los actores al ComboBox
+                        while (reader.Read())
+                        {
+                            string nombreActor = reader.GetString(0);
+                            cmbBoxActores.Items.Add(nombreActor);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejar cualquier excepción ocurrida
+                Console.WriteLine("Error al obtener los actores: " + ex.Message);
+            }
+        }
         public int ObtenerCodigoActor(string primerNombre, string primerApellido)
         {
             int codigoActor = 0;
