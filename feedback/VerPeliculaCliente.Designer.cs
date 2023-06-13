@@ -136,6 +136,7 @@
             this.btnComprar.TabIndex = 27;
             this.btnComprar.Text = "Comprar";
             this.btnComprar.UseVisualStyleBackColor = false;
+            this.btnComprar.Visible= false;
             this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
             // 
             // VerPeliculaCliente

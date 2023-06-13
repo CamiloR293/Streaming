@@ -189,6 +189,7 @@
     </Compile>
     <Compile Include="logica\actor.cs" />
     <Compile Include="logica\administrador.cs" />
+    <Compile Include="logica\clienteProducto.cs" />
     <Compile Include="logica\cliente_plan.cs" />
     <Compile Include="logica\Cliente.cs" />
     <Compile Include="logica\planSuscripcion.cs" />

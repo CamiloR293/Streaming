@@ -83,7 +83,7 @@ namespace Streaming
         private void button3_Click(object sender, EventArgs e)
         {
             Datos dt = new Datos();
-            openForms(new MenuPrincipalCliente());
+            openForms(new MenuPrincipalCliente(cliente, "Sin plan"));
             //dt.EjecutarProcedimiento("El Padrino");
 
         }

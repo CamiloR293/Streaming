@@ -17,21 +17,55 @@ namespace Streaming
 {
     public partial class VerPeliculaCliente : Form
     {
+        Cliente cliente= new Cliente();
         String nPelicula;
+        string plan;
         Panel main = new Panel();
         public VerPeliculaCliente(String nPelicula)
         {
             InitializeComponent();
             this.nPelicula = nPelicula;
+
+            btnComprar.Visible = false;
+            AgregarPeliculas(nPelicula);
+        }
+        public VerPeliculaCliente(String nPelicula, string plan, Cliente cliente)
+        {
+            InitializeComponent();
+            this.nPelicula = nPelicula;
+            this.plan = plan;
+            this.cliente = cliente;
+            if(plan.Equals("Sin plan"))
+            {
+                btnComprar.Visible = true;
+
+            }
             AgregarPeliculas(nPelicula);
         }
 
         private void btnVerAhora_Click(object sender, EventArgs e)
         {
-            ViendoPelicula pelicula = new ViendoPelicula();
-            pelicula.ShowDialog();
-            //openForms(new ViendoPelicula());
-            this.Close();
+            if (plan.Equals("Sin plan"))
+            {
+                Datos dt = new Datos();
+                producto p = new producto();
+                if (dt.VerificarClienteProductoExistente(cliente.Codigo, p.idPelicula(nPelicula)))
+                {
+                    ViendoPelicula pelicula = new ViendoPelicula();
+                    pelicula.ShowDialog();
+                    //openForms(new ViendoPelicula());
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("No has comprado la pelicula, comprala para verla");
+                }
+            }
+            else
+            {
+                ViendoPelicula pelicula = new ViendoPelicula();
+                pelicula.ShowDialog();
+            }
         }
         
         public void informacion(DataSet dsResultado)
@@ -109,19 +143,37 @@ namespace Streaming
             VerPeliculaCliente form = new VerPeliculaCliente(nombre);
             form.informacion(dsResultado);
             form.ShowDialog();
-
-
-
         }
 
         private void btnComprar_Click(object sender, EventArgs e)
         {
+            
+            clienteProducto cp = new clienteProducto();
+            producto p=new producto();
             Datos dt = new Datos();
             int precio=dt.EjecutarProcedimiento(nPelicula);
             DialogResult result = MessageBox.Show("¿Desea comprarla? El valor es de: "+ precio, "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (DialogResult.Yes.Equals(result))
             {
-                MessageBox.Show("Pelicula agregada con exito");
+                if(!dt.VerificarClienteProductoExistente(cliente.Codigo, p.idPelicula(nPelicula))){
+
+                    if(cp.ingresarproducto(cliente.Codigo, p.idPelicula(nPelicula)) > 0){
+
+                        MessageBox.Show("Pelicula agregada con exito"); 
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERROR");
+                    }
+
+
+                }
+
+                
+                else
+                {
+                    MessageBox.Show("Ya has comprado la pelicula!!");
+                }
             }
         }
     }
