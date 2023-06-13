@@ -54,7 +54,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pictureBox2.Image = global::Streaming.Properties.Resources.square1;
             this.pictureBox2.Location = new System.Drawing.Point(13, 482);
             this.pictureBox2.Name = "pictureBox2";
@@ -64,7 +64,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pictureBox1.Image = global::Streaming.Properties.Resources.square;
             this.pictureBox1.Location = new System.Drawing.Point(12, 482);
             this.pictureBox1.Name = "pictureBox1";
@@ -75,7 +75,7 @@
             // 
             // picBoxPause
             // 
-            this.picBoxPause.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.picBoxPause.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.picBoxPause.Image = global::Streaming.Properties.Resources.pause;
             this.picBoxPause.Location = new System.Drawing.Point(395, 509);
             this.picBoxPause.Name = "picBoxPause";
@@ -106,6 +106,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ViendoPelicula";
             this.Text = "ViendoPelicula";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnlBackground.ResumeLayout(false);
             this.pnlBackground.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

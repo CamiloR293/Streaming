@@ -53,12 +53,11 @@
             // lblDescripcion
             // 
             this.lblDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescripcion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblDescripcion.Location = new System.Drawing.Point(238, 96);
+            this.lblDescripcion.Location = new System.Drawing.Point(179, 96);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(161, 21);
+            this.lblDescripcion.Size = new System.Drawing.Size(408, 112);
             this.lblDescripcion.TabIndex = 26;
             this.lblDescripcion.Text = "DescripcionPelicula";
             // 
@@ -75,7 +74,6 @@
             this.btnVerAhora.TabIndex = 25;
             this.btnVerAhora.Text = "Ver ahora";
             this.btnVerAhora.UseVisualStyleBackColor = false;
-            this.btnVerAhora.Visible = false;
             this.btnVerAhora.Click += new System.EventHandler(this.btnVerAhora_Click);
             // 
             // lblTituloPelicula
@@ -120,7 +118,6 @@
             this.ClientSize = new System.Drawing.Size(613, 561);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "VerPeliculaCliente";
             this.Text = "VerPeliculaCliente";
             this.panel1.ResumeLayout(false);

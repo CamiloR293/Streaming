@@ -14,39 +14,25 @@ namespace Streaming
 {
     public partial class VerPeliculaCliente : Form
     {
+        Panel main = new Panel();
         public VerPeliculaCliente()
         {
             InitializeComponent();
+            
         }
 
         private void btnVerAhora_Click(object sender, EventArgs e)
         {
-            openForms(new ViendoPelicula());
+            ViendoPelicula pelicula = new ViendoPelicula();
+            pelicula.ShowDialog();
+            //openForms(new ViendoPelicula());
+            this.Close();
         }
-        #region OpenForm
-
-        private Form activeForm = null;
-        public void openForms(Form newForm)
-        {
-            if (activeForm != null) activeForm.Close();
-            activeForm = newForm;
-
-            newForm.TopLevel = false;
-            newForm.FormBorderStyle = FormBorderStyle.None;
-            activeForm.Dock = DockStyle.Fill;
-
-            //pnlDesktop.Controls.Add(newForm);
-            //pnlDesktop.Tag = newForm;
-
-            newForm.BringToFront();
-            newForm.Show();
-        }
-        #endregion
+        
         public void informacion(DataSet dsResultado)
         {
             lblTituloPelicula.Text = dsResultado.Tables[0].Rows[0]["nombre"].ToString();
             lblDescripcion.Text = dsResultado.Tables[0].Rows[0]["descripcion"].ToString();
-
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {

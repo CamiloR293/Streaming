@@ -53,25 +53,5 @@ namespace Streaming.feedback
             }
         }
 
-        private void cmbBoxPapel_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlDesktop_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-        private void cmbBoxPelicula_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
