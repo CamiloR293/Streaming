@@ -59,7 +59,7 @@ namespace Streaming
             btnMenuPrincipal.BackColor = colorNaranjaSeleccionado;
             btnAddMetodosPago.BackColor = colorNaranjaPredeterminado;
             btnDatosPersonales.BackColor = colorNaranjaPredeterminado;
-
+            btnRecomendados.BackColor = colorNaranjaPredeterminado;
             openForms(new MenuPrincipalCliente());
         }
 
@@ -69,6 +69,7 @@ namespace Streaming
             btnMenuPrincipal.BackColor = colorNaranjaPredeterminado;
             btnAddMetodosPago.BackColor = colorNaranjaPredeterminado;
             btnDatosPersonales.BackColor = colorNaranjaSeleccionado;
+            btnRecomendados.BackColor = colorNaranjaPredeterminado;
             openForms(new DatosPersonalesCliente(cliente));
         }
 
@@ -77,74 +78,9 @@ namespace Streaming
             btnMenuPrincipal.BackColor = colorNaranjaPredeterminado;
             btnAddMetodosPago.BackColor = colorNaranjaSeleccionado;
             btnDatosPersonales.BackColor = colorNaranjaPredeterminado;
+            btnRecomendados.BackColor = colorNaranjaPredeterminado;
             openForms(new AgregarTarjeta(cliente));
         }
-        /*
-        private void cargarPeliculas()
-        {
-            producto peliculas = new producto();
-            DataSet dsResultado = new DataSet();
-            dsResultado = peliculas.consultarProducto();
-            if (dsResultado.Tables[0].Rows.Count > 0)
-            {
-
-                for (int i = 0; i < dsResultado.Tables[0].Rows.Count; i++)
-                {
-                    Button button = new Button();
-                    Font myFont = new Font("Impact", 10);
-                    button.Text = dsResultado.Tables[0].Rows[i]["nombre"].ToString() + "-" + dsResultado.Tables[0].Rows[i]["genero"].ToString();
-                    button.Width = 150;
-                    button.Height = 150;
-                    button.BackgroundImageLayout = ImageLayout.Zoom;
-                    button.ForeColor = Color.Red;
-                    button.BackColor = Color.White;
-                    button.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-                    button.Font = myFont;
-                    button.Name = dsResultado.Tables[0].Rows[i]["codigo"].ToString();
-
-                    //String direccion = "C:\\Users\\Usuario\\Documents\\GitHub\\Streaming\\CamiloR293\\Streaming\\Resources\\" + dsResultado.Tables[0].Rows[i]["nombre"].ToString() + ".png";
-                    String direccion = "D:\\GitHub\\Streaming\\Resources\\" + dsResultado.Tables[0].Rows[i]["nombre"].ToString() + ".png";
-                    if (dsResultado.Tables[0].Rows[i]["nombre"].ToString().Contains(":"))
-                    {
-
-                        String[] linea = dsResultado.Tables[0].Rows[i]["nombre"].ToString().Split(':');
-                        //direccion = "C:\\Users\\Usuario\\Documents\\GitHub\\Streaming\\CamiloR293\\Streaming\\Resources\\" + linea[0] + ".png";
-                        direccion = "D:\\GitHub\\Streaming\\Resources\\" + linea[0] + ".png";
-
-                    }
-                    button.BackgroundImage = Image.FromFile(direccion);
-                    button.BackgroundImageLayout = ImageLayout.Stretch;
-                    flowLayoutPanel1.Controls.Add(button);
-
-
-                    button.Click += button_Click;
-
-
-                }
-
-
-            }
-            else
-            {
-                MessageBox.Show("error");
-            }
-
-        }
-
-        private void button_Click(object sender, EventArgs e)
-        {
-            Button clickedButton = (Button)sender;
-            producto peliculas = new producto();
-            DataSet dsResultado = new DataSet();
-            dsResultado = peliculas.obtenerProducto(int.Parse(clickedButton.Name));
-
-            VerPeliculaCliente form2 = new VerPeliculaCliente();
-            form2.informacion(dsResultado);
-            form2.ShowDialog();
-
-
-        }
-        */
         private void btnCerrarSesion_Click(object sender, System.EventArgs e)
         {
             //Poner una notificacion
@@ -173,16 +109,6 @@ namespace Streaming
             //buscar segun txtBuscar
         }
 
-        private void pnlDesktop_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pnlMain_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         public void hideControls()
         {
             pnlDesktop.Visible = false;
@@ -190,11 +116,13 @@ namespace Streaming
             pnlLateral.Visible = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnRecomendados_Click(object sender, EventArgs e)
         {
-            this.Close();
-            Recomendaciones fromRec = new Recomendaciones(this.cliente);
-            fromRec.ShowDialog();
+            btnMenuPrincipal.BackColor = colorNaranjaPredeterminado;
+            btnAddMetodosPago.BackColor = colorNaranjaPredeterminado;
+            btnDatosPersonales.BackColor = colorNaranjaPredeterminado;
+            btnRecomendados.BackColor = colorNaranjaSeleccionado;
+            openForms(new Recomendaciones(cliente));
             
         }
     }

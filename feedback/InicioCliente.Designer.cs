@@ -31,15 +31,15 @@
             this.pnlMain = new System.Windows.Forms.Panel();
             this.pnlDesktop = new System.Windows.Forms.Panel();
             this.pnlLateral = new System.Windows.Forms.Panel();
+            this.btnRecomendados = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.btnAddMetodosPago = new System.Windows.Forms.Button();
             this.btnDatosPersonales = new System.Windows.Forms.Button();
             this.btnMenuPrincipal = new System.Windows.Forms.Button();
             this.banner = new System.Windows.Forms.Panel();
+            this.picBoxBuscar = new System.Windows.Forms.PictureBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.picBoxBuscar = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.pnlMain.SuspendLayout();
             this.pnlLateral.SuspendLayout();
             this.banner.SuspendLayout();
@@ -54,35 +54,47 @@
             this.pnlMain.Controls.Add(this.banner);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
-            this.pnlMain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1200, 863);
-            this.pnlMain.TabIndex = 0;
-            this.pnlMain.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMain_Paint);
+            this.pnlMain.Size = new System.Drawing.Size(800, 512);
+            this.pnlMain.TabIndex = 0; 
             // 
             // pnlDesktop
             // 
             this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDesktop.Location = new System.Drawing.Point(232, 108);
-            this.pnlDesktop.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlDesktop.Location = new System.Drawing.Point(155, 70);
             this.pnlDesktop.Name = "pnlDesktop";
-            this.pnlDesktop.Size = new System.Drawing.Size(968, 755);
+            this.pnlDesktop.Size = new System.Drawing.Size(645, 442);
             this.pnlDesktop.TabIndex = 3;
             // 
             // pnlLateral
             // 
             this.pnlLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(144)))), ((int)(((byte)(76)))));
-            this.pnlLateral.Controls.Add(this.button1);
+            this.pnlLateral.Controls.Add(this.btnRecomendados);
             this.pnlLateral.Controls.Add(this.btnCerrarSesion);
             this.pnlLateral.Controls.Add(this.btnAddMetodosPago);
             this.pnlLateral.Controls.Add(this.btnDatosPersonales);
             this.pnlLateral.Controls.Add(this.btnMenuPrincipal);
             this.pnlLateral.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlLateral.Location = new System.Drawing.Point(0, 108);
-            this.pnlLateral.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlLateral.Location = new System.Drawing.Point(0, 70);
             this.pnlLateral.Name = "pnlLateral";
-            this.pnlLateral.Size = new System.Drawing.Size(232, 755);
+            this.pnlLateral.Size = new System.Drawing.Size(155, 442);
             this.pnlLateral.TabIndex = 2;
+            // 
+            // btnRecomendados
+            // 
+            this.btnRecomendados.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRecomendados.FlatAppearance.BorderSize = 0;
+            this.btnRecomendados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecomendados.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecomendados.ForeColor = System.Drawing.Color.White;
+            this.btnRecomendados.Location = new System.Drawing.Point(0, 228);
+            this.btnRecomendados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRecomendados.Name = "btnRecomendados";
+            this.btnRecomendados.Size = new System.Drawing.Size(155, 76);
+            this.btnRecomendados.TabIndex = 4;
+            this.btnRecomendados.Text = "RECOMENDADOS";
+            this.btnRecomendados.UseVisualStyleBackColor = true;
+            this.btnRecomendados.Click += new System.EventHandler(this.btnRecomendados_Click);
             // 
             // btnCerrarSesion
             // 
@@ -92,10 +104,9 @@
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarSesion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 624);
-            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 357);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(232, 131);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(155, 85);
             this.btnCerrarSesion.TabIndex = 3;
             this.btnCerrarSesion.Text = "CERRAR SESION";
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
@@ -109,10 +120,9 @@
             this.btnAddMetodosPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddMetodosPago.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddMetodosPago.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddMetodosPago.Location = new System.Drawing.Point(0, 234);
-            this.btnAddMetodosPago.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAddMetodosPago.Location = new System.Drawing.Point(0, 152);
             this.btnAddMetodosPago.Name = "btnAddMetodosPago";
-            this.btnAddMetodosPago.Size = new System.Drawing.Size(232, 117);
+            this.btnAddMetodosPago.Size = new System.Drawing.Size(155, 76);
             this.btnAddMetodosPago.TabIndex = 2;
             this.btnAddMetodosPago.Text = "AÑADIR METODOS DE PAGO";
             this.btnAddMetodosPago.UseVisualStyleBackColor = true;
@@ -126,10 +136,9 @@
             this.btnDatosPersonales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDatosPersonales.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDatosPersonales.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDatosPersonales.Location = new System.Drawing.Point(0, 117);
-            this.btnDatosPersonales.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDatosPersonales.Location = new System.Drawing.Point(0, 76);
             this.btnDatosPersonales.Name = "btnDatosPersonales";
-            this.btnDatosPersonales.Size = new System.Drawing.Size(232, 117);
+            this.btnDatosPersonales.Size = new System.Drawing.Size(155, 76);
             this.btnDatosPersonales.TabIndex = 1;
             this.btnDatosPersonales.Text = "DATOS PERSONALES";
             this.btnDatosPersonales.UseVisualStyleBackColor = true;
@@ -144,9 +153,8 @@
             this.btnMenuPrincipal.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuPrincipal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnMenuPrincipal.Location = new System.Drawing.Point(0, 0);
-            this.btnMenuPrincipal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnMenuPrincipal.Name = "btnMenuPrincipal";
-            this.btnMenuPrincipal.Size = new System.Drawing.Size(232, 117);
+            this.btnMenuPrincipal.Size = new System.Drawing.Size(155, 76);
             this.btnMenuPrincipal.TabIndex = 0;
             this.btnMenuPrincipal.Text = "MENU PRINCIPAL";
             this.btnMenuPrincipal.UseVisualStyleBackColor = true;
@@ -160,10 +168,22 @@
             this.banner.Controls.Add(this.lblTitle);
             this.banner.Dock = System.Windows.Forms.DockStyle.Top;
             this.banner.Location = new System.Drawing.Point(0, 0);
-            this.banner.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.banner.Name = "banner";
-            this.banner.Size = new System.Drawing.Size(1200, 108);
+            this.banner.Size = new System.Drawing.Size(800, 70);
             this.banner.TabIndex = 1;
+            // 
+            // picBoxBuscar
+            // 
+            this.picBoxBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picBoxBuscar.BackColor = System.Drawing.Color.White;
+            this.picBoxBuscar.Image = global::Streaming.Properties.Resources.browse;
+            this.picBoxBuscar.Location = new System.Drawing.Point(744, 24);
+            this.picBoxBuscar.Name = "picBoxBuscar";
+            this.picBoxBuscar.Size = new System.Drawing.Size(32, 28);
+            this.picBoxBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxBuscar.TabIndex = 25;
+            this.picBoxBuscar.TabStop = false;
+            this.picBoxBuscar.Click += new System.EventHandler(this.picBoxBuscar_Click);
             // 
             // txtBuscar
             // 
@@ -171,11 +191,10 @@
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(144)))), ((int)(((byte)(76)))));
-            this.txtBuscar.Location = new System.Drawing.Point(465, 37);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBuscar.Location = new System.Drawing.Point(310, 24);
             this.txtBuscar.Multiline = true;
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(642, 43);
+            this.txtBuscar.Size = new System.Drawing.Size(428, 28);
             this.txtBuscar.TabIndex = 24;
             this.txtBuscar.Text = "Buscar";
             this.txtBuscar.Click += new System.EventHandler(this.txtBuscar_Click);
@@ -186,45 +205,19 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTitle.Location = new System.Drawing.Point(92, 37);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle.Location = new System.Drawing.Point(61, 24);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(217, 42);
+            this.lblTitle.Size = new System.Drawing.Size(141, 27);
             this.lblTitle.TabIndex = 23;
             this.lblTitle.Text = "StreamingBD";
             // 
-            // picBoxBuscar
-            // 
-            this.picBoxBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picBoxBuscar.BackColor = System.Drawing.Color.White;
-            this.picBoxBuscar.Image = global::Streaming.Properties.Resources.browse;
-            this.picBoxBuscar.Location = new System.Drawing.Point(1116, 37);
-            this.picBoxBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.picBoxBuscar.Name = "picBoxBuscar";
-            this.picBoxBuscar.Size = new System.Drawing.Size(48, 43);
-            this.picBoxBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxBuscar.TabIndex = 25;
-            this.picBoxBuscar.TabStop = false;
-            this.picBoxBuscar.Click += new System.EventHandler(this.picBoxBuscar_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(63, 407);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 45);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Recomendaciones";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // InicioCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 863);
+            this.ClientSize = new System.Drawing.Size(800, 512);
             this.Controls.Add(this.pnlMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "InicioCliente";
             this.Text = "InicioDelCliente";
             this.Load += new System.EventHandler(this.InicioCliente_Load);
@@ -250,7 +243,7 @@
         private System.Windows.Forms.Button btnDatosPersonales;
         private System.Windows.Forms.Button btnMenuPrincipal;
         private System.Windows.Forms.Panel pnlDesktop;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRecomendados;
         //private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
