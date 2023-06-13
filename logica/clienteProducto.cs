@@ -15,7 +15,7 @@ namespace Streaming.logica
         {
             int resultado;
             string consulta;
-            consulta = "insert into cliente_producto (CODIGO_CLIENTE, CODIGO_PRODUCTO, FECHA_COMPRA,CODIGO_CLIENTE_PRODUCTO)  values(" + codigoC+"," + codigoP +", sysdate,(select NVL(max(codigo_cliente_producto) +1,1) from cliente_producto))" ;
+            consulta = "insert into cliente_producto_compra (CODIGO_CLIENTE, CODIGO_PRODUCTO, FECHA_COMPRA,CODIGO_CLIENTE_PRODUCTO)  values(" + codigoC+"," + codigoP +", sysdate,(select NVL(max(codigo_cliente_producto) +1,1) from cliente_producto_compra))" ;
             resultado = dt.ejecutarDML(consulta);
             return resultado;
         }

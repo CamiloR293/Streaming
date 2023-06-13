@@ -73,7 +73,7 @@ namespace Streaming.connection
                     OracleCommand comando = new OracleCommand();
                     comando.Connection = conexion;
                     comando.CommandType = CommandType.Text;
-                    comando.CommandText = "SELECT COUNT(*) FROM CLIENTE_PRODUCTO WHERE CODIGO_CLIENTE = :p_codigoCliente AND CODIGO_PRODUCTO = :p_codigoProducto";
+                    comando.CommandText = "SELECT COUNT(*) FROM CLIENTE_PRODUCTO_COMPRA WHERE CODIGO_CLIENTE = :p_codigoCliente AND CODIGO_PRODUCTO = :p_codigoProducto";
                     comando.Parameters.Add("p_codigoCliente", OracleDbType.Int32).Value = codigoCliente;
                     comando.Parameters.Add("p_codigoProducto", OracleDbType.Int32).Value = codigoProducto;
 
