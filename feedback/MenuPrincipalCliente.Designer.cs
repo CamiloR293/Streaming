@@ -52,6 +52,7 @@ namespace Streaming
             // 
             // flowPanelCatalogo
             // 
+            this.flowPanelCatalogo.AutoScroll = true;
             this.flowPanelCatalogo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowPanelCatalogo.Location = new System.Drawing.Point(0, 40);
             this.flowPanelCatalogo.Name = "flowPanelCatalogo";
