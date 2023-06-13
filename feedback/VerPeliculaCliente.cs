@@ -113,5 +113,16 @@ namespace Streaming
 
 
         }
+
+        private void btnComprar_Click(object sender, EventArgs e)
+        {
+            Datos dt = new Datos();
+            int precio=dt.EjecutarProcedimiento(nPelicula);
+            DialogResult result = MessageBox.Show("¿Desea comprarla? El valor es de: "+ precio, "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (DialogResult.Yes.Equals(result))
+            {
+                MessageBox.Show("Pelicula agregada con exito");
+            }
+        }
     }
 }

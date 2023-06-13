@@ -1,4 +1,5 @@
-﻿using Streaming.logica;
+﻿using Streaming.connection;
+using Streaming.logica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -76,6 +77,14 @@ namespace Streaming
             MessageBox.Show("¡Compra exitosa!");
             openForms(new InicioCliente(cliente));
 
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Datos dt = new Datos();
+            openForms(new MenuPrincipalCliente());
+            //dt.EjecutarProcedimiento("El Padrino");
 
         }
     }

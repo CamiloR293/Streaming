@@ -563,26 +563,40 @@ namespace Streaming.connection
             }
             return codigoActor;
         }
-        public int calcularPrecioProducto(string nombreProducto)
+        public int EjecutarProcedimiento(string nombreProducto)
         {
             try
             {
                 using (OracleConnection conexion = new OracleConnection(cadenaConexion))
                 {
-                    conexion.Open();//abrir conexion
+                    conexion.Open();
+
                     OracleCommand comando = new OracleCommand();
-                    comando.CommandType = CommandType.StoredProcedure;//para ejecutar en la base de datos procedimientos o funciones almacenadas
-                    comando.Parameters.Add(new OracleParameter(":p_nombreProducto", cadenaConexion));//para pasar por parametros de entrada
-                    object resultado = comando.ExecuteScalar();//ejecuta consulta y guarda en una variable
-                    conexion.Close();//cerrar conexion
-                    return int.Parse((string)resultado);//pasar entero como parametro
+                    comando.Connection = conexion;
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.CommandText = "calcularPrecioProducto";
+
+                    comando.Parameters.Add("p_nombreProducto", OracleDbType.Varchar2).Value = nombreProducto;
+
+                    // Parámetro de salida para capturar el resultado
+                    comando.Parameters.Add("p_precioFinal", OracleDbType.Decimal).Direction = ParameterDirection.Output;
+
+                    comando.ExecuteNonQuery();
+                    OracleDecimal resultadoOracle = (OracleDecimal)comando.Parameters["p_precioFinal"].Value;
+                    return resultadoOracle.ToInt32();
+                   // MessageBox.Show("Precio Final: " + precioFinal);
+
+                    conexion.Close();
                 }
             }
-            catch(Exception e)
+            catch (OracleException e)
             {
-                MessageBox.Show("Error en procedimiento ->" + e.Message);
+                MessageBox.Show("Error en el procedimiento: " + e.Message);
                 return -1;
             }
         }
+
+
+
     }
 }

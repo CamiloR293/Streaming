@@ -35,6 +35,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowPanelPeliculasRelacionadas = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnComprar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -42,6 +43,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(108)))), ((int)(((byte)(56)))));
+            this.panel1.Controls.Add(this.btnComprar);
             this.panel1.Controls.Add(this.lblDescripcion);
             this.panel1.Controls.Add(this.btnVerAhora);
             this.panel1.Controls.Add(this.lblTituloPelicula);
@@ -121,6 +123,21 @@
             this.label1.TabIndex = 27;
             this.label1.Text = "PELICULAS RELACIONADAS";
             // 
+            // btnComprar
+            // 
+            this.btnComprar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(170)))), ((int)(((byte)(117)))));
+            this.btnComprar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(144)))), ((int)(((byte)(77)))));
+            this.btnComprar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnComprar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnComprar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnComprar.Location = new System.Drawing.Point(152, 175);
+            this.btnComprar.Name = "btnComprar";
+            this.btnComprar.Size = new System.Drawing.Size(90, 25);
+            this.btnComprar.TabIndex = 27;
+            this.btnComprar.Text = "Comprar";
+            this.btnComprar.UseVisualStyleBackColor = false;
+            this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
+            // 
             // VerPeliculaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -147,5 +164,6 @@
         private System.Windows.Forms.Button btnVerAhora;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowPanelPeliculasRelacionadas;
+        private System.Windows.Forms.Button btnComprar;
     }
 }
