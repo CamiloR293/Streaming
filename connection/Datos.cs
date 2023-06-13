@@ -395,6 +395,60 @@ namespace Streaming.connection
                 Console.WriteLine("Error al obtener los actores: " + ex.Message);
             }
         }
+
+        public void obtenerCoincidenciasGeneroTodosActores(ComboBox cmbBoxProductos, int codigoProducto)
+        {
+
+            try
+            {
+                // Crear una instancia de OracleConnection y OracleCommand
+                using (OracleConnection connection = new OracleConnection(this.cadenaConexion))
+                {
+                    using (OracleCommand command = new OracleCommand("ObtenerCoincidenciasGeneroTodosActores", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        // Agregar parámetro de entrada
+                        OracleParameter codigoProductoParam = new OracleParameter("p_codigo_producto", OracleDbType.Decimal);
+                        codigoProductoParam.Direction = ParameterDirection.Input;
+                        codigoProductoParam.Value = codigoProducto;
+                        command.Parameters.Add(codigoProductoParam);
+
+                        // Agregar parámetro de salida
+                        OracleParameter productosCursorParam = new OracleParameter();
+                        productosCursorParam.ParameterName = "p_cursor";
+                        productosCursorParam.Direction = ParameterDirection.Output;
+                        productosCursorParam.OracleDbType = OracleDbType.RefCursor;
+                        command.Parameters.Add(productosCursorParam);
+
+                        // Abrir la conexión a la base de datos
+                        connection.Open();
+
+                        // Ejecutar el procedimiento almacenado
+                        command.ExecuteNonQuery();
+
+                        // Obtener el cursor de salida con los resultados
+                        OracleDataReader reader = ((OracleRefCursor)productosCursorParam.Value).GetDataReader();
+
+                        // Limpiar el ComboBox
+                        cmbBoxProductos.Items.Clear();
+
+                        // Recorrer el cursor y agregar los nombres de los productos al ComboBox
+                        while (reader.Read())
+                        {
+                            string nombreProducto = reader["NOMBRE"].ToString();
+                            cmbBoxProductos.Items.Add(nombreProducto);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejar cualquier excepción ocurrida
+                MessageBox.Show("Error al obtener las coincidencias de productos: " + ex.Message);
+            }
+        }
+
         public ArrayList obtenerCoincidenciasGeneroTodosActores(int codigoProducto)
         {
             ArrayList listaProductos = new ArrayList();
@@ -443,7 +497,7 @@ namespace Streaming.connection
             catch (Exception ex)
             {
                 // Manejar cualquier excepción ocurrida
-                Console.WriteLine("Error al obtener las coincidencias de productos: " + ex.Message);
+                MessageBox.Show("Error al obtener las coincidencias de productos: " + ex.Message);
             }
 
             return listaProductos;

@@ -34,6 +34,7 @@
             this.lblTituloPelicula = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -92,6 +93,7 @@
             // 
             this.panel2.AutoScroll = true;
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel2.Controls.Add(this.flowLayoutPanel1);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 228);
@@ -110,6 +112,14 @@
             this.label1.Size = new System.Drawing.Size(217, 21);
             this.label1.TabIndex = 27;
             this.label1.Text = "PELICULAS RELACIONADAS";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 60);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(613, 273);
+            this.flowLayoutPanel1.TabIndex = 28;
             // 
             // VerPeliculaCliente
             // 
@@ -136,5 +146,6 @@
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Button btnVerAhora;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
