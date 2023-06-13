@@ -175,6 +175,12 @@
     <Compile Include="feedback\PlanSuscripcionCliente.Designer.cs">
       <DependentUpon>PlanSuscripcionCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="feedback\Recomendaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feedback\Recomendaciones.Designer.cs">
+      <DependentUpon>Recomendaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="feedback\VerTarjetasCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="feedback\PlanSuscripcionCliente.resx">
       <DependentUpon>PlanSuscripcionCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="feedback\Recomendaciones.resx">
+      <DependentUpon>Recomendaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="feedback\VerTarjetasCliente.resx">
       <DependentUpon>VerTarjetasCliente.cs</DependentUpon>
@@ -355,6 +364,18 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\El Gran Hotel Budapest.png" />
+    <Content Include="Resources\El Padrino.png" />
+    <Content Include="Resources\El Rey Leon.png" />
+    <Content Include="Resources\El Señor de los Anillos La Comunidad del Anillo.png" />
+    <Content Include="Resources\El Silencio de los Inocentes.png" />
+    <Content Include="Resources\Forrest Gump.png" />
+    <Content Include="Resources\Interestelar.png" />
+    <Content Include="Resources\La La Land.png" />
+    <Content Include="Resources\Pulp Fiction.png" />
+    <Content Include="Resources\Roma.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\System.Text.Json.6.0.1\build\System.Text.Json.targets" Condition="Exists('packages\System.Text.Json.6.0.1\build\System.Text.Json.targets')" />

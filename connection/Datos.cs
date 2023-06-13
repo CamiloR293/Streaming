@@ -597,6 +597,65 @@ namespace Streaming.connection
         }
 
 
+        public ArrayList obtenerListaPorHistorial(int codigoCliente)
+        {
+            ArrayList listaPeliculas = new ArrayList();
+            producto p;
+
+
+            try
+            {
+                // Crear una instancia de OracleConnection y OracleCommand
+                using (OracleConnection connection = new OracleConnection(this.cadenaConexion))
+                {
+                    using (OracleCommand command = new OracleCommand("PQU_FUNCIONES.obtener_recomendados", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        // Agregar parámetro de entrada
+                        OracleParameter codigoProductoParam = new OracleParameter("PRM_COD_CLIENTE", OracleDbType.Decimal);
+                        codigoProductoParam.Direction = ParameterDirection.Input;
+                        codigoProductoParam.Value = codigoCliente;
+                        command.Parameters.Add(codigoProductoParam);
+
+                        // Agregar parámetro de salida
+                        OracleParameter prmCursorPeliculas = new OracleParameter();
+                        prmCursorPeliculas.ParameterName = "PRM_PELICULAS";
+                        prmCursorPeliculas.Direction = ParameterDirection.Output;
+                        prmCursorPeliculas.OracleDbType = OracleDbType.RefCursor;
+                        command.Parameters.Add(prmCursorPeliculas);
+
+                        // Abrir la conexión a la base de datos
+                        connection.Open();
+
+                        // Ejecutar el procedimiento almacenado
+                        command.ExecuteNonQuery();
+
+                        // Obtener el cursor de salida con los resultados
+                        OracleDataReader reader = ((OracleRefCursor)prmCursorPeliculas.Value).GetDataReader();
+
+                        // Recorrer el cursor y agregar los nombres de los productos al ArrayList
+                        while (reader.Read())
+                        {
+                            int codigoproducto = int.Parse(reader.GetString(0));
+                            string nombre = reader.GetString(2);
+                            string genero = reader.GetString(6);
+                            p = new producto(codigoproducto, nombre, genero);
+                            listaPeliculas.Add(p);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejar cualquier excepción ocurrida
+                MessageBox.Show("Error al obtener las recomendaciones: " + ex.Message);
+            }
+
+            return listaPeliculas;
+        }
+
+
 
     }
 }

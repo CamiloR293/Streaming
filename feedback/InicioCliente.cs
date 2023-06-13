@@ -4,6 +4,7 @@ using System;
 using System.Drawing;
 using System.Linq.Expressions;
 using System.Windows.Forms;
+using Streaming.feedback;
 
 namespace Streaming
 {
@@ -187,6 +188,14 @@ namespace Streaming
             pnlDesktop.Visible = false;
             banner.Visible = false;
             pnlLateral.Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Recomendaciones fromRec = new Recomendaciones(this.cliente);
+            fromRec.ShowDialog();
+            
         }
     }
 }

@@ -32,6 +32,8 @@ namespace Streaming.logica
             this.nombre = nombre;
             this.genero = genero;
         }
+        
+
         public producto()
         {
 
