@@ -13,11 +13,21 @@ namespace Streaming
 {
     public partial class MenuPrincipalCliente : Form
     {
-        
+        String plan="Si hay";
+        Cliente cliente;
         public MenuPrincipalCliente(Cliente cliente)
         {
             InitializeComponent();
             AgregarPeliculas();
+
+        }
+        public MenuPrincipalCliente(Cliente cliente, String plan)
+        {
+            InitializeComponent();
+            this.plan=plan;
+            this.cliente=cliente;
+            AgregarPeliculas();
+          
 
         }
 
@@ -86,8 +96,8 @@ namespace Streaming
             producto peliculas = new producto();
             DataSet dsResultado = new DataSet();
             dsResultado = peliculas.obtenerProducto(int.Parse(clickedButton.Name));
-            
-            VerPeliculaCliente form = new VerPeliculaCliente(dsResultado.Tables[0].Rows[0]["nombre"].ToString());
+
+            VerPeliculaCliente form = new VerPeliculaCliente(dsResultado.Tables[0].Rows[0]["nombre"].ToString(), plan, cliente);
             form.informacion(dsResultado);
             form.ShowDialog();
             

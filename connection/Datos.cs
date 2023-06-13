@@ -62,6 +62,35 @@ namespace Streaming.connection
                 return -1;
             }
         }
+        public bool VerificarClienteProductoExistente(int codigoCliente, int codigoProducto)
+        {
+            try
+            {
+                using (OracleConnection conexion = new OracleConnection(cadenaConexion))
+                {
+                    conexion.Open();
+
+                    OracleCommand comando = new OracleCommand();
+                    comando.Connection = conexion;
+                    comando.CommandType = CommandType.Text;
+                    comando.CommandText = "SELECT COUNT(*) FROM CLIENTE_PRODUCTO WHERE CODIGO_CLIENTE = :p_codigoCliente AND CODIGO_PRODUCTO = :p_codigoProducto";
+                    comando.Parameters.Add("p_codigoCliente", OracleDbType.Int32).Value = codigoCliente;
+                    comando.Parameters.Add("p_codigoProducto", OracleDbType.Int32).Value = codigoProducto;
+
+                    int count = Convert.ToInt32(comando.ExecuteScalar());
+
+                    conexion.Close();
+
+                    return count > 0;
+                }
+            }
+            catch (OracleException e)
+            {
+                MessageBox.Show("Error al verificar cliente y producto existente: " + e.Message);
+                return false;
+            }
+        }
+
 
         public int idProducto(String nombreProducto)
         {
