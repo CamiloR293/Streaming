@@ -58,14 +58,14 @@ namespace Streaming.feedback
                     button.Font = myFont;
                     button.Name = p.Codigo.ToString();
                     //Modificar esta direccion para que funcione, es la direccion de donde se toman las fotos
-                    String direccion = "C:\\Users\\juans\\source\\repos\\Streaming\\Resources\\" + p.Nombre + ".png";
+                    String direccion = "C:\\Users\\Usuario\\Documents\\GitHub\\Streaming\\CamiloR293\\Streaming\\Resources\\" + p.Nombre + ".png";
                     //String direccion = "D:\\GitHub\\Streaming\\Resources\\" + dsResultado.Tables[0].Rows[i]["nombre"].ToString() + ".png";
                     if (p.Nombre.Contains(":"))
                     {
 
                         String[] linea = p.Nombre.Split(':');
                         //Esta tambien favor comentarlas y no borrarlas
-                        direccion = "C:\\Users\\juans\\source\\repos\\Streaming\\Resources\\" + linea[0] + ".png";
+                        direccion = "C:\\Users\\Usuario\\Documents\\GitHub\\Streaming\\CamiloR293\\Streaming\\Resources\\" + linea[0] + ".png";
                         //direccion = "D:\\GitHub\\Streaming\\Resources\\" + linea[0] + ".png";
 
                     }

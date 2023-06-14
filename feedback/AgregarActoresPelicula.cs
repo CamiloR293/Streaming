@@ -40,13 +40,20 @@ namespace Streaming.feedback
             int resultado2 = miActor.registrarProductoActor(nombrePelicula, papel);
             if (resultado > 0 && resultado2 > 0)
             {
-                MessageBox.Show("Actor y productos registrados con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //limpiar text box
-                txtFechaNacimiento.Clear();
-                txtPrimerApellido.Clear();
-                txtPrimerNombre.Clear();
-                txtSegundoApellido.Clear();
-                txtSegundoNombre.Clear();
+                if (resultado2 == 20001)
+                {
+                    MessageBox.Show("Trigger Ejecutado: No se pueden añadir más de 5 actores en la misma pelicuala");
+                }
+                else
+                {
+                    MessageBox.Show("Actor y productos registrados con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //limpiar text box
+                    txtFechaNacimiento.Clear();
+                    txtPrimerApellido.Clear();
+                    txtPrimerNombre.Clear();
+                    txtSegundoApellido.Clear();
+                    txtSegundoNombre.Clear();
+                }
             }
             else
             {

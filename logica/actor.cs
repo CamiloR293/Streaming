@@ -19,7 +19,7 @@ namespace Streaming.logica
             int resultado;
             string consulta = "insert into actor values((select nvl(max(codigo) + 1, 1) from actor), '" + primernombre + "', '" + segundonombre + "', '"
                 + primerapellido + "', '" + segundoapellido + "', " + "to_Date('" + fechanacimiento + "','dd/mm/yyyy'))";
-            MessageBox.Show(consulta);
+            //MessageBox.Show(consulta);
             resultado = dt.ejecutarDML(consulta);
             return resultado;
         }

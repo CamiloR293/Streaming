@@ -54,7 +54,7 @@ namespace Streaming.connection
             }
             catch (OracleException E)
             {
-                MessageBox.Show(E.Message);
+                //MessageBox.Show(E.Message);
                 if (E.Number == 20001)
                 {
                     return E.Number;
