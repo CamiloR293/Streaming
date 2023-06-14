@@ -130,6 +130,7 @@ namespace Streaming
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             if (txtBuscar.Text.Equals("")) btnMenuPrincipal_Click(sender,e);
+            else picBoxBuscar_Click(sender,e);
         }
     }
 }

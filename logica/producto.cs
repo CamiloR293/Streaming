@@ -90,7 +90,7 @@ namespace Streaming.logica
         public DataSet consultarProducto(string nombrePelicula)
         {
             DataSet miDs = new DataSet();
-            string consulta = "select * from producto where nombre = '" + nombrePelicula + "'";
+            string consulta = "select * from producto where nombre LIKE '%" + nombrePelicula + "%'";
             miDs = dt.ejecutarSELECT(consulta);
             return miDs;
         }
