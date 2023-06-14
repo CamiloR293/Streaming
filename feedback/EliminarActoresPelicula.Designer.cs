@@ -54,7 +54,6 @@
             this.pnlDesktop.Name = "pnlDesktop";
             this.pnlDesktop.Size = new System.Drawing.Size(809, 512);
             this.pnlDesktop.TabIndex = 8;
-            this.pnlDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDesktop_Paint);
             // 
             // cmbBoxActor
             // 
@@ -65,7 +64,6 @@
             this.cmbBoxActor.Name = "cmbBoxActor";
             this.cmbBoxActor.Size = new System.Drawing.Size(191, 24);
             this.cmbBoxActor.TabIndex = 30;
-            this.cmbBoxActor.SelectedIndexChanged += new System.EventHandler(this.cmbBoxActor_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -78,7 +76,6 @@
             this.label2.Size = new System.Drawing.Size(69, 26);
             this.label2.TabIndex = 29;
             this.label2.Text = "Actor:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // cmbBoxPelicula
             // 
@@ -89,7 +86,6 @@
             this.cmbBoxPelicula.Name = "cmbBoxPelicula";
             this.cmbBoxPelicula.Size = new System.Drawing.Size(191, 24);
             this.cmbBoxPelicula.TabIndex = 28;
-            this.cmbBoxPelicula.SelectedIndexChanged += new System.EventHandler(this.cmbBoxPelicula_SelectedIndexChanged);
             // 
             // lblPelicula
             // 
@@ -103,7 +99,6 @@
             this.lblPelicula.TabIndex = 27;
             this.lblPelicula.Text = "Pelicula:";
             this.lblPelicula.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblPelicula.Click += new System.EventHandler(this.lblPelicula_Click);
             // 
             // btnEliminar
             // 
@@ -132,7 +127,6 @@
             this.pnlBanner.Name = "pnlBanner";
             this.pnlBanner.Size = new System.Drawing.Size(809, 82);
             this.pnlBanner.TabIndex = 7;
-            this.pnlBanner.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBanner_Paint);
             // 
             // label1
             // 
@@ -146,7 +140,6 @@
             this.label1.Size = new System.Drawing.Size(271, 36);
             this.label1.TabIndex = 3;
             this.label1.Text = "ELIMINAR ACTORES";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // EliminarActoresPelicula
             // 

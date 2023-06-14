@@ -117,10 +117,6 @@ namespace Streaming
             }
             return true;
         }
-        private static bool TextoVacio(TextBox texto)
-        {
-            return string.IsNullOrWhiteSpace(texto.Text);
-        }
         private static bool ValidarFecha(TextBox textBoxFecha)
         {
             string dateString = textBoxFecha.Text;

@@ -20,6 +20,7 @@ namespace Streaming
         private String txtFechaNacimiento;
         private String txtTelefono;
         private String txtCorreo;
+
         public AgregarTarjeta(Panel panelContainer, Form register,String txtUsuario, String txtPNombre, String txtPApellido,
                 String txtSNombre, String txtSApellido, String txtPasswordRegistro, String txtFechaNacimiento, String txtTelefono
                 , String txtCorreo)
@@ -53,6 +54,7 @@ namespace Streaming
             bloquearBoton();
             cmbBoxTipoTarjeta.SelectedIndex = 0;//inicializar combobox
         }
+
         public AgregarTarjeta()
         {
             InitializeComponent();
@@ -62,6 +64,7 @@ namespace Streaming
             bloquearBoton();
             cmbBoxTipoTarjeta.SelectedIndex = 0;//inicializar combobox
         }
+
         public void bloquearBoton()
         {
             // Manejar el evento TextChanged para cada caja de texto
@@ -89,6 +92,7 @@ namespace Streaming
         }
 
         private Form activeForm = null;
+
         private void openForms(Form newForm)
         {
             if (activeForm != null) activeForm.Close();

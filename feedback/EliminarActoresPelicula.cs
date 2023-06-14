@@ -54,40 +54,5 @@ namespace Streaming.feedback
                 MessageBox.Show("Actor No eliminado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void pnlDesktop_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void cmbBoxActor_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbBoxPelicula_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPelicula_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlBanner_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
