@@ -1,4 +1,5 @@
 ﻿using Streaming.feedback;
+using Streaming.logica;
 using System;
 using System.Windows.Forms;
 
@@ -12,9 +13,16 @@ namespace Streaming
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            try
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new Main());
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("Error al iniciar la aplicacion -> " + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
