@@ -19,5 +19,13 @@ namespace Streaming.logica
             resultado = dt.ejecutarDML(consulta);
             return resultado;
         }
+        public int ingresarAlHistorialVistas(int codigoC, int codigoP)
+        {
+            int resultado;
+            string consulta;
+            consulta = "insert into cliente_producto(codigo_cliente,codigo_producto,codigo_reproduccion,fecha_reproduccion)values(" + codigoC + "," + codigoP + ",(select max(codigo_reproduccion)+1 from cliente_producto),sysdate)";
+            resultado = dt.ejecutarDML(consulta);
+            return resultado;
+        }
     }
 }

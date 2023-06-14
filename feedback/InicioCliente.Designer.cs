@@ -65,6 +65,7 @@
             this.pnlDesktop.Name = "pnlDesktop";
             this.pnlDesktop.Size = new System.Drawing.Size(645, 442);
             this.pnlDesktop.TabIndex = 3;
+            this.pnlDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDesktop_Paint);
             // 
             // pnlLateral
             // 

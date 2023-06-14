@@ -39,6 +39,7 @@
             this.flowPanelPeliculasRelacionadas.Name = "flowPanelPeliculasRelacionadas";
             this.flowPanelPeliculasRelacionadas.Size = new System.Drawing.Size(613, 484);
             this.flowPanelPeliculasRelacionadas.TabIndex = 29;
+            this.flowPanelPeliculasRelacionadas.Paint += new System.Windows.Forms.PaintEventHandler(this.flowPanelPeliculasRelacionadas_Paint);
             // 
             // Recomendaciones
             // 

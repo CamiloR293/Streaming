@@ -60,7 +60,7 @@ namespace Streaming
             btnAddMetodosPago.BackColor = colorNaranjaPredeterminado;
             btnDatosPersonales.BackColor = colorNaranjaPredeterminado;
             btnRecomendados.BackColor = colorNaranjaPredeterminado;
-            openForms(new MenuPrincipalCliente());
+            openForms(new MenuPrincipalCliente(cliente));
         }
 
         private void btnDatosPersonales_Click(object sender, System.EventArgs e)
@@ -131,6 +131,11 @@ namespace Streaming
         {
             if (txtBuscar.Text.Equals("")) btnMenuPrincipal_Click(sender,e);
             else picBoxBuscar_Click(sender,e);
+        }
+
+        private void pnlDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

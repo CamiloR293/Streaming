@@ -19,9 +19,9 @@ namespace Streaming
     {
         Cliente cliente= new Cliente();
         String nPelicula;
-        string plan;
+        string plan="Con plan";
         Panel main = new Panel();
-        public VerPeliculaCliente(String nPelicula)
+        public VerPeliculaCliente(String nPelicula, Cliente cliente)
         {
             InitializeComponent();
             this.nPelicula = nPelicula;
@@ -45,14 +45,17 @@ namespace Streaming
 
         private void btnVerAhora_Click(object sender, EventArgs e)
         {
+            clienteProducto historial = new clienteProducto();
+            Datos dt = new Datos();
+            producto p = new producto();
             if (plan.Equals("Sin plan"))
             {
-                Datos dt = new Datos();
-                producto p = new producto();
+                
                 if (dt.VerificarClienteProductoExistente(cliente.Codigo, p.idPelicula(nPelicula)))
                 {
                     ViendoPelicula pelicula = new ViendoPelicula();
                     pelicula.ShowDialog();
+                    historial.ingresarAlHistorialVistas(cliente.Codigo, p.idPelicula(nPelicula));
                     //openForms(new ViendoPelicula());
                     this.Close();
                 }
@@ -63,6 +66,7 @@ namespace Streaming
             }
             else
             {
+                historial.ingresarAlHistorialVistas(cliente.Codigo, p.idPelicula(nPelicula));
                 ViendoPelicula pelicula = new ViendoPelicula();
                 pelicula.ShowDialog();
             }
@@ -104,15 +108,15 @@ namespace Streaming
                     button.Font = myFont;
                     button.Name = p.Codigo.ToString();
                     //Modificar esta direccion para que funcione, es la direccion de donde se toman las fotos
-                    //String direccion = "C:\\Users\\Usuario\\Documents\\GitHub\\Streaming\\CamiloR293\\Streaming\\Resources\\" + p.Nombre + ".png";
-                    String direccion = "D:\\GitHub\\Streaming\\Resources\\" + p.Nombre + ".png";
+                    String direccion = "C:\\Users\\Usuario\\Documents\\GitHub\\Streaming\\CamiloR293\\Streaming\\Resources\\" + p.Nombre + ".png";
+                    //String direccion = "D:\\GitHub\\Streaming\\Resources\\" + p.Nombre + ".png";
                     if (p.Nombre.Contains(":"))
                     {
 
                         String[] linea = p.Nombre.Split(':');
                         //Esta tambien favor comentarlas y no borrarlas
-                        //direccion = "C:\\Users\\Usuario\\Documents\\GitHub\\Streaming\\CamiloR293\\Streaming\\Resources\\" + linea[0] + ".png";
-                        direccion = "D:\\GitHub\\Streaming\\Resources\\" + linea[0] + ".png";
+                        direccion = "C:\\Users\\Usuario\\Documents\\GitHub\\Streaming\\CamiloR293\\Streaming\\Resources\\" + linea[0] + ".png";
+                        //direccion = "D:\\GitHub\\Streaming\\Resources\\" + linea[0] + ".png";
 
                     }
                     button.BackgroundImage = Image.FromFile(direccion);
@@ -140,7 +144,7 @@ namespace Streaming
             DataSet dsResultado = new DataSet();
             dsResultado = peliculas.obtenerProducto(int.Parse(clickedButton.Name));
             string nombre=dsResultado.Tables[0].Rows[0]["nombre"].ToString();
-            VerPeliculaCliente form = new VerPeliculaCliente(nombre);
+            VerPeliculaCliente form = new VerPeliculaCliente(nombre, cliente);
             form.informacion(dsResultado);
             form.ShowDialog();
         }
