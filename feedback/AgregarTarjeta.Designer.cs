@@ -169,6 +169,9 @@ namespace Streaming
             this.btnRegistrar.TabIndex = 24;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += BtnRegistrar_Click;
+
+            //this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click_1);
             // 
             // cmbBoxTipoTarjeta
             // 
@@ -200,6 +203,8 @@ namespace Streaming
             this.btnRegistrarme.TabIndex = 21;
             this.btnRegistrarme.Text = "Registrarme";
             this.btnRegistrarme.UseVisualStyleBackColor = false;
+            this.btnRegistrarme.Click += BtnRegistrarme_Click;
+
             // 
             // txtCVV
             // 
@@ -285,12 +290,11 @@ namespace Streaming
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(68, 172);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(55, 141);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(209, 26);
+            this.label5.Size = new System.Drawing.Size(166, 21);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Fecha de expedicion:";
+            this.label5.Text = "Fecha de expiración:";
             // 
             // label2
             // 

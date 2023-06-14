@@ -281,3 +281,5 @@ C:\Users\juans\source\repos\Streaming\obj\Debug\Streaming.csproj.CopyComplete
 C:\Users\juans\source\repos\Streaming\obj\Debug\Streaming.exe
 C:\Users\juans\source\repos\Streaming\obj\Debug\Streaming.pdb
 C:\Users\juans\source\repos\Streaming\obj\Debug\Streaming.feedback.Recomendaciones.resources
+D:\GitHub\Streaming\obj\Debug\Streaming.feedback.Recomendaciones.resources
+C:\Users\Usuario\Documents\GitHub\Streaming\CamiloR293\Streaming\obj\Debug\Streaming.feedback.Recomendaciones.resources
