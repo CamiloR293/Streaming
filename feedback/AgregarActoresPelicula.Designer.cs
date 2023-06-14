@@ -99,6 +99,7 @@
             // 
             // cmbBoxPelicula
             // 
+            this.cmbBoxPelicula.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbBoxPelicula.FormattingEnabled = true;
             this.cmbBoxPelicula.Location = new System.Drawing.Point(217, 299);
             this.cmbBoxPelicula.Margin = new System.Windows.Forms.Padding(2);
@@ -156,7 +157,7 @@
             this.txtSegundoApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSegundoApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSegundoApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSegundoApellido.Location = new System.Drawing.Point(316, 110);
+            this.txtSegundoApellido.Location = new System.Drawing.Point(342, 110);
             this.txtSegundoApellido.Multiline = true;
             this.txtSegundoApellido.Name = "txtSegundoApellido";
             this.txtSegundoApellido.Size = new System.Drawing.Size(188, 20);
@@ -167,7 +168,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(314, 86);
+            this.label2.Location = new System.Drawing.Point(340, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(149, 21);
             this.label2.TabIndex = 31;
@@ -178,7 +179,7 @@
             this.txtSegundoNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSegundoNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSegundoNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSegundoNombre.Location = new System.Drawing.Point(316, 45);
+            this.txtSegundoNombre.Location = new System.Drawing.Point(342, 45);
             this.txtSegundoNombre.Multiline = true;
             this.txtSegundoNombre.Name = "txtSegundoNombre";
             this.txtSegundoNombre.Size = new System.Drawing.Size(188, 20);
@@ -189,7 +190,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(314, 21);
+            this.label3.Location = new System.Drawing.Point(340, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(146, 21);
             this.label3.TabIndex = 29;
@@ -216,7 +217,7 @@
             this.txtPrimerApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPrimerApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrimerApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrimerApellido.Location = new System.Drawing.Point(38, 110);
+            this.txtPrimerApellido.Location = new System.Drawing.Point(64, 110);
             this.txtPrimerApellido.Multiline = true;
             this.txtPrimerApellido.Name = "txtPrimerApellido";
             this.txtPrimerApellido.Size = new System.Drawing.Size(180, 20);
@@ -227,7 +228,7 @@
             this.lblApellido.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblApellido.AutoSize = true;
             this.lblApellido.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellido.Location = new System.Drawing.Point(34, 86);
+            this.lblApellido.Location = new System.Drawing.Point(60, 86);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(132, 21);
             this.lblApellido.TabIndex = 20;
@@ -238,7 +239,7 @@
             this.txtPrimerNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPrimerNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrimerNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrimerNombre.Location = new System.Drawing.Point(38, 45);
+            this.txtPrimerNombre.Location = new System.Drawing.Point(64, 45);
             this.txtPrimerNombre.Multiline = true;
             this.txtPrimerNombre.Name = "txtPrimerNombre";
             this.txtPrimerNombre.Size = new System.Drawing.Size(180, 20);
@@ -249,7 +250,7 @@
             this.lblNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(34, 21);
+            this.lblNombre.Location = new System.Drawing.Point(60, 21);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(129, 21);
             this.lblNombre.TabIndex = 12;

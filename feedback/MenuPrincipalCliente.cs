@@ -30,19 +30,33 @@ namespace Streaming
           
 
         }
-
+        public MenuPrincipalCliente(string consulta)
+        {
+            InitializeComponent();
+            AgregarPeliculas(consulta);
+        }
         public MenuPrincipalCliente()
         {
             InitializeComponent();
             AgregarPeliculas();
         }
-
-        /*dimensiones picture box 169; 97 */
+        private void AgregarPeliculas(string consulta) 
+        {
+            producto peliculas = new producto();
+            DataSet dsResultado = new DataSet();
+            dsResultado = peliculas.consultarProducto(consulta);
+            crearBotones(dsResultado);
+        }
         private void AgregarPeliculas()
         {
             producto peliculas = new producto();
             DataSet dsResultado = new DataSet();
             dsResultado = peliculas.consultarProducto();
+            crearBotones(dsResultado);
+            
+        }
+        private void crearBotones(DataSet dsResultado)
+        {
             if (dsResultado.Tables[0].Rows.Count > 0)
             {
 
@@ -60,36 +74,29 @@ namespace Streaming
                     button.Font = myFont;
                     button.Name = dsResultado.Tables[0].Rows[i]["codigo"].ToString();
                     //Modificar esta direccion para que funcione, es la direccion de donde se toman las fotos
-                    String direccion = "C:\\Users\\Usuario\\Documents\\GitHub\\Streaming\\CamiloR293\\Streaming\\Resources\\" + dsResultado.Tables[0].Rows[i]["nombre"].ToString() + ".png";
-                    //String direccion = "D:\\GitHub\\Streaming\\Resources\\" + dsResultado.Tables[0].Rows[i]["nombre"].ToString() + ".png";
+                    //String direccion = "C:\\Users\\Usuario\\Documents\\GitHub\\Streaming\\CamiloR293\\Streaming\\Resources\\" + dsResultado.Tables[0].Rows[i]["nombre"].ToString() + ".png";
+                    String direccion = "D:\\GitHub\\Streaming\\Resources\\" + dsResultado.Tables[0].Rows[i]["nombre"].ToString() + ".png";
                     if (dsResultado.Tables[0].Rows[i]["nombre"].ToString().Contains(":"))
                     {
 
                         String[] linea = dsResultado.Tables[0].Rows[i]["nombre"].ToString().Split(':');
                         //Esta tambien favor comentarlas y no borrarlas
-                        direccion = "C:\\Users\\Usuario\\Documents\\GitHub\\Streaming\\CamiloR293\\Streaming\\Resources\\" + linea[0] + ".png";
-                        //direccion = "D:\\GitHub\\Streaming\\Resources\\" + linea[0] + ".png";
+                        //direccion = "C:\\Users\\Usuario\\Documents\\GitHub\\Streaming\\CamiloR293\\Streaming\\Resources\\" + linea[0] + ".png";
+                        direccion = "D:\\GitHub\\Streaming\\Resources\\" + linea[0] + ".png";
 
                     }
                     button.BackgroundImage = Image.FromFile(direccion);
                     button.BackgroundImageLayout = ImageLayout.Stretch;
                     flowPanelCatalogo.Controls.Add(button);
 
-
                     button.Click += button_Click;
-
-
                 }
-
-
-
             }
             else
             {
-                MessageBox.Show("error");
+                MessageBox.Show("La pelicula no existe o tiene un nombre distinto.");
             }
         }
-
         private void button_Click(object sender, EventArgs e)
         {
             Button clickedButton = (Button)sender;
@@ -101,8 +108,6 @@ namespace Streaming
             form.informacion(dsResultado);
             form.ShowDialog();
             
-            
-
         }
         #region OpenForm
 
@@ -130,7 +135,5 @@ namespace Streaming
 
         }
         #endregion
-        //Las picture box deben generarse de acuerdo a la cantidad de peliculas de la base
-        //de datos
     }
 }

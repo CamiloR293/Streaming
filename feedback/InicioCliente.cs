@@ -107,6 +107,7 @@ namespace Streaming
         private void picBoxBuscar_Click(object sender, System.EventArgs e)
         {
             //buscar segun txtBuscar
+            openForms(new MenuPrincipalCliente(txtBuscar.Text));
         }
 
         public void hideControls()
@@ -124,6 +125,11 @@ namespace Streaming
             btnRecomendados.BackColor = colorNaranjaSeleccionado;
             openForms(new Recomendaciones(cliente));
             
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text.Equals("")) btnMenuPrincipal_Click(sender,e);
         }
     }
 }

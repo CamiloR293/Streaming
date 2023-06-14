@@ -1,6 +1,7 @@
 ﻿
 using Oracle.ManagedDataAccess.Client;
 using Streaming.connection;
+using System;
 using System.Data;
 
 namespace Streaming.logica
@@ -86,7 +87,13 @@ namespace Streaming.logica
             miDs = dt.ejecutarSELECT(consulta);
             return miDs;
         }
-
+        public DataSet consultarProducto(string nombrePelicula)
+        {
+            DataSet miDs = new DataSet();
+            string consulta = "select * from producto where nombre = '" + nombrePelicula + "'";
+            miDs = dt.ejecutarSELECT(consulta);
+            return miDs;
+        }
         public DataSet extraerPeliculasPorGenero(string genero)
         {
             DataSet miDs = new DataSet();

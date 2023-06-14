@@ -109,7 +109,7 @@
             this.lblFechaExpedicion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFechaExpedicion.AutoSize = true;
             this.lblFechaExpedicion.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaExpedicion.Location = new System.Drawing.Point(225, 145);
+            this.lblFechaExpedicion.Location = new System.Drawing.Point(212, 145);
             this.lblFechaExpedicion.Name = "lblFechaExpedicion";
             this.lblFechaExpedicion.Size = new System.Drawing.Size(115, 21);
             this.lblFechaExpedicion.TabIndex = 4;
@@ -122,9 +122,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(49, 145);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(170, 21);
+            this.label3.Size = new System.Drawing.Size(166, 21);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Fecha de expedicion:";
+            this.label3.Text = "Fecha de expiracion:";
             // 
             // lblNombre
             // 

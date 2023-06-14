@@ -56,7 +56,7 @@
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(800, 512);
-            this.pnlMain.TabIndex = 0; 
+            this.pnlMain.TabIndex = 0;
             // 
             // pnlDesktop
             // 
@@ -88,7 +88,7 @@
             this.btnRecomendados.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecomendados.ForeColor = System.Drawing.Color.White;
             this.btnRecomendados.Location = new System.Drawing.Point(0, 228);
-            this.btnRecomendados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRecomendados.Margin = new System.Windows.Forms.Padding(2);
             this.btnRecomendados.Name = "btnRecomendados";
             this.btnRecomendados.Size = new System.Drawing.Size(155, 76);
             this.btnRecomendados.TabIndex = 4;
@@ -198,6 +198,7 @@
             this.txtBuscar.TabIndex = 24;
             this.txtBuscar.Text = "Buscar";
             this.txtBuscar.Click += new System.EventHandler(this.txtBuscar_Click);
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             this.txtBuscar.Leave += new System.EventHandler(this.txtBuscar_Leave);
             // 
             // lblTitle
