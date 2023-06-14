@@ -14,25 +14,25 @@ namespace Streaming
 {
     public partial class DatosPersonalesEmpleado : Form
     {
-        administrador cliente= new administrador();
+        administrador MiAdministrador= new administrador();
         public DatosPersonalesEmpleado(administrador admin)
         {
             InitializeComponent();
-            this.cliente=admin;
-            this.actualizarLabel(cliente);
+            this.MiAdministrador=admin;
+            this.actualizarLabel(MiAdministrador);
           
         }
         private void actualizarLabel(administrador admin) {
-            lblPrimerNombre.Text = cliente.PName;
-            lblNombreUsuario.Text = cliente.User;
-            lblSegundoNombre.Text = cliente.SName;
-            lblPrimerApellido.Text = cliente.PApellido;
-            lblSegundoApellido.Text = cliente.SApellido;
-            lblFechaNacimiento.Text = cliente.FNacimiento;
-            lblCorreo.Text = cliente.Correo;
-            lblTelefono.Text = cliente.Telefono;
-            lblCodigo.Text = cliente.Codigo.ToString();
-            lblIdAdmin.Text = cliente.IdAdmin.ToString();
+            lblPrimerNombre.Text = MiAdministrador.PName;
+            lblNombreUsuario.Text = MiAdministrador.User;
+            lblSegundoNombre.Text = MiAdministrador.SName;
+            lblPrimerApellido.Text = MiAdministrador.PApellido;
+            lblSegundoApellido.Text = MiAdministrador.SApellido;
+            lblFechaNacimiento.Text = MiAdministrador.FNacimiento;
+            lblCorreo.Text = MiAdministrador.Correo;
+            lblTelefono.Text = MiAdministrador.Telefono;
+            lblCodigo.Text = MiAdministrador.Codigo.ToString();
+            lblIdAdmin.Text = MiAdministrador.IdAdmin.ToString();
         }
         private void lblPrimerNombre_Click(object sender, EventArgs e)
         {
@@ -42,9 +42,9 @@ namespace Streaming
         private void btnActualizarDatos_Click(object sender, EventArgs e)
         {
             
-            Form actualizar = new ActualizarDatosCliente(cliente, "1");
+            Form actualizar = new ActualizarDatosCliente(MiAdministrador, "1");
             actualizar.ShowDialog();
-            this.actualizarLabel(cliente);
+            this.actualizarLabel(MiAdministrador);
             // hacer el reset de datos empleado
         }
     }

@@ -20,7 +20,15 @@ namespace Streaming.feedback
             InitializeComponent();
             misDatos.obtenerActores(cmbBoxActor);
             misDatos.obtenerPeliculas(cmbBoxPelicula);
+            inicializarComboBox();
         }
+
+        public void inicializarComboBox()
+        {
+            cmbBoxActor.SelectedIndex = 0;
+            cmbBoxPelicula.SelectedIndex = 0;
+        }
+
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
