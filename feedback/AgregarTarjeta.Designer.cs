@@ -166,6 +166,9 @@ namespace Streaming
             this.btnRegistrar.TabIndex = 24;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += BtnRegistrar_Click;
+
+            //this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click_1);
             // 
             // cmbBoxTipoTarjeta
             // 
@@ -195,6 +198,8 @@ namespace Streaming
             this.btnRegistrarme.TabIndex = 21;
             this.btnRegistrarme.Text = "Registrarme";
             this.btnRegistrarme.UseVisualStyleBackColor = false;
+            this.btnRegistrarme.Click += BtnRegistrarme_Click;
+
             // 
             // txtCVV
             // 
