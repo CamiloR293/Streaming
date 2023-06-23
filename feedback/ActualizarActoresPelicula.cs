@@ -29,10 +29,10 @@ namespace Streaming.feedback
         }
 
         public void inicializarComboBox()
-        {
-            cmbBoxActor.SelectedIndex = 0; /*@TODO: marcar si no se inicializa el combobox de Actor o causa errores*/
+        {/*
+            cmbBoxActor.SelectedIndex = 0; /*@TODO: marcar si no se inicializa el combobox de Actor o causa errores
             cmbBoxPapel.SelectedIndex = 0;
-            cmbBoxPelicula.SelectedIndex = 0;
+            cmbBoxPelicula.SelectedIndex = 0;*/
         }
 
         private void VerificarCamposTexto(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace Streaming.feedback
 
         private void llenarCmbBoxPeliculas()
         {
-            misDatos.obtenerPeliculas(cmbBoxPelicula);
+            misDatos.Llenar0eliculasComboBoxConCursor(cmbBoxPelicula);
             //cmbBoxPelicula.Items.Add(); //Ciclo que llene todas las peliculas para seleccionar
         }
 

@@ -41,6 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.picBoxAdminIcon = new System.Windows.Forms.PictureBox();
             this.pnlDesktop = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlLateral.SuspendLayout();
             this.pnlAdministrarActores.SuspendLayout();
             this.pnlLateral1.SuspendLayout();
@@ -50,6 +51,7 @@
             // pnlLateral
             // 
             this.pnlLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(239)))));
+            this.pnlLateral.Controls.Add(this.button1);
             this.pnlLateral.Controls.Add(this.pnlAdministrarActores);
             this.pnlLateral.Controls.Add(this.btnAdministrarActores);
             this.pnlLateral.Controls.Add(this.btnCerrarSesion);
@@ -136,9 +138,9 @@
             this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 480);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 525);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(161, 69);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(161, 36);
             this.btnCerrarSesion.TabIndex = 4;
             this.btnCerrarSesion.Text = "CERRAR SESION";
             this.btnCerrarSesion.UseVisualStyleBackColor = false;
@@ -213,6 +215,21 @@
             this.pnlDesktop.Size = new System.Drawing.Size(639, 561);
             this.pnlDesktop.TabIndex = 1;
             // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(239)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(0, 459);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(161, 60);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "ACTUALIZAR CLIENTES";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // InicioEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -248,5 +265,6 @@
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnAgregarActores;
         private System.Windows.Forms.Button btnAdministrarActores;
+        private System.Windows.Forms.Button button1;
     }
 }

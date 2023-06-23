@@ -687,5 +687,113 @@ namespace Streaming.connection
 
 
 
+        public void LlenarComboBoxConCursor(ComboBox comboBox)
+        {
+            OracleConnection connection = new OracleConnection(cadenaConexion);
+
+            try
+            {
+                // Abrir la conexión
+                connection.Open();
+
+                // Crear el comando para ejecutar el procedimiento almacenado
+                OracleCommand command = new OracleCommand("cursor_estudiante", connection);
+                command.CommandType = CommandType.StoredProcedure;
+
+                // Agregar parámetro de salida para el cursor
+                OracleParameter cursorParam = new OracleParameter();
+                cursorParam.ParameterName = "p_cursor";
+                cursorParam.OracleDbType = OracleDbType.RefCursor;
+                cursorParam.Direction = ParameterDirection.Output;
+                command.Parameters.Add(cursorParam);
+
+                // Ejecutar el procedimiento almacenado
+                command.ExecuteNonQuery();
+
+                // Obtener el cursor del procedimiento almacenado
+                OracleRefCursor cursor = (OracleRefCursor)command.Parameters["p_cursor"].Value;
+
+                // Crear un lector de datos para leer los registros del cursor
+                OracleDataReader reader = cursor.GetDataReader();
+
+                // Recorrer los registros del cursor
+                while (reader.Read())
+                {
+                    // Acceder a los valores de cada columna
+                    int codigo = reader.GetInt32(0);
+                    string nombreUsuario = reader.GetString(1);
+
+                    // Agregar el item al ComboBox
+                    comboBox.Items.Add($"{codigo}, {nombreUsuario}");
+                }
+
+                // Cerrar el DataReader
+                reader.Close();
+            }
+            catch (OracleException ex)
+            {
+                // Manejar cualquier excepción ocurrida durante la ejecución
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                // Cerrar la conexión
+                connection.Close();
+            }
+        }
+        public void Llenar0eliculasComboBoxConCursor(ComboBox comboBox)
+        {
+            OracleConnection connection = new OracleConnection(cadenaConexion);
+
+            try
+            {
+                // Abrir la conexión
+                connection.Open();
+
+                // Crear el comando para ejecutar el procedimiento almacenado
+                OracleCommand command = new OracleCommand("cursor_peliculas", connection);
+                command.CommandType = CommandType.StoredProcedure;
+
+                // Agregar parámetro de salida para el cursor
+                OracleParameter cursorParam = new OracleParameter();
+                cursorParam.ParameterName = "p_cursor";
+                cursorParam.OracleDbType = OracleDbType.RefCursor;
+                cursorParam.Direction = ParameterDirection.Output;
+                command.Parameters.Add(cursorParam);
+
+                // Ejecutar el procedimiento almacenado
+                command.ExecuteNonQuery();
+
+                // Obtener el cursor del procedimiento almacenado
+                OracleRefCursor cursor = (OracleRefCursor)command.Parameters["p_cursor"].Value;
+
+                // Crear un lector de datos para leer los registros del cursor
+                OracleDataReader reader = cursor.GetDataReader();
+
+                // Recorrer los registros del cursor
+                while (reader.Read())
+                {
+                    // Acceder a los valores de cada columna
+                    string nombreUsuario = reader.GetString(2);
+
+                    // Agregar el item al ComboBox
+                    comboBox.Items.Add($"{nombreUsuario}");
+                }
+
+                // Cerrar el DataReader
+                reader.Close();
+            }
+            catch (OracleException ex)
+            {
+                // Manejar cualquier excepción ocurrida durante la ejecución
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                // Cerrar la conexión
+                connection.Close();
+            }
+        }
+
     }
 }

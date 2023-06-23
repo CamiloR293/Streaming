@@ -139,6 +139,12 @@
     <Compile Include="feedback\EliminarActoresPelicula.Designer.cs">
       <DependentUpon>EliminarActoresPelicula.cs</DependentUpon>
     </Compile>
+    <Compile Include="feedback\Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feedback\Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="feedback\InicioCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="feedback\EliminarActoresPelicula.resx">
       <DependentUpon>EliminarActoresPelicula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="feedback\Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="feedback\InicioCliente.resx">
       <DependentUpon>InicioCliente.cs</DependentUpon>
