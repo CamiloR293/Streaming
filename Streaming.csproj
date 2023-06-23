@@ -121,6 +121,12 @@
     <Compile Include="feedback\AgregarTarjeta.Designer.cs">
       <DependentUpon>AgregarTarjeta.cs</DependentUpon>
     </Compile>
+    <Compile Include="feedback\BuscarClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feedback\BuscarClientes.Designer.cs">
+      <DependentUpon>BuscarClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="feedback\DatosPersonalesCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="feedback\AgregarTarjeta.resx">
       <DependentUpon>AgregarTarjeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="feedback\BuscarClientes.resx">
+      <DependentUpon>BuscarClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="feedback\DatosPersonalesCliente.resx">
       <DependentUpon>DatosPersonalesCliente.cs</DependentUpon>

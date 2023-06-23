@@ -333,3 +333,4 @@ C:\Users\Usuario\Source\Repos\CamiloR293\Streaming\obj\Debug\Streaming.csproj.Co
 C:\Users\Usuario\Source\Repos\CamiloR293\Streaming\obj\Debug\Streaming.csproj.CopyComplete
 C:\Users\Usuario\Source\Repos\CamiloR293\Streaming\obj\Debug\Streaming.exe
 C:\Users\Usuario\Source\Repos\CamiloR293\Streaming\obj\Debug\Streaming.pdb
+C:\Users\Usuario\Source\Repos\CamiloR293\Streaming\obj\Debug\Streaming.feedback.BuscarClientes.resources

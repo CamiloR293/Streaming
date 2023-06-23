@@ -795,5 +795,322 @@ namespace Streaming.connection
             }
         }
 
+       /* public Cliente BuscarClientePorNombreUsuario(string nombreUsuario)
+        {
+            OracleConnection connection = new OracleConnection(cadenaConexion);
+            Cliente cliente = null;
+
+            try
+            {
+                // Abrir la conexión
+                connection.Open();
+
+                // Crear el comando para ejecutar el procedimiento del paquete
+                OracleCommand command = new OracleCommand("pqt_gestion_clientes.buscar_cliente_por_nombre_usuario", connection);
+                command.CommandType = CommandType.StoredProcedure;
+
+                // Parámetro de entrada para el nombre de usuario
+                OracleParameter nombreUsuarioParam = new OracleParameter();
+                nombreUsuarioParam.ParameterName = "p_nombre_usuario";
+                nombreUsuarioParam.OracleDbType = OracleDbType.Varchar2;
+                nombreUsuarioParam.Value = nombreUsuario;
+                command.Parameters.Add(nombreUsuarioParam);
+
+                // Parámetro de salida para el cliente
+                OracleParameter clienteParam = new OracleParameter();
+                clienteParam.ParameterName = "p_cliente";
+                clienteParam.OracleDbType = OracleDbType.RefCursor;
+                clienteParam.Direction = ParameterDirection.Output;
+                command.Parameters.Add(clienteParam);
+
+                // Ejecutar el procedimiento
+                command.ExecuteNonQuery();
+
+                // Obtener el cursor de salida
+                OracleRefCursor cursor = (OracleRefCursor)command.Parameters["p_cliente"].Value;
+                OracleDataReader reader = cursor.GetDataReader();
+
+                // Leer el resultado del cursor
+                if (reader.Read())
+                {
+                    // Crear un objeto Cliente y asignar los valores
+                    cliente = new Cliente();
+                    cliente.Codigo = reader.GetInt32(0);
+                    cliente.User = reader.GetString(1);
+                    cliente.PName=reader.GetString(2);
+                    cliente.SName=reader.GetString(3);
+                    cliente.PApellido = reader.GetString(4);
+                    cliente.SApellido = reader.GetString(5);
+                    cliente.FNacimiento = reader.GetString(6);
+                    cliente.Password = reader.GetString(7);
+                    cliente.Telefono = reader.GetString(9);
+                    cliente.Correo = reader.GetString(10);
+
+                }
+
+                // Cerrar el DataReader
+                reader.Close();
+            }
+            catch (OracleException ex)
+            {
+                // Manejar cualquier excepción ocurrida durante la ejecución
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                // Cerrar la conexión
+                connection.Close();
+            }
+
+            return cliente;
+        }*/
+        /*
+        public Cliente BuscarClientePorCodigo(int codigo)
+        {
+            OracleConnection connection = new OracleConnection(cadenaConexion);
+            Cliente cliente = null;
+
+            try
+            {
+                // Abrir la conexión
+                connection.Open();
+
+                // Crear el comando para ejecutar el procedimiento del paquete
+                OracleCommand command = new OracleCommand("pqt_gestion_clientes.buscar_cliente_por_codigo", connection);
+                command.CommandType = CommandType.StoredProcedure;
+
+                // Parámetro de entrada para el código
+                OracleParameter codigoParam = new OracleParameter();
+                codigoParam.ParameterName = "p_codigo";
+                codigoParam.OracleDbType = OracleDbType.Int32;
+                codigoParam.Value = codigo;
+                command.Parameters.Add(codigoParam);
+
+                // Parámetro de salida para el cliente
+                OracleParameter clienteParam = new OracleParameter();
+                clienteParam.ParameterName = "p_cliente";
+                clienteParam.OracleDbType = OracleDbType.RefCursor;
+                clienteParam.Direction = ParameterDirection.Output;
+                command.Parameters.Add(clienteParam);
+
+                // Ejecutar el procedimiento
+                command.ExecuteNonQuery();
+
+                // Obtener el cursor de salida
+                OracleRefCursor cursor = (OracleRefCursor)command.Parameters["p_cliente"].Value;
+                OracleDataReader reader = cursor.GetDataReader();
+
+                // Leer el resultado del cursor
+                if (reader.Read())
+                {
+                    // Crear un objeto Cliente y asignar los valores
+                    cliente = new Cliente();
+                    cliente.Codigo = reader.GetInt32(0);
+                    cliente.User = reader.GetString(1);
+                    cliente.PName = reader.GetString(2);
+                    cliente.SName = reader.GetString(3);
+                    cliente.PApellido = reader.GetString(4);
+                    cliente.SApellido = reader.GetString(5);
+                    cliente.FNacimiento = reader.GetString(6);
+                    cliente.Password = reader.GetString(7);
+                    cliente.Telefono = reader.GetString(9);
+                    cliente.Correo = reader.GetString(10);
+                }
+
+                // Cerrar el DataReader
+                reader.Close();
+            }
+            catch (OracleException ex)
+            {
+                // Manejar cualquier excepción ocurrida durante la ejecución
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                // Cerrar la conexión
+                connection.Close();
+            }
+
+            return cliente;
+        }
+
+        */
+        public Cliente BuscarClientePorNombreUsuario(string nombreUsuario)
+        {
+            Cliente cliente = null;
+            OracleConnection connection = new OracleConnection(cadenaConexion);
+
+            try
+            {
+                // Abrir la conexión
+                connection.Open();
+
+                // Crear el comando para ejecutar el procedimiento del paquete
+                OracleCommand command = new OracleCommand("pqt_gestion_clientes.buscar_cliente_por_nombre_usuario", connection);
+                command.CommandType = CommandType.StoredProcedure;
+
+                // Parámetros de entrada y salida
+                OracleParameter nombreUsuarioParam = new OracleParameter();
+                nombreUsuarioParam.ParameterName = "p_nombre_usuario";
+                nombreUsuarioParam.OracleDbType = OracleDbType.Varchar2;
+                nombreUsuarioParam.Direction = ParameterDirection.Input;
+                nombreUsuarioParam.Value = nombreUsuario;
+                command.Parameters.Add(nombreUsuarioParam);
+
+                OracleParameter clienteParam = new OracleParameter();
+                clienteParam.ParameterName = "p_cliente";
+                clienteParam.OracleDbType = OracleDbType.RefCursor;
+                clienteParam.Direction = ParameterDirection.Output;
+                command.Parameters.Add(clienteParam);
+
+                // Ejecutar el procedimiento
+                command.ExecuteNonQuery();
+
+                // Obtener el resultado del cursor
+                OracleRefCursor cursor = (OracleRefCursor)command.Parameters["p_cliente"].Value;
+                OracleDataReader reader = cursor.GetDataReader();
+
+                // Recorrer los registros del cursor
+                while (reader.Read())
+                {
+                    cliente = new Cliente();
+                    cliente.Codigo = reader.GetInt32(0);
+                    cliente.User = reader.GetString(1);
+                    cliente.PName = reader.GetString(2);
+                    cliente.SName = reader.GetString(3);
+                    cliente.PApellido = reader.GetString(4);
+                    cliente.SApellido = reader.GetString(5);
+                    cliente.FNacimiento = reader.GetString(6);
+                    cliente.Password = reader.GetString(7);
+                    cliente.Telefono = reader.GetString(9);
+                    cliente.Correo = reader.GetString(10);
+                }
+
+                // Cerrar el DataReader
+                reader.Close();
+            }
+            catch (OracleException ex)
+            {
+                // Manejar cualquier excepción ocurrida durante la ejecución
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                // Cerrar la conexión
+                connection.Close();
+            }
+            return cliente;
+        }
+
+        public Cliente BuscarClientePorCodigo(int codigo)
+        {
+            Cliente cliente = null;
+            OracleConnection connection = new OracleConnection(cadenaConexion);
+
+            try
+            {
+                // Abrir la conexión
+                connection.Open();
+
+                // Crear el comando para ejecutar el procedimiento del paquete
+                OracleCommand command = new OracleCommand("pqt_gestion_clientes.buscar_cliente_por_codigo", connection);
+                command.CommandType = CommandType.StoredProcedure;
+
+                // Parámetros de entrada y salida
+                OracleParameter codigoParam = new OracleParameter();
+                codigoParam.ParameterName = "p_codigo";
+                codigoParam.OracleDbType = OracleDbType.Int32;
+                codigoParam.Direction = ParameterDirection.Input;
+                codigoParam.Value = codigo;
+                command.Parameters.Add(codigoParam);
+
+                OracleParameter clienteParam = new OracleParameter();
+                clienteParam.ParameterName = "p_cliente";
+                clienteParam.OracleDbType = OracleDbType.RefCursor;
+                clienteParam.Direction = ParameterDirection.Output;
+                command.Parameters.Add(clienteParam);
+
+                // Ejecutar el procedimiento
+                command.ExecuteNonQuery();
+
+                // Obtener el resultado del cursor
+                OracleRefCursor cursor = (OracleRefCursor)command.Parameters["p_cliente"].Value;
+                OracleDataReader reader = cursor.GetDataReader();
+
+                // Recorrer los registros del cursor
+                while (reader.Read())
+                {
+                    cliente = new Cliente();
+                    cliente.Codigo = reader.GetInt32(0);
+                    cliente.User = reader.GetString(1);
+                    cliente.PName = reader.GetString(2);
+                    cliente.SName = reader.GetString(3);
+                    cliente.PApellido = reader.GetString(4);
+                    cliente.SApellido = reader.GetString(5);
+                    cliente.FNacimiento = reader.GetString(6);
+                    cliente.Password = reader.GetString(7);
+                    cliente.Telefono = reader.GetString(9);
+                    cliente.Correo = reader.GetString(10);
+                }
+
+                // Cerrar el DataReader
+                reader.Close();
+            }
+            catch (OracleException ex)
+            {
+                // Manejar cualquier excepción ocurrida durante la ejecución
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                // Cerrar la conexión
+                connection.Close();
+            }
+            return cliente;
+        }
+
+        public int ObtenerCantidadClientes()
+        {
+            OracleConnection connection = new OracleConnection(cadenaConexion);
+            int cantidad = 0;
+
+            try
+            {
+                // Abrir la conexión
+                connection.Open();
+
+                // Crear el comando para ejecutar el procedimiento del paquete
+                OracleCommand command = new OracleCommand("pqt_gestion_clientes.obtener_cantidad_clientes", connection);
+                command.CommandType = CommandType.StoredProcedure;
+
+                // Parámetro de salida para la cantidad de clientes
+                OracleParameter cantidadParam = new OracleParameter();
+                cantidadParam.ParameterName = "p_cantidad";
+                cantidadParam.OracleDbType = OracleDbType.Int32;
+                cantidadParam.Direction = ParameterDirection.Output;
+                command.Parameters.Add(cantidadParam);
+
+                // Ejecutar el procedimiento
+                command.ExecuteNonQuery();
+
+                // Obtener la cantidad de clientes
+                cantidad = ((OracleDecimal)command.Parameters["p_cantidad"].Value).ToInt32();
+            }
+            catch (OracleException ex)
+            {
+                // Manejar cualquier excepción ocurrida durante la ejecución
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                // Cerrar la conexión
+                connection.Close();
+            }
+
+            return cantidad;
+        }
+
+
+
     }
 }

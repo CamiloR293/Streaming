@@ -107,5 +107,10 @@ namespace Streaming
         {
             openForms(new Admin());
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            openForms(new BuscarClientes());
+        }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlLateral = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlAdministrarActores = new System.Windows.Forms.Panel();
             this.btnEliminarActores = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
@@ -41,7 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.picBoxAdminIcon = new System.Windows.Forms.PictureBox();
             this.pnlDesktop = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.pnlLateral.SuspendLayout();
             this.pnlAdministrarActores.SuspendLayout();
             this.pnlLateral1.SuspendLayout();
@@ -51,8 +52,10 @@
             // pnlLateral
             // 
             this.pnlLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(239)))));
+            this.pnlLateral.Controls.Add(this.button2);
             this.pnlLateral.Controls.Add(this.button1);
             this.pnlLateral.Controls.Add(this.pnlAdministrarActores);
+            this.pnlLateral.Controls.Add(this.btnAgregarActores);
             this.pnlLateral.Controls.Add(this.btnAdministrarActores);
             this.pnlLateral.Controls.Add(this.btnCerrarSesion);
             this.pnlLateral.Controls.Add(this.pnlLateral1);
@@ -64,14 +67,28 @@
             this.pnlLateral.Size = new System.Drawing.Size(161, 561);
             this.pnlLateral.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(239)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(0, 466);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(161, 53);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "ACTUALIZAR CLIENTES";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // pnlAdministrarActores
             // 
             this.pnlAdministrarActores.Controls.Add(this.btnEliminarActores);
             this.pnlAdministrarActores.Controls.Add(this.btnActualizar);
-            this.pnlAdministrarActores.Controls.Add(this.btnAgregarActores);
             this.pnlAdministrarActores.Location = new System.Drawing.Point(0, 374);
             this.pnlAdministrarActores.Name = "pnlAdministrarActores";
-            this.pnlAdministrarActores.Size = new System.Drawing.Size(161, 79);
+            this.pnlAdministrarActores.Size = new System.Drawing.Size(161, 53);
             this.pnlAdministrarActores.TabIndex = 6;
             this.pnlAdministrarActores.Visible = false;
             // 
@@ -81,7 +98,7 @@
             this.btnEliminarActores.FlatAppearance.BorderSize = 0;
             this.btnEliminarActores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarActores.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarActores.Location = new System.Drawing.Point(0, 51);
+            this.btnEliminarActores.Location = new System.Drawing.Point(0, 26);
             this.btnEliminarActores.Name = "btnEliminarActores";
             this.btnEliminarActores.Size = new System.Drawing.Size(161, 29);
             this.btnEliminarActores.TabIndex = 2;
@@ -95,7 +112,7 @@
             this.btnActualizar.FlatAppearance.BorderSize = 0;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.Location = new System.Drawing.Point(0, 25);
+            this.btnActualizar.Location = new System.Drawing.Point(-3, 0);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(161, 29);
             this.btnActualizar.TabIndex = 1;
@@ -109,7 +126,7 @@
             this.btnAgregarActores.FlatAppearance.BorderSize = 0;
             this.btnAgregarActores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarActores.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarActores.Location = new System.Drawing.Point(0, 0);
+            this.btnAgregarActores.Location = new System.Drawing.Point(0, 350);
             this.btnAgregarActores.Name = "btnAgregarActores";
             this.btnAgregarActores.Size = new System.Drawing.Size(161, 29);
             this.btnAgregarActores.TabIndex = 0;
@@ -123,9 +140,9 @@
             this.btnAdministrarActores.FlatAppearance.BorderSize = 0;
             this.btnAdministrarActores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdministrarActores.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdministrarActores.Location = new System.Drawing.Point(0, 307);
+            this.btnAdministrarActores.Location = new System.Drawing.Point(0, 303);
             this.btnAdministrarActores.Name = "btnAdministrarActores";
-            this.btnAdministrarActores.Size = new System.Drawing.Size(161, 69);
+            this.btnAdministrarActores.Size = new System.Drawing.Size(161, 53);
             this.btnAdministrarActores.TabIndex = 5;
             this.btnAdministrarActores.Text = "ADMINISTRAR ACTORES";
             this.btnAdministrarActores.UseVisualStyleBackColor = false;
@@ -165,7 +182,7 @@
             this.btnDatosPersonales.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDatosPersonales.Location = new System.Drawing.Point(0, 0);
             this.btnDatosPersonales.Name = "btnDatosPersonales";
-            this.btnDatosPersonales.Size = new System.Drawing.Size(161, 69);
+            this.btnDatosPersonales.Size = new System.Drawing.Size(161, 51);
             this.btnDatosPersonales.TabIndex = 2;
             this.btnDatosPersonales.Text = "DATOS PERSONALES";
             this.btnDatosPersonales.UseVisualStyleBackColor = false;
@@ -178,9 +195,9 @@
             this.btnRegistrarProducto.FlatAppearance.BorderSize = 0;
             this.btnRegistrarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarProducto.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarProducto.Location = new System.Drawing.Point(0, 69);
+            this.btnRegistrarProducto.Location = new System.Drawing.Point(0, 49);
             this.btnRegistrarProducto.Name = "btnRegistrarProducto";
-            this.btnRegistrarProducto.Size = new System.Drawing.Size(161, 69);
+            this.btnRegistrarProducto.Size = new System.Drawing.Size(161, 89);
             this.btnRegistrarProducto.TabIndex = 3;
             this.btnRegistrarProducto.Text = "REGISTRAR PRODUCTO";
             this.btnRegistrarProducto.UseVisualStyleBackColor = false;
@@ -215,20 +232,20 @@
             this.pnlDesktop.Size = new System.Drawing.Size(639, 561);
             this.pnlDesktop.TabIndex = 1;
             // 
-            // button1
+            // button2
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(239)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 459);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(161, 60);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "ACTUALIZAR CLIENTES";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(239)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(0, 433);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(161, 35);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "BUSCAR CLIENTES";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // InicioEmpleado
             // 
@@ -266,5 +283,6 @@
         private System.Windows.Forms.Button btnAgregarActores;
         private System.Windows.Forms.Button btnAdministrarActores;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
