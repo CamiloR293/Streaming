@@ -82,8 +82,7 @@ namespace Streaming
 
         }
 
-        private void AgregarPeliculas(String nombreP) //Lo llamo en el constructor, se necesita pasar el genero de la pelicula
-                                        // se hace otro select? o se usa el texto del boton presionado
+        private void AgregarPeliculas(String nombreP) 
         {
 
             Datos dt = new Datos();
@@ -108,14 +107,14 @@ namespace Streaming
                     button.Font = myFont;
                     button.Name = p.Codigo.ToString();
                     //Modificar esta direccion para que funcione, es la direccion de donde se toman las fotos
-                    String direccion = "C:\\Users\\Usuario\\Documents\\GitHub\\Streaming\\CamiloR293\\Streaming\\Resources\\" + p.Nombre + ".png";
+                    String direccion = "C:\\Users\\Usuario\\source\\repos\\CamiloR293\\Streaming\\Resources\\" + p.Nombre + ".png";
                     //String direccion = "D:\\GitHub\\Streaming\\Resources\\" + p.Nombre + ".png";
                     if (p.Nombre.Contains(":"))
                     {
 
                         String[] linea = p.Nombre.Split(':');
                         //Esta tambien favor comentarlas y no borrarlas
-                        direccion = "C:\\Users\\Usuario\\Documents\\GitHub\\Streaming\\CamiloR293\\Streaming\\Resources\\" + linea[0] + ".png";
+                        direccion = "C:\\Users\\Usuario\\source\\repos\\CamiloR293\\Streaming\\Resources\\" + linea[0] + ".png";
                         //direccion = "D:\\GitHub\\Streaming\\Resources\\" + linea[0] + ".png";
 
                     }
@@ -172,8 +171,6 @@ namespace Streaming
 
 
                 }
-
-                
                 else
                 {
                     MessageBox.Show("Ya has comprado la pelicula!!");

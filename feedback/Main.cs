@@ -113,6 +113,7 @@ namespace Streaming
                         if (resultado > 0 /*&& /*verify==false*/)
                         {
                             // La suscripción está activa, permitir acceso al contenido
+                            MessageBox.Show("Inicio de sesion exitoso");
                             openForms(new InicioCliente(ClienteGlobal));
                         }
                     }

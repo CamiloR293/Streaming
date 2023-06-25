@@ -115,7 +115,7 @@
             this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDesktop.Location = new System.Drawing.Point(0, 67);
             this.pnlDesktop.Name = "pnlDesktop";
-            this.pnlDesktop.Size = new System.Drawing.Size(854, 425);
+            this.pnlDesktop.Size = new System.Drawing.Size(854, 477);
             this.pnlDesktop.TabIndex = 8;
             this.pnlDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDesktop_Paint);
             // 
@@ -125,7 +125,7 @@
             this.lblSegundoApellido.AutoSize = true;
             this.lblSegundoApellido.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSegundoApellido.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblSegundoApellido.Location = new System.Drawing.Point(583, 242);
+            this.lblSegundoApellido.Location = new System.Drawing.Point(583, 268);
             this.lblSegundoApellido.Name = "lblSegundoApellido";
             this.lblSegundoApellido.Size = new System.Drawing.Size(80, 21);
             this.lblSegundoApellido.TabIndex = 21;
@@ -137,7 +137,7 @@
             this.lblSegundoNombre.AutoSize = true;
             this.lblSegundoNombre.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSegundoNombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblSegundoNombre.Location = new System.Drawing.Point(583, 201);
+            this.lblSegundoNombre.Location = new System.Drawing.Point(583, 227);
             this.lblSegundoNombre.Name = "lblSegundoNombre";
             this.lblSegundoNombre.Size = new System.Drawing.Size(80, 21);
             this.lblSegundoNombre.TabIndex = 20;
@@ -149,7 +149,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label19.Location = new System.Drawing.Point(431, 242);
+            this.label19.Location = new System.Drawing.Point(431, 268);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(149, 21);
             this.label19.TabIndex = 19;
@@ -161,7 +161,7 @@
             this.lblCorreo.AutoSize = true;
             this.lblCorreo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCorreo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCorreo.Location = new System.Drawing.Point(290, 373);
+            this.lblCorreo.Location = new System.Drawing.Point(290, 399);
             this.lblCorreo.Name = "lblCorreo";
             this.lblCorreo.Size = new System.Drawing.Size(80, 21);
             this.lblCorreo.TabIndex = 17;
@@ -173,7 +173,7 @@
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelefono.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTelefono.Location = new System.Drawing.Point(609, 330);
+            this.lblTelefono.Location = new System.Drawing.Point(609, 356);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(80, 21);
             this.lblTelefono.TabIndex = 16;
@@ -185,7 +185,7 @@
             this.lblFechaNacimiento.AutoSize = true;
             this.lblFechaNacimiento.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaNacimiento.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblFechaNacimiento.Location = new System.Drawing.Point(609, 285);
+            this.lblFechaNacimiento.Location = new System.Drawing.Point(609, 311);
             this.lblFechaNacimiento.Name = "lblFechaNacimiento";
             this.lblFechaNacimiento.Size = new System.Drawing.Size(80, 21);
             this.lblFechaNacimiento.TabIndex = 15;
@@ -197,7 +197,7 @@
             this.lblNombreUsuario.AutoSize = true;
             this.lblNombreUsuario.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreUsuario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblNombreUsuario.Location = new System.Drawing.Point(311, 330);
+            this.lblNombreUsuario.Location = new System.Drawing.Point(311, 356);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
             this.lblNombreUsuario.Size = new System.Drawing.Size(80, 21);
             this.lblNombreUsuario.TabIndex = 14;
@@ -209,7 +209,7 @@
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCodigo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCodigo.Location = new System.Drawing.Point(290, 285);
+            this.lblCodigo.Location = new System.Drawing.Point(290, 311);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(80, 21);
             this.lblCodigo.TabIndex = 12;
@@ -221,7 +221,7 @@
             this.lblPrimerApellido.AutoSize = true;
             this.lblPrimerApellido.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrimerApellido.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPrimerApellido.Location = new System.Drawing.Point(290, 242);
+            this.lblPrimerApellido.Location = new System.Drawing.Point(290, 268);
             this.lblPrimerApellido.Name = "lblPrimerApellido";
             this.lblPrimerApellido.Size = new System.Drawing.Size(80, 21);
             this.lblPrimerApellido.TabIndex = 11;
@@ -233,7 +233,7 @@
             this.lblPrimerNombre.AutoSize = true;
             this.lblPrimerNombre.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrimerNombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPrimerNombre.Location = new System.Drawing.Point(290, 201);
+            this.lblPrimerNombre.Location = new System.Drawing.Point(290, 227);
             this.lblPrimerNombre.Name = "lblPrimerNombre";
             this.lblPrimerNombre.Size = new System.Drawing.Size(80, 21);
             this.lblPrimerNombre.TabIndex = 10;
@@ -245,7 +245,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label9.Location = new System.Drawing.Point(144, 373);
+            this.label9.Location = new System.Drawing.Point(144, 399);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(136, 21);
             this.label9.TabIndex = 9;
@@ -257,7 +257,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(431, 330);
+            this.label8.Location = new System.Drawing.Point(431, 356);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(153, 21);
             this.label8.TabIndex = 8;
@@ -269,7 +269,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(431, 285);
+            this.label7.Location = new System.Drawing.Point(431, 311);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(172, 21);
             this.label7.TabIndex = 7;
@@ -281,7 +281,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(144, 330);
+            this.label6.Location = new System.Drawing.Point(144, 356);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(161, 21);
             this.label6.TabIndex = 6;
@@ -293,7 +293,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(144, 285);
+            this.label4.Location = new System.Drawing.Point(144, 311);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 21);
             this.label4.TabIndex = 4;
@@ -305,7 +305,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(144, 242);
+            this.label3.Location = new System.Drawing.Point(144, 268);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(132, 21);
             this.label3.TabIndex = 3;
@@ -317,7 +317,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(144, 201);
+            this.label2.Location = new System.Drawing.Point(144, 227);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 21);
             this.label2.TabIndex = 2;
@@ -329,7 +329,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label18.Location = new System.Drawing.Point(431, 201);
+            this.label18.Location = new System.Drawing.Point(431, 227);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(146, 21);
             this.label18.TabIndex = 18;
@@ -375,7 +375,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(83, 401);
+            this.label10.Location = new System.Drawing.Point(83, 436);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(359, 20);
             this.label10.TabIndex = 26;
@@ -414,7 +414,7 @@
             this.btnConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsulta.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsulta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnConsulta.Location = new System.Drawing.Point(351, 148);
+            this.btnConsulta.Location = new System.Drawing.Point(351, 174);
             this.btnConsulta.Name = "btnConsulta";
             this.btnConsulta.Size = new System.Drawing.Size(145, 40);
             this.btnConsulta.TabIndex = 30;
@@ -426,7 +426,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 492);
+            this.ClientSize = new System.Drawing.Size(854, 544);
             this.Controls.Add(this.pnlDesktop);
             this.Controls.Add(this.pnlBanner);
             this.Name = "BuscarClientes";
